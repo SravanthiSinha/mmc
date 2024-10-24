@@ -7,4 +7,14 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true,
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
+  }
 })
