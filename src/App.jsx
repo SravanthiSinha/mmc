@@ -10,7 +10,7 @@ const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const App = () => {
   return (
-    <BrowserRouter basename="/mindmatterscenter">
+    <BrowserRouter basename="/mmc">
       <MainLayout>
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>

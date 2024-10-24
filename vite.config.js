@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/mindmatterscenter/', // Replace with your GitHub repo name
+  base: '/mmc/', // Replace with your GitHub repo name
   server: {
     historyApiFallback: true,
   },
