@@ -20,13 +20,6 @@ const Home = () => {
               We provide culturally sensitive mental health services tailored to the Asian American community. 
               Our experienced therapists understand your unique experiences and challenges.
             </p>
-            <Link
-              to="/book"
-              className="inline-block bg-brand-primary-500 hover:bg-brand-primary-600 text-white px-8 py-3 rounded-full 
-                         font-medium text-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
-            >
-              Schedule a Consultation
-            </Link>
           </div>
         </div>
       </section>

@@ -16,7 +16,7 @@ const Navbar = () => {
   const navLinks = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
-    { path: '/resources', label: 'Resources' },
+    { path: '/faq', label: 'FAQs' },
   ];
 
   return (
@@ -39,7 +39,7 @@ const Navbar = () => {
               <Link
                 key={path}
                 to={path}
-                className={`${isActive(path)} text-lg transition-colors duration-300 tracking-wide hover:text-brand-primary-500`}
+                className={`${isActive(path)} text-lg transition-colors duration-300 hover:text-brand-primary-500`}
               >
                 {label}
               </Link>
@@ -47,8 +47,8 @@ const Navbar = () => {
             <Link
               to="/book"
               className="bg-brand-primary-500 hover:bg-brand-primary-600 text-white 
-                         px-8 py-3 rounded-full text-lg font-normal transition-all duration-300 
-                         shadow-sm hover:shadow tracking-wide"
+                         px-5 py-2 rounded-full text-lg font-normal transition-all duration-300 
+                         shadow-sm hover:shadow"
             >
               Book Consultation
             </Link>
