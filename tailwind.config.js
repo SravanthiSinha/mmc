@@ -7,6 +7,16 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        heading: ['Lora', 'serif'],
+        body: ['Inter', 'sans-serif'],
+      },
+      fontWeight: {
+        light: '300',
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+      },
       colors: {
         brand: {
           // Warm yellow - Primary color
