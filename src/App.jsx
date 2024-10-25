@@ -2,11 +2,11 @@ import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import LoadingSpinner from './components/LoadingSpinner';
-import FAQ from './pages/faq';
 
 // Lazy load pages for better performance
 const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
+const Faq = React.lazy(() => import('./pages/FAQ'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/faq" element={<FAQ />} />
+            <Route path="/faq" element={<Faq />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
