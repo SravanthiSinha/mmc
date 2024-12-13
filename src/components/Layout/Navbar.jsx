@@ -131,11 +131,12 @@ const Navbar = () => {
             to="/"
             className={`text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold transition-colors
               ${location.pathname === '/' && !scrolled ? 'text-brand-text-primary' : 'text-brand-text-secondary'}`}
+            onClick={() => setIsMenuOpen(false)}
           >
             Mind Matters Center
           </Link>
 
-          {/* Mobile Menu Button - Larger touch target */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden p-4 -mr-4 touch-manipulation"
@@ -224,76 +225,72 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={`lg:hidden fixed inset-0 top-16 sm:top-20 bg-white z-50 transform transition-all duration-300 ease-in-out
-            ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-        >
-          <div className="flex flex-col p-4 space-y-2 h-[calc(100vh-4rem)] sm:h-[calc(100vh-5rem)] overflow-y-auto">
-            {navLinks.map((link) => (
-              <div key={link.path}>
-                {link.dropdownItems ? (
-                  <div>
-                    <button
-                      className={`w-full flex justify-between items-center px-4 py-3 text-lg rounded-lg
-                        text-brand-text-secondary hover:bg-gray-100 transition-colors duration-200
-                        ${location.pathname === link.path ? 'font-semibold bg-gray-50' : ''}`}
-                      onClick={() => setActiveDropdown(activeDropdown === link.path ? null : link.path)}
-                      aria-expanded={activeDropdown === link.path}
-                    >
-                      {link.label}
-                      <svg
-                        className={`w-5 h-5 transition-transform duration-200 ${activeDropdown === link.path ? 'rotate-180' : ''}`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                    <div
-                      className={`ml-4 mt-2 space-y-2 transition-all duration-200
-                        ${activeDropdown === link.path ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
-                    >
-                      {link.dropdownItems.map((item) => (
+          {/* Mobile Menu */}
+          {isMenuOpen && (
+            <div className="lg:hidden fixed inset-0 top-16 sm:top-20 bg-white z-50">
+              <div className="flex flex-col p-4 space-y-2 h-[calc(100vh-4rem)] sm:h-[calc(100vh-5rem)] overflow-y-auto">
+                {navLinks.map((link) => (
+                  <div key={link.path}>
+                    {link.dropdownItems ? (
+                      <>
+                        {/* Make the Specialties text clickable on mobile */}
                         <Link
-                          key={item.path}
-                          to={item.path}
+                          to={link.path}
+                          className={`block px-4 py-3 text-lg rounded-lg text-brand-text-secondary
+                            hover:bg-gray-100 transition-colors duration-200
+                            ${location.pathname === link.path ? 'font-semibold bg-gray-50' : ''}`}
                           onClick={() => {
                             setIsMenuOpen(false);
                             setActiveDropdown(null);
                           }}
-                          className="block px-4 py-3 text-brand-text-secondary hover:bg-gray-50 rounded-lg transition-colors"
                         >
-                          {item.label}
+                          {link.label}
                         </Link>
-                      ))}
-                    </div>
+                        {/* Dropdown items as separate clickable links */}
+                        <div className="ml-4 space-y-2">
+                          {link.dropdownItems.map((item) => (
+                            <Link
+                              key={item.path}
+                              to={item.path}
+                              className="block px-4 py-2 text-brand-text-secondary hover:bg-gray-50 rounded-lg transition-colors"
+                              onClick={() => {
+                                setIsMenuOpen(false);
+                                setActiveDropdown(null);
+                              }}
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      renderLink(
+                        link,
+                        `block px-4 py-3 text-lg rounded-lg transition-colors duration-200 text-brand-text-secondary
+                          hover:bg-gray-100
+                          ${location.pathname === link.path ? 'font-semibold bg-gray-50' : ''}`,
+                        () => {
+                          setIsMenuOpen(false);
+                          setActiveDropdown(null);
+                        }
+                      )
+                    )}
                   </div>
-                ) : (
-                  renderLink(
-                    link,
-                    `block px-4 py-3 text-lg rounded-lg transition-colors duration-200 text-brand-text-secondary
-                      hover:bg-gray-100
-                      ${location.pathname === link.path ? 'font-semibold bg-gray-50' : ''}`,
-                    () => setIsMenuOpen(false)
-                  )
-                )}
+                ))}
+                <div className="pt-4">
+                  <Link
+                    to="/book-consultation"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block bg-brand-coral text-white text-xl font-bold px-4 py-3 
+                      rounded-full text-center hover:bg-opacity-90 transition-colors duration-200"
+                  >
+                    Book a Consultation
+                  </Link>
+                </div>
               </div>
-            ))}
-            <div className="pt-4">
-              <Link
-                to="/book-consultation"
-                onClick={() => setIsMenuOpen(false)}
-                className="block bg-brand-coral text-white text-xl font-bold px-4 py-3 
-                  rounded-full text-center hover:bg-opacity-90 transition-colors duration-200"
-              >
-                Book a Consultation
-              </Link>
             </div>
-          </div>
+          )}
         </div>
-      </div>
     </nav>
   );
 };
