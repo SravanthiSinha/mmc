@@ -7,67 +7,21 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
 
-  // Handle scroll effect with debouncing
   useEffect(() => {
-    let timeoutId;
     const handleScroll = () => {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-      timeoutId = setTimeout(() => {
-        setScrolled(window.scrollY > 20);
-      }, 100);
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle resize with debouncing
   useEffect(() => {
-    let timeoutId;
-    const handleResize = () => {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-      timeoutId = setTimeout(() => {
-        if (window.innerWidth >= 1024) {
-          setIsMenuOpen(false);
-          setActiveDropdown(null);
-        }
-      }, 100);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-    };
-  }, []);
-
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    const body = document.body;
-    if (isMenuOpen) {
-      const scrollY = window.scrollY;
-      body.style.position = 'fixed';
-      body.style.top = `-${scrollY}px`;
-      body.style.width = '100%';
-    } else {
-      const scrollY = body.style.top;
-      body.style.position = '';
-      body.style.top = '';
-      body.style.width = '';
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    if (window.innerWidth >= 1024) {
+      setIsMenuOpen(false);
+      setActiveDropdown(null);
     }
-  }, [isMenuOpen]);
+  }, [location]);
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -92,37 +46,10 @@ const Navbar = () => {
     }
   ];
 
-  const renderLink = (link, className, onClick = () => {}) => {
-    if (link.isExternal) {
-      return (
-        <a
-          href={link.path}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={className}
-          onClick={onClick}
-        >
-          {link.label}
-        </a>
-      );
-    }
-    
-    return (
-      <Link
-        to={link.path}
-        className={className}
-        onClick={onClick}
-      >
-        {link.label}
-      </Link>
-    );
-  };
-
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}
-        ${isMenuOpen ? 'bg-white' : ''}`}
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
+      ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}
+      ${isMenuOpen ? 'bg-white' : ''}`}
     >
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
@@ -139,84 +66,60 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-4 -mr-4 touch-manipulation"
+            className="lg:hidden p-4 -mr-4"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isMenuOpen}
           >
             <svg
               className={`w-6 h-6 transition-colors
                 ${scrolled || isMenuOpen ? 'text-brand-text-secondary' : 'text-brand-text-secondary'}`}
               fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
               {isMenuOpen ? (
-                <path d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1 xl:space-x-4">
-            <div className="flex items-center space-x-1 xl:space-x-2 text-sm xl:text-base">
-              {navLinks.map((link) => (
-                <div key={link.path} className="relative">
-                  {link.dropdownItems ? (
-                    <div className="group">
-                      <button
-                        className={`px-3 py-2 rounded-full transition-all duration-200 flex items-center gap-1
-                          ${location.pathname === '/' && !scrolled ? 'text-brand-text-primary' : 'text-brand-text-secondary'}
-                          ${location.pathname === link.path ? 'font-semibold' : ''}`}
-                        aria-expanded={activeDropdown === link.path}
-                        onClick={() => setActiveDropdown(activeDropdown === link.path ? null : link.path)}
-                      >
-                        {link.label}
-                        <svg
-                          className={`w-4 h-4 transition-transform ${activeDropdown === link.path ? 'rotate-180' : ''}`}
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-6">
+            {navLinks.map((link) => (
+              <div key={link.path} className="relative group">
+                {/* Main Link */}
+                <Link
+                  to={link.path}
+                  className={`px-3 py-2 rounded-full transition-all duration-200
+                    ${location.pathname === link.path ? 'underline font-semibold' : ''}
+                    ${location.pathname === '/' && !scrolled ? 'text-brand-text-primary' : 'text-brand-text-secondary'}
+                    hover:bg-gray-100/20`}
+                >
+                  {link.label}
+                </Link>
 
-                      <div 
-                        className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 z-50
-                          transition-all duration-200 transform origin-top
-                          ${activeDropdown === link.path ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'}`}
+                {/* Desktop Dropdown */}
+                {link.dropdownItems && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 z-50 
+                    opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    {link.dropdownItems.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className="block px-4 py-2 text-brand-text-secondary hover:bg-gray-50 transition-colors"
                       >
-                        {link.dropdownItems.map((item) => (
-                          <Link
-                            key={item.path}
-                            to={item.path}
-                            className="block px-4 py-2 text-brand-text-secondary hover:bg-gray-50 transition-colors"
-                            onClick={() => setActiveDropdown(null)}
-                          >
-                            {item.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    renderLink(
-                      link,
-                      `px-3 py-2 rounded-full transition-all duration-200
-                        ${location.pathname === link.path ? 'underline font-semibold' : ''}
-                        ${location.pathname === '/' && !scrolled ? 'text-brand-text-primary' : 'text-brand-text-secondary'}`
-                    )
-                  )}
-                </div>
-              ))}
-            </div>
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            
             <Link
               to="/book-consultation"
-              className="bg-brand-coral text-white text-sm xl:text-base font-bold 
+              className="bg-brand-coral text-white text-base xl:text-lg font-bold 
                 px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors duration-200
                 whitespace-nowrap"
             >
@@ -225,72 +128,55 @@ const Navbar = () => {
           </div>
         </div>
 
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="lg:hidden fixed inset-0 top-16 sm:top-20 bg-white z-50">
-              <div className="flex flex-col p-4 space-y-2 h-[calc(100vh-4rem)] sm:h-[calc(100vh-5rem)] overflow-y-auto">
-                {navLinks.map((link) => (
-                  <div key={link.path}>
-                    {link.dropdownItems ? (
-                      <>
-                        {/* Make the Specialties text clickable on mobile */}
-                        <Link
-                          to={link.path}
-                          className={`block px-4 py-3 text-lg rounded-lg text-brand-text-secondary
-                            hover:bg-gray-100 transition-colors duration-200
-                            ${location.pathname === link.path ? 'font-semibold bg-gray-50' : ''}`}
-                          onClick={() => {
-                            setIsMenuOpen(false);
-                            setActiveDropdown(null);
-                          }}
-                        >
-                          {link.label}
-                        </Link>
-                        {/* Dropdown items as separate clickable links */}
-                        <div className="ml-4 space-y-2">
-                          {link.dropdownItems.map((item) => (
-                            <Link
-                              key={item.path}
-                              to={item.path}
-                              className="block px-4 py-2 text-brand-text-secondary hover:bg-gray-50 rounded-lg transition-colors"
-                              onClick={() => {
-                                setIsMenuOpen(false);
-                                setActiveDropdown(null);
-                              }}
-                            >
-                              {item.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </>
-                    ) : (
-                      renderLink(
-                        link,
-                        `block px-4 py-3 text-lg rounded-lg transition-colors duration-200 text-brand-text-secondary
-                          hover:bg-gray-100
-                          ${location.pathname === link.path ? 'font-semibold bg-gray-50' : ''}`,
-                        () => {
-                          setIsMenuOpen(false);
-                          setActiveDropdown(null);
-                        }
-                      )
-                    )}
-                  </div>
-                ))}
-                <div className="pt-4">
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="lg:hidden fixed inset-0 top-16 sm:top-20 bg-white z-50">
+            <div className="flex flex-col p-4 space-y-2 h-[calc(100vh-4rem)] sm:h-[calc(100vh-5rem)] overflow-y-auto">
+              {navLinks.map((link) => (
+                <div key={link.path}>
+                  {/* Main Link */}
                   <Link
-                    to="/book-consultation"
+                    to={link.path}
+                    className={`block px-4 py-3 text-lg rounded-lg transition-colors duration-200 text-brand-text-secondary
+                      hover:bg-gray-100
+                      ${location.pathname === link.path ? 'font-semibold bg-gray-50' : ''}`}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block bg-brand-coral text-white text-xl font-bold px-4 py-3 
-                      rounded-full text-center hover:bg-opacity-90 transition-colors duration-200"
                   >
-                    Book a Consultation
+                    {link.label}
                   </Link>
+                  
+                  {/* Mobile Dropdown Items */}
+                  {link.dropdownItems && (
+                    <div className="ml-4 mt-1 space-y-1">
+                      {link.dropdownItems.map((item) => (
+                        <Link
+                          key={item.path}
+                          to={item.path}
+                          className="block px-4 py-2 text-brand-text-secondary hover:bg-gray-50 rounded-lg transition-colors"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
+              ))}
+              
+              <div className="pt-4">
+                <Link
+                  to="/book-consultation"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block bg-brand-coral text-white text-xl font-bold px-4 py-3 
+                    rounded-full text-center hover:bg-opacity-90 transition-colors duration-200"
+                >
+                  Book a Consultation
+                </Link>
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        )}
+      </div>
     </nav>
   );
 };
