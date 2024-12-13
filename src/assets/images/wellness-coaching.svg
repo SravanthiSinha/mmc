@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  {/* Background Circle */}
+  <circle cx="120" cy="120" r="120" fill="#F7F8FA"/>
+  
+  {/* Center Wellness Circle */}
+  <circle cx="120" cy="120" r="60" fill="none" stroke="#7FA693" strokeWidth="2" strokeDasharray="4"/>
+  
+  {/* Wellness Elements */}
+  {/* Mind - Brain */}
+  <path d="M120 70 
+           c-10 0-20 8-20 18
+           c0 8 5 15 12 17
+           v10 h16 v-10
+           c7-2 12-9 12-17
+           c0-10-10-18-20-18z" 
+        fill="#A2C1D4"/>
+  
+  {/* Body - Lotus Position */}
+  <circle cx="120" cy="160" r="15" fill="#7FA693"/>
+  <path d="M105 160 c0 0 15-10 30 0" fill="none" stroke="#7FA693" strokeWidth="2"/>
+  <path d="M105 165 c0 0 15 5 30 0" fill="none" stroke="#7FA693" strokeWidth="2"/>
+  
+  {/* Spirit - Heart */}
+  <path d="M85 115 
+           c-2-3-6-3-8 0
+           c-2 3-2 6 0 8
+           l8 8
+           l8-8
+           c2-2 2-5 0-8
+           c-2-3-6-3-8 0z" 
+        fill="#FF7F50"/>
+  
+  {/* Growth - Plant */}
+  <path d="M155 115
+           c0 0 -5-10 0-15
+           c5-5 10-5 15 0
+           c5 5 0 15 0 15z" 
+        fill="#7FA693"/>
+  <rect x="162" y="115" width="2" height="10" fill="#6A8F7D"/>
+  
+  {/* Balance - Yin Yang inspired */}
+  <circle cx="155" cy="160" r="12" fill="#2D3748" opacity="0.8"/>
+  <path d="M155 148 a12 12 0 0 1 0 24 a6 6 0 0 1 0-12 a6 6 0 0 0 0-12" fill="#F7F8FA"/>
+  <circle cx="155" cy="154" r="2" fill="#2D3748"/>
+  <circle cx="155" cy="166" r="2" fill="#F7F8FA"/>
+  
+  {/* Goals - Target */}
+  <circle cx="85" cy="160" r="12" fill="none" stroke="#FF7F50" strokeWidth="2"/>
+  <circle cx="85" cy="160" r="8" fill="none" stroke="#FF7F50" strokeWidth="2"/>
+  <circle cx="85" cy="160" r="4" fill="#FF7F50"/>
+  
+  {/* Connection Lines */}
+  <g opacity="0.3" stroke="#7FA693" strokeWidth="1">
+    <path d="M120 85 L120 145"/>
+    <path d="M95 120 L145 120"/>
+    <path d="M100 100 L140 140"/>
+    <path d="M100 140 L140 100"/>
+  </g>
+  
+  {/* Stars - Achievement */}
+  <g fill="#FFD700" opacity="0.8">
+    <path d="M60 100 l2-6 2 6 6 0-4 4 2 6-6-4-6 4 2-6-4-4z"/>
+    <path d="M180 100 l2-6 2 6 6 0-4 4 2 6-6-4-6 4 2-6-4-4z"/>
+  </g>
+</svg>

@@ -1,26 +1,29 @@
-import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import MainLayout from './layouts/MainLayout';
-import LoadingSpinner from './components/LoadingSpinner';
+import ScrollToTop from './components/Layout/ScrollToTop';
+import MainLayout from './components/Layout/MainLayout';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
-// Lazy load pages for better performance
-const Home = React.lazy(() => import('./pages/Home'));
-const About = React.lazy(() => import('./pages/About'));
-const Faq = React.lazy(() => import('./pages/FAQ'));
-const NotFound = React.lazy(() => import('./pages/NotFound'));
+import Faq from './pages/Faq';
+import Resources from './pages/Resources';
+import Specialties from './pages/Specialties';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
     <BrowserRouter basename="/mmc">
+    <ScrollToTop />
       <MainLayout>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/faq" element={<Faq />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/specialties" element={<Specialties />} />
+          <Route path="*" element={<NotFound/>} />
+        </Routes>
       </MainLayout>
     </BrowserRouter>
   );

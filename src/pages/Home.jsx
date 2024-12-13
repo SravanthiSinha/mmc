@@ -1,158 +1,178 @@
-// src/pages/Home.jsx
-import React from 'react';
 import { Link } from 'react-router-dom';
-import Hero from '../components/sections/Hero';
+import heroImage from '../assets/images/hero-background.jpg';
+import IndividualTherapy from '../assets/images/individual-therapy.svg';
+import CouplesTherapy from '../assets/images/couples-therapy.svg';
+import WellNessCoaching from '../assets/images/wellness-coaching.svg';
 
 const Home = () => {
-  return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <Hero />
+  const checklistItems = [
+    "Feeling anxious or overwhelmed by life's demands?",
+    "Struggling with cultural identity or intergenerational conflicts?",
+    "Battling negative thought patterns or self-doubt?",
+    "Finding it difficult to connect in your relationships?",
+    "Seeking a safe space to navigate your immigrant or BIPOC experience?",
+    "Wanting support for stress, trauma, or life transitions?"
+  ];
 
-      {/* Welcome Section */}
-      <section className="py-20 bg-gradient-to-b from-brand-neutral-50 to-brand-primary-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-brand-primary-800 mb-6">
-              Your Journey to Mental Wellness Starts Here
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="relative min-h-screen">
+        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${heroImage})`
+          }}
+        ></div>
+
+        {/* Content */}
+        <div className="relative z-20 min-h-screen flex items-center">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-48">
+            <div className="max-w-4xl mx-auto md:mx-0">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-brand-text-primary mb-4 md:mb-6">
+                Empowering Healing for AAPI, BIPOC
+              </h1>
+              <p className="text-xl sm:text-2xl md:text-3xl text-brand-text-primary/90 mb-6 md:mb-8">
+                Accessible, Inclusive Virtual Therapy for Diverse Communities in California
+              </p>
+              <Link
+                to="/book-consultation"
+                className="inline-block bg-brand-coral text-white text-lg sm:text-xl md:text-2xl font-bold px-6 py-3 rounded-full
+                  hover:bg-opacity-90 transition-colors duration-200"
+              >
+                Book a Consultation
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* It's Never Too Late Section */}
+      <section className="py-12 md:py-20 bg-brand-background-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
+            {/* Left Column */}
+            <div className="flex-1 flex flex-col space-y-6 md:space-y-8">
+              <h2 className="text-2xl md:text-3xl font-serif text-brand-text-secondary">
+              It’s Never Too Late to Start the Journey of Healing
+              </h2>
+              <div className="flex flex-col space-y-4">
+                {checklistItems.map((item, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <svg className="w-5 h-5 mt-1 text-brand-sage flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                    </svg>
+                    <span className="text-base md:text-lg text-brand-text-secondary">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column */}
+            <div className="flex-1 flex flex-col justify-center space-y-6 md:space-y-12 mt-8 lg:mt-0">
+              <p className="text-3xl md:text-4xl lg:text-5xl text-brand-text-secondary font-semibold">
+                Culturally <span className="text-brand-coral">Sensitive</span> Therapy That Meets You Where You Are
+              </p>
+              <p className="text-xl md:text-2xl lg:text-3xl text-brand-text-secondary">
+                At Mind Matters Center, we provide inclusive, compassionate care to help you find clarity, balance, and empowerment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Not Alone Section */}
+      <section className="py-12 md:py-20 bg-brand-background-secondary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-secondary mb-6 md:mb-8">
+              You Are Not Alone – We're Here to Help You Reclaim Your Life
             </h2>
-            <p className="text-xl text-brand-neutral-700 leading-relaxed mb-8">
-              We provide culturally sensitive mental health services tailored to the Asian American community. 
-              Our experienced therapists understand your unique experiences and challenges.
+            <p className="text-base md:text-xl text-brand-text-secondary">
+            Life’s challenges can feel isolating, but you don’t have to face them alone.
+            At Mind Matters Center, we’re committed to walking alongside you on your journey toward healing and growth.
+            Our dedicated therapists provide the support and understanding you need to overcome obstacles and start living your life with confidence and peace.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Offer Section */}
+      <section className="py-12 md:py-24 bg-brand-background-primary">
+        <div className="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8">
+          <div className="bg-neutral-150 rounded-lg shadow-2xl p-8 md:p-12 " >
+            <div className="text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-yellow mb-6 md:mb-8">
+                What We Offer
+              </h2>
+              <p className="text-base md:text-xl text-brand-text-secondary">
+                We specialize in providing culturally sensitive therapy services, with a focus on supporting Asian American individuals and couples.
+                Whether you're navigating anxiety, trauma, relationship challenges, or other life stressors, we tailor our approach to meet your unique needs.
+                Our therapists draw from a wide range of therapeutic modalities, including Cognitive Behavioral Therapy (CBT),
+                Trauma-Focused Therapy, mindfulness practices, relational therapy, psychodynamic therapy, and more, to help you achieve lasting healing in a safe,
+                compassionate environment. Whatever your path to wellness looks like, we're here to support you every step of the way.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-brand-primary-800 mb-16">
-            Our Services
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                title: "Individual Therapy",
-                description: "One-on-one sessions focused on personal growth and healing",
-                features: ["Anxiety & Depression", "Cultural Identity", "Life Transitions"]
-              },
-              {
-                title: "Family Counseling",
-                description: "Bridge generational and cultural gaps within families",
-                features: ["Intergenerational Trauma", "Communication", "Family Dynamics"]
-              },
-              {
-                title: "Group Therapy",
-                description: "Connect with others in a supportive environment",
-                features: ["Shared Experiences", "Community Support", "Personal Growth"]
-              }
-            ].map((service, index) => (
-              <div 
-                key={index}
-                className="bg-brand-neutral-50 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                <h3 className="text-2xl font-bold text-brand-primary-700 mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-brand-neutral-700 mb-6">
-                  {service.description}
-                </p>
-                <ul className="space-y-3">
-                  {service.features.map((feature, idx) => (
-                    <li 
-                      key={idx}
-                      className="flex items-center text-brand-neutral-600"
-                    >
-                      <span className="w-2 h-2 bg-brand-primary-500 rounded-full mr-3"></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-brand-primary-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-brand-primary-800 mb-16">
-              Why Choose Us
+      <section className="py-12 md:py-20 bg-brand-background-secondary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-6xl font-serif text-brand-yellow mb-8 md:mb-12">
+              Our Services
             </h2>
-            <div className="grid md:grid-cols-2 gap-12">
-              {[
-                {
-                  title: "Cultural Understanding",
-                  description: "Our therapists understand the unique challenges and experiences of the Asian American community."
-                },
-                {
-                  title: "Multilingual Services",
-                  description: "Sessions available in multiple languages to ensure clear and comfortable communication."
-                },
-                {
-                  title: "Professional Expertise",
-                  description: "Experienced therapists specialized in cultural identity and intergenerational relationships."
-                },
-                {
-                  title: "Comfortable Environment",
-                  description: "A warm, welcoming space where you can feel safe to express yourself freely."
-                }
-              ].map((feature, index) => (
-                <div 
-                  key={index}
-                  className="flex gap-6"
-                >
-                  <div className="w-12 h-12 shrink-0 bg-brand-primary-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-2xl">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-brand-primary-700 mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-brand-neutral-700">
-                      {feature.description}
-                    </p>
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+              {/* Service Cards */}
+              <div className="bg-white p-6 rounded-lg shadow-sm h-full">
+                <div className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4">
+                  <img src={IndividualTherapy} alt="Individual Therapy" className="w-full h-full" />
                 </div>
-              ))}
+                <h3 className="text-xl font-semibold text-center mb-2 text-brand-sage">Individual Therapy</h3>
+                <p className="text-brand-text-secondary text-center">
+                  One-on-one sessions focused on your personal growth and healing journey.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm h-full">
+                <div className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4">
+                  <img src={CouplesTherapy} alt="Couples Therapy" className="w-full h-full" />
+                </div>
+                <h3 className="text-xl font-semibold text-center mb-2 text-brand-sage">Couples Therapy</h3>
+                <p className="text-brand-text-secondary text-center">
+                  Building stronger relationships through open communication and understanding.
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm h-full lg:col-span-1 md:col-span-2 lg:col-span-1">
+                <div className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4">
+                  <img src={WellNessCoaching} alt="Wellness Coaching" className="w-full h-full" />
+                </div>
+                <h3 className="text-xl font-semibold text-center mb-2 text-brand-sage">Wellness Coaching</h3>
+                <p className="text-brand-text-secondary text-center">
+                  Holistic approach to achieving balance in mind, body, and spirit.
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-primary-800 mb-6">
-              Begin Your Healing Journey Today
-            </h2>
-            <p className="text-xl text-brand-neutral-700 mb-8">
-              Take the first step towards mental wellness. Schedule a consultation with one of our experienced therapists.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* Final CTA */}
+            <div className="mt-12 md:mt-16">
+              <p className="text-xl md:text-2xl lg:text-3xl text-brand-text-secondary mb-8">
+                <span className="font-semibold">Take the First Step Toward Healing:</span> Reach out today to schedule your consultation. Together, we can begin your path to emotional well-being and a more fulfilling life.
+              </p>
               <Link
-                to="/book"
-                className="bg-brand-primary-500 hover:bg-brand-primary-600 text-white px-8 py-3 rounded-full 
-                           font-medium transition-all duration-300 shadow-md hover:shadow-lg"
+                to="/book-consultation"
+                className="inline-block bg-brand-coral text-white text-lg md:text-2xl font-bold px-6 py-3 rounded-full
+                  hover:bg-opacity-90 transition-colors duration-200"
               >
-                Book Consultation
-              </Link>
-              <Link
-                to="/about"
-                className="bg-brand-neutral-100 hover:bg-brand-neutral-200 text-brand-primary-700 px-8 py-3 rounded-full 
-                           font-medium transition-all duration-300"
-              >
-                Learn More
+                Book a Consultation
               </Link>
             </div>
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

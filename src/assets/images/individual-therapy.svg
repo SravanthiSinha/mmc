@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  {/* Background Circle */}
+  <circle cx="120" cy="120" r="120" fill="#F7F8FA"/>
+  
+  {/* Therapist Chair */}
+  <path d="M160 140 h30 v40 h-30 z" fill="#7FA693"/>
+  <path d="M160 180 h30 v10 h-30 z" fill="#6A8F7D"/>
+  
+  {/* Client Couch */}
+  <path d="M50 140 h80 v10 h-80 z" fill="#A2C1D4"/>
+  <path d="M50 150 h80 v40 h-80 z" fill="#7FA693"/>
+  <path d="M130 150 v40 h15 l-5-40 z" fill="#6A8F7D"/>
+  
+  {/* Therapist Figure */}
+  <circle cx="175" cy="110" r="15" fill="#2D3748"/>
+  <path d="M175 125 l-10 25 h20 z" fill="#2D3748"/>
+  
+  {/* Client Figure */}
+  <circle cx="90" cy="110" r="15" fill="#4A5568"/>
+  <path d="M90 125 l-10 25 h20 z" fill="#4A5568"/>
+  
+  {/* Plant Decoration */}
+  <path d="M40 80 c0 0 -5 -10 0 -20 c5 -10 15 -10 20 0 c5 10 0 20 0 20 z" fill="#7FA693"/>
+  <rect x="47" y="80" width="6" height="20" fill="#6A8F7D"/>
+  
+  {/* Small Window */}
+  <rect x="200" y="60" width="20" height="40" fill="#A2C1D4" opacity="0.5"/>
+  <path d="M200 80 h20" stroke="#FFFFFF" strokeWidth="2"/>
+  
+  {/* Connection Lines - Representing therapeutic relationship */}
+  <path d="M110 105 l45 0" stroke="#FF7F50" strokeWidth="2" strokeDasharray="4" opacity="0.6"/>
+</svg>
