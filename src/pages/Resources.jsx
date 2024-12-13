@@ -59,20 +59,18 @@ const Resources = () => {
     ];
 
     return (
-
-
-        <div className="min-h-screen pt-32 bg-brand-background-secondary">
+        <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-secondary">
             {/* Hero Section */}
-            <section className="mb-20">
+            <section className="mb-12 sm:mb-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto">
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-secondary mb-12">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-secondary mb-8 sm:mb-12">
                             Resources for Your Mental Health Journey
                         </h1>
-                        <p className="text-lg md:text-xl text-brand-text-secondary mb-2">
+                        <p className="text-base sm:text-lg md:text-xl text-brand-text-secondary mb-4">
                             At <span className="font-semibold text-brand-yellow">Mind Matters Center</span>, we offer various resources to support your emotional well-being.
                         </p>
-                        <p className="text-lg md:text-xl text-brand-text-secondary">
+                        <p className="text-base sm:text-lg md:text-xl text-brand-text-secondary">
                             <span className="font-semibold">While we do not provide crisis services</span>, we've compiled helpful tools for managing stress, anxiety, and other mental health concerns.
                         </p>
                     </div>
@@ -80,19 +78,21 @@ const Resources = () => {
             </section>
 
             {/* California Resources Section */}
-            <section className="bg-brand-background-primary py-10">
+            <section className="bg-brand-background-primary py-8 sm:py-10">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-                    <h2 className="text-2xl md:text-3xl font-serif text-brand-text-secondary mb-6">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-secondary mb-6">
                         Crisis Resources
                     </h2>
-                    <p className="text-lg text-brand-text-secondary mb-6">
+                    <p className="text-base sm:text-lg text-brand-text-secondary mb-6 text-center">
                         If you have an urgent or emergent need for mental health assistance, please CALL or TEXT Crisis Lifeline to 988, or call 911 and go to the nearest emergency department.
                     </p>
                     <a
                         href="https://focus.senate.ca.gov/mentalhealth/suicide"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-brand-sage text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-colors duration-200"
+                        className="inline-block bg-brand-sage text-white px-6 py-3 rounded-full 
+                            hover:bg-opacity-90 transition-all duration-200 text-center
+                            hover:transform hover:scale-105 active:scale-95"
                     >
                         Visit California Mental Health Resources
                     </a>
@@ -100,54 +100,62 @@ const Resources = () => {
             </section>
 
             {/* Crisis Resources Section */}
-            <section className="bg-brand-background-primary py-10">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8   shadow-md border border-brand-gray-warm rounded-md py-10 px-30">
-                    <h2 className="text-2xl md:text-3xl font-serif text-brand-yellow mb-8 text-center">
-                        24/7 Crisis Resources
-                    </h2>
-                    <div className="flex flex-wrap -m-3 justify-center ">
-                        {crisisLines.map((line, index) => (
-                          <div
-                          key={index}
-                          className="w-full md:w-1/2 p-3"
-                      >
-                          <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 h-full border border-brand-gray-warm flex flex-col">
-                              <div className="flex-grow">
-                                  <h3 className="text-lg font-semibold text-brand-text-secondary mb-2">
-                                      {line.name}
-                                  </h3>
-                                  <p className="text-brand-text-secondary mb-4 text-small">
-                                      {line.description}
-                                  </p>
-                              </div>
-                              <div className="bg-brand-gray-warm p-4 rounded-full mt-auto">
-                                  <div className="flex items-center justify-center gap-2">
-                                      <span className="text-brand-text-secondary whitespace-nowrap">{line.callText}</span>
-                                      <span className="font-bold text-brand-coral whitespace-nowrap">
-                                          {line.number}
-                                      </span>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                        ))}
+            <section className="bg-brand-background-primary py-8 sm:py-10">
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="shadow-md border border-brand-gray-warm rounded-xl py-8 sm:py-10 px-4 sm:px-6">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-yellow mb-8 text-center">
+                            24/7 Crisis Resources
+                        </h2>
+                        <div className="flex flex-wrap justify-center  gap-4 sm:gap-6">
+                            {crisisLines.map((line, index) => (
+                                <div
+                                    key={index}
+                                    className="w-full sm:w-[calc(50%-1rem)] flex flex-col"
+                                >
+                                    <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md 
+                                        transition-all duration-200 h-full border border-brand-gray-warm 
+                                        flex flex-col"
+                                    >
+                                        <div className="flex-grow">
+                                            <h3 className="text-base sm:text-lg font-semibold text-brand-text-secondary mb-2">
+                                                {line.name}
+                                            </h3>
+                                            <p className="text-sm sm:text-base text-brand-text-secondary mb-4">
+                                                {line.description}
+                                            </p>
+                                        </div>
+                                        <div className="bg-brand-gray-warm p-3 sm:p-4 rounded-full mt-auto">
+                                            <div className="flex items-center justify-center gap-2 flex-wrap text-center">
+                                                <span className="text-sm sm:text-base text-brand-text-secondary">
+                                                    {line.callText}
+                                                </span>
+                                                <span className="font-bold text-brand-coral text-sm sm:text-base">
+                                                    {line.number}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* Help Section */}
-            <section className="py-16 bg-brand-background-primary">
+            <section className="py-12 sm:py-16 bg-brand-background-primary">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-2xl md:text-3xl font-serif text-brand-text-secondary mb-6">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-secondary mb-6">
                         Need Non-Emergency Support?
                     </h2>
-                    <p className="text-lg text-brand-text-secondary mb-8">
+                    <p className="text-base sm:text-lg text-brand-text-secondary mb-8">
                         If you're looking for ongoing therapeutic support, we're here to help.
                     </p>
                     <Link
                         to="/book-consultation"
-                        className="inline-block bg-brand-coral text-white text-lg font-bold px-6 py-3 rounded-full
-             hover:bg-opacity-90 transition-colors duration-200"
+                        className="inline-block bg-brand-coral text-white text-base sm:text-lg font-bold 
+                            px-6 py-3 rounded-full hover:bg-opacity-90 transition-all duration-200
+                            hover:transform hover:scale-105 active:scale-95"
                     >
                         Book a Consultation
                     </Link>

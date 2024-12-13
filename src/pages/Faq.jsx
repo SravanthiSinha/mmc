@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 const Faq = () => {
-  // FAQ data
   const faqs = [
     {
       question: "Is everything truly confidential?",
@@ -51,34 +50,35 @@ const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="min-h-screen pt-32 bg-brand-background-primary">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-secondary mb-6">
+    <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-primary">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
+     {/* Header */}
+        <div className="text-center mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-secondary mb-4 sm:mb-6">
             Frequently Asked Questions
           </h1>
-          <p className="text-lg md:text-xl text-brand-text-secondary">
+          <p className="text-base sm:text-lg md:text-xl text-brand-text-secondary max-w-2xl mx-auto">
             Find answers to common questions about our therapy services
           </p>
         </div>
 
         {/* FAQ Accordion */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-sm overflow-hidden border"
+              className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:border-brand-sage/30 transition-all duration-300"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                className="w-full px-4 sm:px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors group"
+                aria-expanded={openIndex === index}
               >
-                <span className="text-lg font-medium text-brand-sage">
+                <span className="text-base sm:text-lg font-medium text-brand-sage group-hover:text-brand-sage/80 transition-colors pr-4">
                   {faq.question}
                 </span>
                 <svg
-                  className={`w-6 h-6 text-brand-sage transition-transform duration-200 
+                  className={`w-5 h-5 sm:w-6 sm:h-6 text-brand-sage transition-transform duration-300 flex-shrink-0
                     ${openIndex === index ? 'transform rotate-180' : ''}`}
                   fill="none"
                   viewBox="0 0 24 24"
@@ -93,10 +93,11 @@ const Faq = () => {
                 </svg>
               </button>
               <div
-                className={`transition-all duration-200 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  } overflow-hidden`}
+                className={`transition-all duration-300 ease-in-out ${
+                  openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
+                } overflow-hidden`}
               >
-                <div className="px-6 pb-4 prose text-brand-text-secondary whitespace-pre-line">
+                <div className="px-4 sm:px-6 pb-4 prose text-brand-text-secondary whitespace-pre-line text-base sm:text-lg">
                   {faq.answer}
                 </div>
               </div>
@@ -104,19 +105,20 @@ const Faq = () => {
           ))}
         </div>
       </div>
+
       {/* GFE Section */}
-      <section className="py-12 md:py-24 bg-brand-background-primary">
-        <div className="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8">
-          <div className="bg-neutral-150 rounded-lg shadow-2xl p-8 md:p-12 " >
+      <section className="py-12 sm:py-16 md:py-20 bg-brand-background-primary">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-neutral-150 rounded-xl shadow-lg p-6 sm:p-8 md:p-12">
             <div className="text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-yellow mb-6 md:mb-8">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-yellow mb-4 sm:mb-6">
                 Good Faith Estimate (GFE) - Your Rights
               </h2>
-              <p>
-                You have the right to receive a GFE explaining how much your medical care will cost. Under the law, health care providers need to give patients who don’t have insurance or who are not using insurance an estimate of the bill for medical items and services.
+              <p className="text-base sm:text-lg text-brand-text-secondary mb-6">
+                You have the right to receive a GFE explaining how much your medical care will cost. Under the law, health care providers need to give patients who don't have insurance or who are not using insurance an estimate of the bill for medical items and services.
               </p>
               <div className="my-6 text-left">
-                <ul className="list-disc pl-6 space-y-2">
+                <ul className="list-disc pl-6 space-y-2 text-base sm:text-lg text-brand-text-secondary">
                   <li>You have the right to receive a GFE for the total expected cost of any non-emergency items or services.</li>
                   <li>Make sure your health care provider gives you a GFE in writing at least one business day before your medical service or item.</li>
                   <li>You can also ask your health care provider, and any other provider you choose for a GFE before you schedule an item or service.</li>
@@ -126,13 +128,13 @@ const Faq = () => {
               </div>
 
               <div className="bg-gray-50 p-4 rounded-lg mt-6">
-                <p className="text-sm">
+                <p className="text-sm sm:text-base">
                   For questions or more information about your right to a GFE, visit{' '}
                   <a
                     href="https://www.cms.gov/nosurprises"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-brand-sage hover:underline"
+                    className="text-brand-sage hover:underline focus:outline-none focus:ring-2 focus:ring-brand-sage/50 focus:ring-offset-2 rounded-sm"
                   >
                     www.cms.gov/nosurprises
                   </a>

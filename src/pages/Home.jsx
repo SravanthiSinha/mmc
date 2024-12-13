@@ -159,7 +159,10 @@ const Home = () => {
             {/* Final CTA */}
             <div className="mt-12 md:mt-16">
               <p className="text-xl md:text-2xl lg:text-3xl text-brand-text-secondary mb-8">
-                <span className="font-semibold">Take the First Step Toward Healing:</span> Reach out today to schedule your consultation. Together, we can begin your path to emotional well-being and a more fulfilling life.
+                <span className="font-semibold">Take the First Step Toward Healing</span>
+              </p>
+              <p className="text-lg md:text-xl lg:text-3xl text-brand-text-secondary mb-8">
+               Reach out today to schedule your consultation. Together, we can begin your path to emotional well-being and a more fulfilling life.
               </p>
               <Link
                 to="/book-consultation"
