@@ -84,6 +84,8 @@ const Specialties = () => {
                             We combine therapies like Cognitive Behavioral Therapy (CBT), Trauma-Focused Therapy, mindfulness, relational therapy, and psychodynamic therapy, all tailored to your unique needs.
                             At <span className="font-semibold text-brand-yellow">Mind Matters Center</span>,
                             we believe that therapy should respect and integrate your cultural background while helping you move forward with confidence and clarity.
+                        </p>
+                        <p>
                             Our goal is to help you feel heard, understood, and empowered as you work toward emotional healing and a more balanced life.
                         </p>
                     </div>
@@ -95,8 +97,8 @@ const Specialties = () => {
                         Book a Consultation
                     </Link>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 
