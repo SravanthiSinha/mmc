@@ -64,13 +64,13 @@ const Resources = () => {
             <section className="mb-12 sm:mb-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto">
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-secondary mb-8 sm:mb-12">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary mb-8 sm:mb-12">
                             Resources for Your Mental Health Journey
                         </h1>
-                        <p className="text-base sm:text-lg md:text-xl text-brand-text-secondary mb-4">
+                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary mb-4">
                             At <span className="font-semibold text-brand-yellow">Mind Matters Center</span>, we offer various resources to support your emotional well-being.
                         </p>
-                        <p className="text-base sm:text-lg md:text-xl text-brand-text-secondary">
+                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
                             <span className="font-semibold">While we do not provide crisis services</span>, we've compiled helpful tools for managing stress, anxiety, and other mental health concerns.
                         </p>
                     </div>
@@ -80,10 +80,10 @@ const Resources = () => {
             {/* California Resources Section */}
             <section className="bg-brand-background-primary py-8 sm:py-10">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-secondary mb-6">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-6">
                         Crisis Resources
                     </h2>
-                    <p className="text-base sm:text-lg text-brand-text-secondary mb-6 text-center">
+                    <p className="text-base sm:text-lg text-brand-text-primary mb-6 text-center">
                         If you have an urgent or emergent need for mental health assistance, please CALL or TEXT Crisis Lifeline to 988, or call 911 and go to the nearest emergency department.
                     </p>
                     <a
@@ -117,16 +117,16 @@ const Resources = () => {
                                         flex flex-col"
                                     >
                                         <div className="flex-grow">
-                                            <h3 className="text-base sm:text-lg font-semibold text-brand-text-secondary mb-2">
+                                            <h3 className="text-base sm:text-lg font-semibold text-brand-text-primary mb-2">
                                                 {line.name}
                                             </h3>
-                                            <p className="text-sm sm:text-base text-brand-text-secondary mb-4">
+                                            <p className="text-sm sm:text-base text-brand-text-primary mb-4">
                                                 {line.description}
                                             </p>
                                         </div>
                                         <div className="bg-brand-gray-warm p-3 sm:p-4 rounded-full mt-auto">
                                             <div className="flex items-center justify-center gap-2 flex-wrap text-center">
-                                                <span className="text-sm sm:text-base text-brand-text-secondary">
+                                                <span className="text-sm sm:text-base text-brand-text-primary">
                                                     {line.callText}
                                                 </span>
                                                 <span className="font-bold text-brand-coral text-sm sm:text-base">
@@ -145,10 +145,10 @@ const Resources = () => {
             {/* Help Section */}
             <section className="py-12 sm:py-16 bg-brand-background-primary">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-secondary mb-6">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-6">
                         Need Non-Emergency Support?
                     </h2>
-                    <p className="text-base sm:text-lg text-brand-text-secondary mb-8">
+                    <p className="text-base sm:text-lg text-brand-text-primary mb-8">
                         If you're looking for ongoing therapeutic support, we're here to help.
                     </p>
                     <Link

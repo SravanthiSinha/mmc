@@ -36,8 +36,8 @@ export default {
           },
           // Text Colors
           text: {
-            primary: '#e5e5e5', //easy white
-            secondary: '#4A5568',
+            primary: '#4A5568',
+            secondary:'#e5e5e5',
           },
           // Action Colors
           coral: '#FF7F50',

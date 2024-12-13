@@ -36,14 +36,14 @@ const Specialties = () => {
             <div className="bg-gradient-to-b from-brand-blue-soft/10 to-brand-background-primary">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 sm:pt-32 sm:pb-20">
                     <div className="max-w-3xl mx-auto text-center">
-                        <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-text-secondary mb-8 sm:mb-12">
+                        <h1 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-brand-text-primary mb-8 sm:mb-12">
                             Our Specialties
                         </h1>
                         <div className="space-y-4">
-                            <p className="text-lg sm:text-xl text-brand-text-secondary">
+                            <p className="text-lg sm:text-xl text-brand-text-primary">
                                 At <strong className="text-brand-yellow font-semibold">Mind Matters Center</strong>, we specialize in providing culturally sensitive therapy designed to support the mental health and well-being of Asian American individuals and couples.
                             </p>
-                            <p className="text-lg sm:text-xl text-brand-text-secondary">
+                            <p className="text-lg sm:text-xl text-brand-text-primary">
                                 We understand the unique challenges that come with balancing cultural expectations, family dynamics, and personal growth, and we are here to offer a safe, understanding space to work through them.
                             </p>
                         </div>
@@ -70,11 +70,11 @@ const Specialties = () => {
                                 hover:shadow-lg hover:bg-white hover:scale-[1.02] 
                                 border border-transparent hover:border-brand-sage/20"
                         >
-                            <h3 className="font-heading text-lg sm:text-xl font-semibold text-brand-text-secondary mb-3 
+                            <h3 className="font-heading text-lg sm:text-xl font-semibold text-brand-text-primary mb-3 
                                 group-hover:text-brand-yellow transition-colors duration-300">
                                 {specialty.title}
                             </h3>
-                            <p className="text-brand-text-secondary text-base sm:text-lg">
+                            <p className="text-brand-text-primary text-base sm:text-lg">
                                 {specialty.description}
                             </p>
                         </Link>
@@ -83,10 +83,10 @@ const Specialties = () => {
 
                 {/* Bottom Section */}
                 <div className="max-w-4xl mx-auto text-center px-4">
-                    <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-brand-text-secondary mb-6">
+                    <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-brand-text-primary mb-6">
                         Our Therapeutic Approach
                     </h2>
-                    <div className="text-brand-text-secondary text-base sm:text-lg md:text-xl space-y-4">
+                    <div className="text-brand-text-primary text-base sm:text-lg md:text-xl space-y-4">
                         <p>
                             We combine therapies like Cognitive Behavioral Therapy (CBT), Trauma-Focused Therapy, mindfulness, relational therapy, and psychodynamic therapy, all tailored to your unique needs.
                             At <span className="font-semibold text-brand-yellow">Mind Matters Center</span>,

@@ -54,10 +54,10 @@ const Faq = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
      {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-secondary mb-4 sm:mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary mb-4 sm:mb-6">
             Frequently Asked Questions
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-brand-text-secondary max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-brand-text-primary max-w-2xl mx-auto">
             Find answers to common questions about our therapy services
           </p>
         </div>
@@ -97,7 +97,7 @@ const Faq = () => {
                   openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                 } overflow-hidden`}
               >
-                <div className="px-4 sm:px-6 pb-4 prose text-brand-text-secondary whitespace-pre-line text-base sm:text-lg">
+                <div className="px-4 sm:px-6 pb-4 prose text-brand-text-primary whitespace-pre-line text-base sm:text-lg">
                   {faq.answer}
                 </div>
               </div>
@@ -114,11 +114,11 @@ const Faq = () => {
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-yellow mb-4 sm:mb-6">
                 Good Faith Estimate (GFE) - Your Rights
               </h2>
-              <p className="text-base sm:text-lg text-brand-text-secondary mb-6">
+              <p className="text-base sm:text-lg text-brand-text-primary mb-6">
                 You have the right to receive a GFE explaining how much your medical care will cost. Under the law, health care providers need to give patients who don't have insurance or who are not using insurance an estimate of the bill for medical items and services.
               </p>
               <div className="my-6 text-left">
-                <ul className="list-disc pl-6 space-y-2 text-base sm:text-lg text-brand-text-secondary">
+                <ul className="list-disc pl-6 space-y-2 text-base sm:text-lg text-brand-text-primary">
                   <li>You have the right to receive a GFE for the total expected cost of any non-emergency items or services.</li>
                   <li>Make sure your health care provider gives you a GFE in writing at least one business day before your medical service or item.</li>
                   <li>You can also ask your health care provider, and any other provider you choose for a GFE before you schedule an item or service.</li>

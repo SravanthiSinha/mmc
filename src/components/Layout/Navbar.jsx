@@ -56,8 +56,8 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             to="/"
-            className={`text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold transition-colors
-              ${location.pathname === '/' && !scrolled ? 'text-brand-text-primary' : 'text-brand-text-secondary'}`}
+            className={`text-3xl font-semibold transition-colors
+              ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}`}
             onClick={() => setIsMenuOpen(false)}
           >
             Mind Matters Center
@@ -71,7 +71,7 @@ const Navbar = () => {
           >
             <svg
               className={`w-6 h-6 transition-colors
-                ${scrolled || isMenuOpen ? 'text-brand-text-secondary' : 'text-brand-text-secondary'}`}
+                 ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -93,7 +93,7 @@ const Navbar = () => {
                   to={link.path}
                   className={`px-3 py-2 rounded-full transition-all duration-200
                     ${location.pathname === link.path ? 'underline font-semibold' : ''}
-                    ${location.pathname === '/' && !scrolled ? 'text-brand-text-primary' : 'text-brand-text-secondary'}
+                    ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}
                     hover:bg-gray-100/20`}
                 >
                   {link.label}
@@ -107,7 +107,7 @@ const Navbar = () => {
                       <Link
                         key={item.path}
                         to={item.path}
-                        className="block px-4 py-2 text-brand-text-secondary hover:bg-gray-50 transition-colors"
+                        className="block px-4 py-2 text-brand-text-primary hover:bg-gray-50 transition-colors"
                       >
                         {item.label}
                       </Link>
@@ -137,7 +137,7 @@ const Navbar = () => {
                   {/* Main Link */}
                   <Link
                     to={link.path}
-                    className={`block px-4 py-3 text-lg rounded-lg transition-colors duration-200 text-brand-text-secondary
+                    className={`block px-4 py-3 text-lg rounded-lg transition-colors duration-200 text-brand-text-primary
                       hover:bg-gray-100
                       ${location.pathname === link.path ? 'font-semibold bg-gray-50' : ''}`}
                     onClick={() => setIsMenuOpen(false)}
@@ -152,7 +152,7 @@ const Navbar = () => {
                         <Link
                           key={item.path}
                           to={item.path}
-                          className="block px-4 py-2 text-brand-text-secondary hover:bg-gray-50 rounded-lg transition-colors"
+                          className="block px-4 py-2 text-brand-text-primary hover:bg-gray-50 rounded-lg transition-colors"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {item.label}

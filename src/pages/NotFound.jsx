@@ -24,10 +24,10 @@ const NotFound = () => {
 
           {/* Main Content */}
           <div className="max-w-lg">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif text-brand-text-secondary mb-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif text-brand-text-primary mb-4">
               Page Not Found
             </h1>
-            <p className="text-base sm:text-lg text-brand-text-secondary mb-8">
+            <p className="text-base sm:text-lg text-brand-text-primary mb-8">
               We understand that feeling lost can be uncomfortable. While this page doesn't exist, 
               we're here to help guide you back to where you need to be.
             </p>
@@ -54,7 +54,7 @@ const NotFound = () => {
 
             {/* Additional Resources */}
             <div className="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-brand-gray-warm">
-              <h2 className="text-lg sm:text-xl font-semibold text-brand-text-secondary mb-4">
+              <h2 className="text-lg sm:text-xl font-semibold text-brand-text-primary mb-4">
                 Looking for Something Specific?
               </h2>
               <div className="flex flex-col gap-3">

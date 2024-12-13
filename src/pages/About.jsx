@@ -37,10 +37,10 @@ const About = () => {
       <section className="mb-12 sm:mb-16 md:mb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-secondary mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary mb-6 sm:mb-8">
               Welcome to <span className="text-brand-yellow">Mind Matters Center</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-brand-text-secondary">
+            <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
               An Asian-owned, women-owned company committed to providing compassionate,
               culturally sensitive therapy and wellness services.
             </p>
@@ -51,7 +51,7 @@ const About = () => {
       {/* Mission Section */}
       <section className="bg-brand-background-primary py-8 sm:py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg mx-auto text-brand-text-secondary">
+          <div className="prose prose-lg mx-auto text-brand-text-primary">
             <p className="text-base sm:text-lg md:text-xl mb-6">
               At <strong className="text-brand-yellow">Mind Matters Center</strong>, we believe that everyone deserves the opportunity to heal, grow, and live a fulfilling life.
               As an Asian-owned, women-owned company, we are deeply committed to providing compassionate,
@@ -68,17 +68,17 @@ const About = () => {
       {/* Approach Section */}
       <section className="bg-brand-background-primary py-8 sm:py-10 md:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-secondary mb-6 sm:mb-8 text-center">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-6 sm:mb-8 text-center">
             Our Therapeutic Approach
           </h2>
 
           <div className="max-w-4xl mx-auto">
-            <p className="text-base sm:text-lg text-brand-text-secondary mb-6">
+            <p className="text-base sm:text-lg text-brand-text-primary mb-6">
               Our approach is rooted in a blend of evidence-based therapies—like Cognitive Behavioral Therapy (CBT),
               Trauma-Focused Therapy, mindfulness, and relational therapy—combined with cultural sensitivity and respect.
               We create a safe and non-judgmental space where you can explore your feelings, gain clarity, and develop the tools you need to thrive.
             </p>
-            <p className="text-base sm:text-lg text-brand-text-secondary mb-8">
+            <p className="text-base sm:text-lg text-brand-text-primary mb-8">
               We are passionate about creating a welcoming and inclusive space for all. We aim to help
               you find healing, balance, and empowerment in every aspect of your life. Whether through
               individual therapy, couples counseling, or wellness coaching, we are here to walk alongside
@@ -97,10 +97,10 @@ const About = () => {
                 <div className="flex justify-center mb-4">
                   {value.icon}
                 </div>
-                <h3 className="text-lg sm:text-xl font-semibold text-brand-text-secondary mb-2">
+                <h3 className="text-lg sm:text-xl font-semibold text-brand-text-primary mb-2">
                   {value.title}
                 </h3>
-                <p className="text-base text-brand-text-secondary">
+                <p className="text-base text-brand-text-primary">
                   {value.description}
                 </p>
               </div>
@@ -112,10 +112,10 @@ const About = () => {
       {/* CTA Section */}
       <section className="py-8 sm:py-10 md:py-12 bg-brand-background-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-secondary mb-4 sm:mb-6">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-4 sm:mb-6">
             Ready to Begin Your Journey?
           </h2>
-          <p className="text-base sm:text-lg text-brand-text-secondary mb-6 sm:mb-8">
+          <p className="text-base sm:text-lg text-brand-text-primary mb-6 sm:mb-8">
             Take the first step towards healing and growth with Mind Matters Center.
           </p>
           <Link
