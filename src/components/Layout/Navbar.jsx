@@ -5,39 +5,68 @@ const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
-  // Handle scroll effect
+  // Handle scroll effect with debouncing
   useEffect(() => {
+    let timeoutId;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        setScrolled(window.scrollY > 20);
+      }, 100);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
-  // Close menu and dropdown on resize
+  // Handle resize with debouncing
   useEffect(() => {
+    let timeoutId;
     const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setIsMenuOpen(false);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
       }
+      timeoutId = setTimeout(() => {
+        if (window.innerWidth >= 1024) {
+          setIsMenuOpen(false);
+          setActiveDropdown(null);
+        }
+      }, 100);
     };
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isMenuOpen]);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, []);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
+    const body = document.body;
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      const scrollY = window.scrollY;
+      body.style.position = 'fixed';
+      body.style.top = `-${scrollY}px`;
+      body.style.width = '100%';
     } else {
-      document.body.style.overflow = 'unset';
+      const scrollY = body.style.top;
+      body.style.position = '';
+      body.style.top = '';
+      body.style.width = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
   }, [isMenuOpen]);
 
   const navLinks = [
@@ -57,13 +86,12 @@ const Navbar = () => {
     { path: '/faq', label: 'FAQ' },
     { path: '/resources', label: 'Resources' },
     { 
-      path: 'https://your-client-portal-url.com', // Replace with actual client portal URL
+      path: 'https://your-client-portal-url.com',
       label: 'Client Portal',
       isExternal: true 
     }
   ];
 
-  // Helper function to render the appropriate link type
   const renderLink = (link, className, onClick = () => {}) => {
     if (link.isExternal) {
       return (
@@ -96,21 +124,21 @@ const Navbar = () => {
         ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}
         ${isMenuOpen ? 'bg-white' : ''}`}
     >
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-32">
-        <div className="flex justify-between items-center h-20">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
           <Link
             to="/"
-            className={`text-xl sm:text-2xl md:text-3xl font-semibold transition-colors
+            className={`text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold transition-colors
               ${location.pathname === '/' && !scrolled ? 'text-brand-text-primary' : 'text-brand-text-secondary'}`}
           >
             Mind Matters Center
           </Link>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Larger touch target */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-md hover:bg-gray-100/20 transition-colors"
+            className="lg:hidden p-4 -mr-4 touch-manipulation"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen}
           >
@@ -133,36 +161,41 @@ const Navbar = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-2 xl:space-x-6">
-            <div className="flex items-center space-x-1 xl:space-x-2 text-base xl:text-lg">
+          <div className="hidden lg:flex items-center space-x-1 xl:space-x-4">
+            <div className="flex items-center space-x-1 xl:space-x-2 text-sm xl:text-base">
               {navLinks.map((link) => (
-                <div key={link.path} className="relative dropdown-container">
+                <div key={link.path} className="relative">
                   {link.dropdownItems ? (
                     <div className="group">
-                      <Link
-                        to={link.path}
+                      <button
                         className={`px-3 py-2 rounded-full transition-all duration-200 flex items-center gap-1
                           ${location.pathname === '/' && !scrolled ? 'text-brand-text-primary' : 'text-brand-text-secondary'}
                           ${location.pathname === link.path ? 'font-semibold' : ''}`}
+                        aria-expanded={activeDropdown === link.path}
+                        onClick={() => setActiveDropdown(activeDropdown === link.path ? null : link.path)}
                       >
                         {link.label}
                         <svg
-                          className={`w-4 h-4 transition-transform group-hover:rotate-180`}
+                          className={`w-4 h-4 transition-transform ${activeDropdown === link.path ? 'rotate-180' : ''}`}
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
-                      </Link>
+                      </button>
 
-                      {/* Hover Dropdown Menu */}
-                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <div 
+                        className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 z-50
+                          transition-all duration-200 transform origin-top
+                          ${activeDropdown === link.path ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'}`}
+                      >
                         {link.dropdownItems.map((item) => (
                           <Link
                             key={item.path}
                             to={item.path}
                             className="block px-4 py-2 text-brand-text-secondary hover:bg-gray-50 transition-colors"
+                            onClick={() => setActiveDropdown(null)}
                           >
                             {item.label}
                           </Link>
@@ -172,7 +205,7 @@ const Navbar = () => {
                   ) : (
                     renderLink(
                       link,
-                      `px-3 xl:px-4 py-2 rounded-full transition-all duration-200
+                      `px-3 py-2 rounded-full transition-all duration-200
                         ${location.pathname === link.path ? 'underline font-semibold' : ''}
                         ${location.pathname === '/' && !scrolled ? 'text-brand-text-primary' : 'text-brand-text-secondary'}`
                     )
@@ -182,8 +215,8 @@ const Navbar = () => {
             </div>
             <Link
               to="/book-consultation"
-              className="bg-brand-coral text-white text-base xl:text-xl font-bold 
-                px-4 xl:px-6 py-2 rounded-full hover:bg-opacity-90 transition-colors duration-200
+              className="bg-brand-coral text-white text-sm xl:text-base font-bold 
+                px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors duration-200
                 whitespace-nowrap"
             >
               Book a Consultation
@@ -191,55 +224,52 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Overlay */}
-        {isMenuOpen && (
-          <div
-            className="lg:hidden fixed inset-0 bg-black/50 z-40"
-            aria-hidden="true"
-            onClick={() => setIsMenuOpen(false)}
-          />
-        )}
-
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden fixed inset-0 top-20 bg-white z-50 transform transition-transform duration-300 ease-in-out
+          className={`lg:hidden fixed inset-0 top-16 sm:top-20 bg-white z-50 transform transition-all duration-300 ease-in-out
             ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
-          <div className="flex flex-col p-4 space-y-2 max-h-[calc(100vh-5rem)] overflow-y-auto">
+          <div className="flex flex-col p-4 space-y-2 h-[calc(100vh-4rem)] sm:h-[calc(100vh-5rem)] overflow-y-auto">
             {navLinks.map((link) => (
               <div key={link.path}>
                 {link.dropdownItems ? (
-                  <>
-                    <Link
-                      to={link.path}
-                      className={`w-full flex justify-between items-center px-4 py-3 text-lg rounded-lg transition-colors duration-200 
-                        text-brand-text-secondary hover:bg-gray-100
+                  <div>
+                    <button
+                      className={`w-full flex justify-between items-center px-4 py-3 text-lg rounded-lg
+                        text-brand-text-secondary hover:bg-gray-100 transition-colors duration-200
                         ${location.pathname === link.path ? 'font-semibold bg-gray-50' : ''}`}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={() => setActiveDropdown(activeDropdown === link.path ? null : link.path)}
+                      aria-expanded={activeDropdown === link.path}
                     >
                       {link.label}
                       <svg
-                        className="w-5 h-5"
+                        className={`w-5 h-5 transition-transform duration-200 ${activeDropdown === link.path ? 'rotate-180' : ''}`}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
-                    </Link>
-                    <div className="ml-4 mt-2 space-y-2">
+                    </button>
+                    <div
+                      className={`ml-4 mt-2 space-y-2 transition-all duration-200
+                        ${activeDropdown === link.path ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
+                    >
                       {link.dropdownItems.map((item) => (
                         <Link
                           key={item.path}
                           to={item.path}
-                          onClick={() => setIsMenuOpen(false)}
-                          className="block px-4 py-2 text-brand-text-secondary hover:bg-gray-50 rounded-lg transition-colors"
+                          onClick={() => {
+                            setIsMenuOpen(false);
+                            setActiveDropdown(null);
+                          }}
+                          className="block px-4 py-3 text-brand-text-secondary hover:bg-gray-50 rounded-lg transition-colors"
                         >
                           {item.label}
                         </Link>
                       ))}
                     </div>
-                  </>
+                  </div>
                 ) : (
                   renderLink(
                     link,
