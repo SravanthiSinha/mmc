@@ -92,10 +92,10 @@ const Navbar = () => {
                 {/* Main Link */}
                 <Link
                   to={link.path}
-                  className={`px-3 py-2 rounded-full transition-all duration-200
-                    ${location.pathname === link.path ? 'underline font-semibold' : ''}
+                  className={`px-2 py-2 rounded-full transition-all duration-200 text-lg
+                    ${location.pathname === link.path ? 'font-semibold' : ''}
                     ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}
-                    hover:bg-gray-100/20`}
+                    hover:bg-gray-300/20`}
                 >
                   {link.label}
                 </Link>
@@ -108,7 +108,7 @@ const Navbar = () => {
                       <Link
                         key={item.path}
                         to={item.path}
-                        className="block px-4 py-2 text-brand-text-primary hover:bg-gray-50 transition-colors"
+                        className="block px-4 py-2 text-brand-text-primary hover:bg-gray-300/20 transition-colors"
                       >
                         {item.label}
                       </Link>
@@ -121,10 +121,10 @@ const Navbar = () => {
             <Link
               to="/book-consultation"
               className="bg-brand-coral text-white text-base xl:text-lg font-bold 
-                px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors duration-200
+                px-4 py-2 rounded-full hover:bg-brand-coralLight transition-colors duration-200
                 whitespace-nowrap"
             >
-              Book a Consultation
+              Book a consultation
             </Link>
           </div>
         </div>
@@ -138,9 +138,9 @@ const Navbar = () => {
                   {/* Main Link */}
                   <Link
                     to={link.path}
-                    className={`block px-4 py-3 text-lg rounded-lg transition-colors duration-200 text-brand-text-primary
-                      hover:bg-gray-100
-                      ${location.pathname === link.path ? 'font-semibold bg-gray-50' : ''}`}
+                    className={`block px-4 py-2 text-base rounded-lg transition-colors duration-200 text-brand-text-primary
+                      hover:bg-gray-300
+                      ${location.pathname === link.path ? 'font-semibold bg-gray-150' : ''}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
@@ -153,7 +153,7 @@ const Navbar = () => {
                         <Link
                           key={item.path}
                           to={item.path}
-                          className="block px-4 py-2 text-brand-text-primary hover:bg-gray-50 rounded-lg transition-colors"
+                          className="block px-4 py-2 text-base text-brand-text-primary hover:bg-gray-150 rounded-lg transition-colors"
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {item.label}
@@ -169,9 +169,9 @@ const Navbar = () => {
                   to="/book-consultation"
                   onClick={() => setIsMenuOpen(false)}
                   className="block bg-brand-coral text-white text-xl font-bold px-4 py-3 
-                    rounded-full text-center hover:bg-opacity-90 transition-colors duration-200"
+                    rounded-full text-center hover:bg-brand-coralLight transition-colors duration-200"
                 >
-                  Book a Consultation
+                  Book a consultation
                 </Link>
               </div>
             </div>

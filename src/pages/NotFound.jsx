@@ -37,7 +37,7 @@ const NotFound = () => {
               <Link
                 to="/"
                 className="inline-flex items-center justify-center px-6 py-3 bg-brand-sage text-white 
-                  rounded-full hover:bg-opacity-90 transition-all duration-200
+                  rounded-full hover:bg-brand-coralLight transition-all duration-200
                   hover:transform hover:scale-105 active:scale-95 text-base sm:text-lg font-semibold"
               >
                 Return Home
@@ -45,10 +45,10 @@ const NotFound = () => {
               <Link
                 to="/book-consultation"
                 className="inline-flex items-center justify-center px-6 py-3 bg-brand-coral text-white 
-                  rounded-full hover:bg-opacity-90 transition-all duration-200
+                  rounded-full hover:bg-brand-coralLight transition-all duration-200
                   hover:transform hover:scale-105 active:scale-95 text-base sm:text-lg font-semibold"
               >
-                Book a Consultation
+                Book a consultation
               </Link>
             </div>
 
@@ -60,25 +60,25 @@ const NotFound = () => {
               <div className="flex flex-col gap-3">
                 <Link 
                   to="/specialties"
-                  className="text-brand-sage hover:text-brand-yellow transition-colors duration-200"
+                  className="text-brand-sage hover:text-brand-text-primary transition-colors duration-200"
                 >
                   View Our Specialties →
                 </Link>
                 <Link 
                   to="/resources"
-                  className="text-brand-sage hover:text-brand-yellow transition-colors duration-200"
+                  className="text-brand-sage hover:text-brand-text-primary transition-colors duration-200"
                 >
                   Access Mental Health Resources →
                 </Link>
                 <Link 
                   to="/faq"
-                  className="text-brand-sage hover:text-brand-yellow transition-colors duration-200"
+                  className="text-brand-sage hover:text-brand-text-primary transition-colors duration-200"
                 >
                   Read FAQ →
                 </Link>
                 <Link 
                   to="/about"
-                  className="text-brand-sage hover:text-brand-yellow transition-colors duration-200"
+                  className="text-brand-sage hover:text-brand-text-primary transition-colors duration-200"
                 >
                   Learn About Us →
                 </Link>

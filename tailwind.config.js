@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ['Lora', 'serif'],
-        body: ['Inter', 'sans-serif'],
+        heading: ["Quattrocento", 'serif'],
+        body: ["Quattrocento", 'serif'],
       },
       fontWeight: {
         light: '300',
@@ -20,10 +20,10 @@ export default {
       colors: {
         brand: {
           // Primary Palette
-          yellow: '#F5BE09',
           background: {
             primary: '#FFFFFF',
-            secondary: '#F7F8FA'
+            // secondary: '#F7F8FA'
+            secondary:'#f9f4f2'
           },
           // Supporting Colors
           sage: '#7FA693',
@@ -40,7 +40,8 @@ export default {
             secondary:'#e5e5e5',
           },
           // Action Colors
-          coral: '#FF7F50',
+          coral: '#FF7300',
+          coralLight: '#FE6701',
         }
       },
       backgroundImage: {

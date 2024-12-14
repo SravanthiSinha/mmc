@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const About = () => {
   const values = [
     {
-      title: "Cultural Sensitivity",
+      title: "Cultural sensitivity",
       description: "Deep understanding of Asian American experiences and challenges",
       icon: (
         <svg className="w-10 h-10 sm:w-12 sm:h-12 text-brand-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -12,7 +12,7 @@ const About = () => {
       )
     },
     {
-      title: "Evidence-Based Approach",
+      title: "Evidence-based approach",
       description: "Utilizing proven therapeutic methods tailored to your needs",
       icon: (
         <svg className="w-10 h-10 sm:w-12 sm:h-12 text-brand-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -21,7 +21,7 @@ const About = () => {
       )
     },
     {
-      title: "Safe Space",
+      title: "Safe space",
       description: "Non-judgmental environment for healing and growth",
       icon: (
         <svg className="w-10 h-10 sm:w-12 sm:h-12 text-brand-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,7 +38,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary mb-6 sm:mb-8">
-              Welcome to <span className="text-brand-yellow">Mind Matters Center</span>
+              Welcome to <span className="text-brand-text-primary">Mind Matters Center</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
               An Asian-owned, women-owned company committed to providing compassionate,
@@ -53,7 +53,7 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg mx-auto text-brand-text-primary">
             <p className="text-base sm:text-lg md:text-xl mb-6">
-              At <strong className="text-brand-yellow">Mind Matters Center</strong>, we believe that everyone deserves the opportunity to heal, grow, and live a fulfilling life.
+              At <strong className="text-brand-text-primary">Mind Matters Center</strong>, we believe that everyone deserves the opportunity to heal, grow, and live a fulfilling life.
               As an Asian-owned, women-owned company, we are deeply committed to providing compassionate,
               culturally sensitive therapy and wellness services that empower individuals and couples to navigate life's challenges and embrace emotional well-being.
             </p>
@@ -66,19 +66,19 @@ const About = () => {
       </section>
 
       {/* Approach Section */}
-      <section className="bg-brand-background-primary py-8 sm:py-10 md:py-12">
+      <section className="bg-brand-background-primary py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-6 sm:mb-8 text-center">
-            Our Therapeutic Approach
+            Our therapeutic approach
           </h2>
 
           <div className="max-w-4xl mx-auto">
             <p className="text-base sm:text-lg text-brand-text-primary mb-6">
               Our approach is rooted in a blend of evidence-based therapies—like Cognitive Behavioral Therapy (CBT),
-              Trauma-Focused Therapy, mindfulness, and relational therapy—combined with cultural sensitivity and respect.
+              Trauma-focused therapy, mindfulness, and relational therapy—combined with cultural sensitivity and respect.
               We create a safe and non-judgmental space where you can explore your feelings, gain clarity, and develop the tools you need to thrive.
             </p>
-            <p className="text-base sm:text-lg text-brand-text-primary mb-8">
+            <p className="text-base sm:text-lg text-brand-text-primary mb-16">
               We are passionate about creating a welcoming and inclusive space for all. We aim to help
               you find healing, balance, and empowerment in every aspect of your life. Whether through
               individual therapy, couples counseling, or wellness coaching, we are here to walk alongside
@@ -113,7 +113,7 @@ const About = () => {
       <section className="py-8 sm:py-10 md:py-12 bg-brand-background-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-4 sm:mb-6">
-            Ready to Begin Your Journey?
+            Ready to begin your journey?
           </h2>
           <p className="text-base sm:text-lg text-brand-text-primary mb-6 sm:mb-8">
             Take the first step towards healing and growth with Mind Matters Center.
@@ -121,10 +121,10 @@ const About = () => {
           <Link
             to="/book-consultation"
             className="inline-block bg-brand-coral text-white text-base sm:text-lg md:text-xl font-bold 
-              px-6 py-3 rounded-full hover:bg-opacity-90 transition-all duration-200
+              px-6 py-3 rounded-full hover:bg-brand-coralLight transition-all duration-200
               hover:transform hover:scale-105 active:scale-95"
           >
-            Book a Consultation
+            Book a consultation
           </Link>
         </div>
       </section>

@@ -54,7 +54,7 @@ const Faq = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
      {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary mb-4 sm:mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary mb-8 sm:mb-10">
             Frequently Asked Questions
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-brand-text-primary max-w-2xl mx-auto">
@@ -74,7 +74,7 @@ const Faq = () => {
                 className="w-full px-4 sm:px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors group"
                 aria-expanded={openIndex === index}
               >
-                <span className="text-base sm:text-lg font-medium text-brand-sage group-hover:text-brand-sage/80 transition-colors pr-4">
+                <span className="text-base sm:text-lg font-semibold text-brand-sage group-hover:text-brand-sage/80 transition-colors pr-4">
                   {faq.question}
                 </span>
                 <svg
@@ -97,7 +97,7 @@ const Faq = () => {
                   openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                 } overflow-hidden`}
               >
-                <div className="px-4 sm:px-6 pb-4 prose text-brand-text-primary whitespace-pre-line text-base sm:text-lg">
+                <div className="px-4 sm:px-6 p-4 prose text-brand-text-primary whitespace-pre-line text-base sm:text-lg">
                   {faq.answer}
                 </div>
               </div>
@@ -111,8 +111,8 @@ const Faq = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-neutral-150 rounded-xl shadow-lg p-6 sm:p-8 md:p-12">
             <div className="text-center">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-yellow mb-4 sm:mb-6">
-                Good Faith Estimate (GFE) - Your Rights
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-4 sm:mb-6">
+                Good Faith Estimate (GFE) - Your rights
               </h2>
               <p className="text-base sm:text-lg text-brand-text-primary mb-6">
                 You have the right to receive a GFE explaining how much your medical care will cost. Under the law, health care providers need to give patients who don't have insurance or who are not using insurance an estimate of the bill for medical items and services.

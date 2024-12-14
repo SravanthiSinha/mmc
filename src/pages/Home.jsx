@@ -31,17 +31,17 @@ const Home = () => {
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-48">
             <div className="max-w-4xl mx-auto md:mx-0">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-brand-text-secondary mb-4 md:mb-6">
-                Empowering Healing for AAPI, BIPOC
+                Empowering healing for AAPI, BIPOC
               </h1>
               <p className="text-xl sm:text-2xl md:text-3xl text-brand-text-secondary/90 mb-6 md:mb-8">
-                Accessible, Inclusive Virtual Therapy for Diverse Communities in California
+                Accessible, inclusive virtual therapy for diverse communities in California
               </p>
               <Link
                 to="/book-consultation"
                 className="inline-block bg-brand-coral text-white text-lg sm:text-xl md:text-2xl font-bold px-6 py-3 rounded-full
-                  hover:bg-opacity-90 transition-colors duration-200"
+                  hover:bg-brand-coralLight transition-colors duration-200"
               >
-                Book a Consultation
+                Book a consultation
               </Link>
             </div>
           </div>
@@ -55,7 +55,7 @@ const Home = () => {
             {/* Left Column */}
             <div className="flex-1 flex flex-col space-y-6 md:space-y-8">
               <h2 className="text-2xl md:text-3xl font-serif text-brand-text-primary">
-              It’s Never Too Late to Start the Journey of Healing
+              It’s never too late to start the journey of healing
               </h2>
               <div className="flex flex-col space-y-4">
                 {checklistItems.map((item, index) => (
@@ -72,7 +72,7 @@ const Home = () => {
             {/* Right Column */}
             <div className="flex-1 flex flex-col justify-center space-y-6 md:space-y-12 mt-8 lg:mt-0">
               <p className="text-3xl md:text-4xl lg:text-5xl text-brand-text-primary font-semibold">
-                Culturally <span className="text-brand-coral">Sensitive</span> Therapy That Meets You Where You Are
+                Culturally <span className="text-brand-coral">sensitive</span> therapy that meets you where you are
               </p>
               <p className="text-xl md:text-2xl lg:text-3xl text-brand-text-primary">
                 At Mind Matters Center, we provide inclusive, compassionate care to help you find clarity, balance, and empowerment.
@@ -87,7 +87,7 @@ const Home = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6 md:mb-8">
-              You Are Not Alone – We're Here to Help You Reclaim Your Life
+              You are not alone – We're here to help you reclaim your life
             </h2>
             <p className="text-base md:text-xl text-brand-text-primary">
             Life’s challenges can feel isolating, but you don’t have to face them alone.
@@ -103,9 +103,10 @@ const Home = () => {
         <div className="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8">
           <div className="bg-neutral-150 rounded-lg shadow-2xl p-8 md:p-12 " >
             <div className="text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-yellow mb-6 md:mb-8">
-                What We Offer
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6 md:mb-8">
+                What we offer
               </h2>
+              </div>
               <p className="text-base md:text-xl text-brand-text-primary">
                 We specialize in providing culturally sensitive therapy services, with a focus on supporting Asian American individuals and couples.
                 Whether you're navigating anxiety, trauma, relationship challenges, or other life stressors, we tailor our approach to meet your unique needs.
@@ -113,7 +114,6 @@ const Home = () => {
                 Trauma-Focused Therapy, mindfulness practices, relational therapy, psychodynamic therapy, and more, to help you achieve lasting healing in a safe,
                 compassionate environment. Whatever your path to wellness looks like, we're here to support you every step of the way.
               </p>
-            </div>
           </div>
         </div>
       </section>
@@ -122,8 +122,8 @@ const Home = () => {
       <section className="py-12 md:py-20 bg-brand-background-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-6xl font-serif text-brand-yellow mb-8 md:mb-12">
-              Our Services
+            <h2 className="text-xl md:text-3xl lg:text-5xl font-serif text-brand-text-primary mb-8 md:mb-12">
+              Our services
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
               {/* Service Cards */}
@@ -131,7 +131,7 @@ const Home = () => {
                 <div className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4">
                   <img src={IndividualTherapy} alt="Individual Therapy" className="w-full h-full" />
                 </div>
-                <h3 className="text-xl font-semibold text-center mb-2 text-brand-sage">Individual Therapy</h3>
+                <h3 className="text-xl font-semibold text-center mb-2 text-brand-sage">Individual therapy</h3>
                 <p className="text-brand-text-primary text-center">
                   One-on-one sessions focused on your personal growth and healing journey.
                 </p>
@@ -140,7 +140,7 @@ const Home = () => {
                 <div className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4">
                   <img src={CouplesTherapy} alt="Couples Therapy" className="w-full h-full" />
                 </div>
-                <h3 className="text-xl font-semibold text-center mb-2 text-brand-sage">Couples Therapy</h3>
+                <h3 className="text-xl font-semibold text-center mb-2 text-brand-sage">Couples therapy</h3>
                 <p className="text-brand-text-primary text-center">
                   Building stronger relationships through open communication and understanding.
                 </p>
@@ -149,7 +149,7 @@ const Home = () => {
                 <div className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4">
                   <img src={WellNessCoaching} alt="Wellness Coaching" className="w-full h-full" />
                 </div>
-                <h3 className="text-xl font-semibold text-center mb-2 text-brand-sage">Wellness Coaching</h3>
+                <h3 className="text-xl font-semibold text-center mb-2 text-brand-sage">Wellness coaching</h3>
                 <p className="text-brand-text-primary text-center">
                   Holistic approach to achieving balance in mind, body, and spirit.
                 </p>
@@ -159,7 +159,7 @@ const Home = () => {
             {/* Final CTA */}
             <div className="mt-12 md:mt-16">
               <p className="text-xl md:text-2xl lg:text-3xl text-brand-text-primary mb-8">
-                <span className="font-semibold">Take the First Step Toward Healing</span>
+                <span className="font-semibold">Take the first step toward healing</span>
               </p>
               <p className="text-lg md:text-xl lg:text-3xl text-brand-text-primary mb-8">
                Reach out today to schedule your consultation. Together, we can begin your path to emotional well-being and a more fulfilling life.
@@ -167,9 +167,9 @@ const Home = () => {
               <Link
                 to="/book-consultation"
                 className="inline-block bg-brand-coral text-white text-lg md:text-2xl font-bold px-6 py-3 rounded-full
-                  hover:bg-opacity-90 transition-colors duration-200"
+                  hover:bg-brand-coralLight transition-colors duration-200"
               >
-                Book a Consultation
+                Book a consultation
               </Link>
             </div>
           </div>
