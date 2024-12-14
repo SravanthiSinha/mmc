@@ -60,8 +60,8 @@ const Navbar = () => {
               ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}`}
             onClick={() => setIsMenuOpen(false)}
           >
-            <img className="w-[2.25rem]  h-[2.25rem] mr-1" src={`${Logo}`} />
-            <h1>Mind Matters Center</h1>
+            <img className="w-[1.5rem]  h-[1.5rem] mr-1" src={`${Logo}`} />
+            <h3>Mind Matters Center</h3>
           </Link>
 
           {/* Mobile Menu Button */}
