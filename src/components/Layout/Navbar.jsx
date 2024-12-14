@@ -1,11 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Logo from '../../assets/images/favicon.svg';
 
 const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,7 +19,6 @@ const Navbar = () => {
   useEffect(() => {
     if (window.innerWidth >= 1024) {
       setIsMenuOpen(false);
-      setActiveDropdown(null);
     }
   }, [location]);
 
@@ -54,13 +53,15 @@ const Navbar = () => {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
+        
           <Link
             to="/"
-            className={`text-3xl font-semibold transition-colors
+            className={`text-3xl font-semibold transition-colors flex items-center
               ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}`}
             onClick={() => setIsMenuOpen(false)}
           >
-            Mind Matters Center
+            <img className="w-[2.25rem]  h-[2.25rem] mr-1" src={`${Logo}`} />
+            <h1>Mind Matters Center</h1>
           </Link>
 
           {/* Mobile Menu Button */}
