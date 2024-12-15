@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+import { FadeInSection, AnimatedFAQItem } from '../components/shared/Animations';
+
+
 const Faq = () => {
   const faqs = [
     {
@@ -52,7 +55,7 @@ const Faq = () => {
   return (
     <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-primary">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
-     {/* Header */}
+        {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary mb-8 sm:mb-10">
             Frequently Asked Questions
@@ -65,83 +68,56 @@ const Faq = () => {
         {/* FAQ Accordion */}
         <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
-            <div
+            <AnimatedFAQItem
               key={index}
-              className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:border-brand-sage/30 transition-all duration-300"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-4 sm:px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors group"
-                aria-expanded={openIndex === index}
-              >
-                <span className="text-base sm:text-lg font-semibold text-brand-sage group-hover:text-brand-sage/80 transition-colors pr-4">
-                  {faq.question}
-                </span>
-                <svg
-                  className={`w-5 h-5 sm:w-6 sm:h-6 text-brand-sage transition-transform duration-300 flex-shrink-0
-                    ${openIndex === index ? 'transform rotate-180' : ''}`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div
-                className={`transition-all duration-300 ease-in-out ${
-                  openIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-                } overflow-hidden`}
-              >
-                <div className="px-4 sm:px-6 p-4 prose text-brand-text-primary whitespace-pre-line text-base sm:text-lg">
-                  {faq.answer}
-                </div>
-              </div>
-            </div>
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              index={index}
+            />
           ))}
         </div>
       </div>
 
       {/* GFE Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-brand-background-primary">
+      <section className="py-6 sm:py-8 md:py-10 bg-brand-background-primary">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-neutral-150 rounded-xl shadow-lg p-6 sm:p-8 md:p-12">
-            <div className="text-center">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-4 sm:mb-6">
-                Good Faith Estimate (GFE) - Your rights
-              </h2>
-              <p className="text-base sm:text-lg text-brand-text-primary mb-6">
-                You have the right to receive a GFE explaining how much your medical care will cost. Under the law, health care providers need to give patients who don't have insurance or who are not using insurance an estimate of the bill for medical items and services.
-              </p>
-              <div className="my-6 text-left">
-                <ul className="list-disc pl-6 space-y-2 text-base sm:text-lg text-brand-text-primary">
-                  <li>You have the right to receive a GFE for the total expected cost of any non-emergency items or services.</li>
-                  <li>Make sure your health care provider gives you a GFE in writing at least one business day before your medical service or item.</li>
-                  <li>You can also ask your health care provider, and any other provider you choose for a GFE before you schedule an item or service.</li>
-                  <li>If you receive a bill that is at least $400 more than your GFE, you can dispute the bill.</li>
-                  <li>Make sure to save a copy or picture of your GFE.</li>
-                </ul>
-              </div>
-
-              <div className="bg-gray-50 p-4 rounded-lg mt-6">
-                <p className="text-sm sm:text-base">
-                  For questions or more information about your right to a GFE, visit{' '}
-                  <a
-                    href="https://www.cms.gov/nosurprises"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-brand-sage hover:underline focus:outline-none focus:ring-2 focus:ring-brand-sage/50 focus:ring-offset-2 rounded-sm"
-                  >
-                    www.cms.gov/nosurprises
-                  </a>
+          <FadeInSection direction="up">
+            <div className="shadow-md border border-brand-gray-warm rounded-xl py-8 sm:py-10 px-4 sm:px-6">
+              <div className="text-center">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-4 sm:mb-6">
+                  Good Faith Estimate (GFE) - Your rights
+                </h2>
+                <p className="text-base sm:text-lg text-brand-text-primary mb-6">
+                  You have the right to receive a GFE explaining how much your medical care will cost. Under the law, health care providers need to give patients who don't have insurance or who are not using insurance an estimate of the bill for medical items and services.
                 </p>
+                <div className="my-6 text-left">
+                  <ul className="list-disc pl-6 space-y-2 text-base sm:text-lg text-brand-text-primary">
+                    <li>You have the right to receive a GFE for the total expected cost of any non-emergency items or services.</li>
+                    <li>Make sure your health care provider gives you a GFE in writing at least one business day before your medical service or item.</li>
+                    <li>You can also ask your health care provider, and any other provider you choose for a GFE before you schedule an item or service.</li>
+                    <li>If you receive a bill that is at least $400 more than your GFE, you can dispute the bill.</li>
+                    <li>Make sure to save a copy or picture of your GFE.</li>
+                  </ul>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg mt-6">
+                  <p className="text-sm sm:text-base">
+                    For questions or more information about your right to a GFE, visit{' '}
+                    <a
+                      href="https://www.cms.gov/nosurprises"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brand-sage hover:underline focus:outline-none focus:ring-2 focus:ring-brand-sage/50 focus:ring-offset-2 rounded-sm"
+                    >
+                      www.cms.gov/nosurprises
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </FadeInSection>
         </div>
       </section>
     </div>

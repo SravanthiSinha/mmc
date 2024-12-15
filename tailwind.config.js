@@ -27,6 +27,7 @@ export default {
           },
           // Supporting Colors
           sage: '#7FA693',
+          sageLight: '#89a095',
           blue: {
             soft: '#A2C1D4',
             bright: '#2D87D3',

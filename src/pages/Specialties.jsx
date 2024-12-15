@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { FadeInSection, SpecialtyCard } from '../components/shared/Animations';
+
+
 const Specialties = () => {
     const specialties = [
         {
@@ -53,62 +56,47 @@ const Specialties = () => {
 
             {/* Main Content */}
             <section className="bg-brand-background-primary py-8 sm:py-10">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+                <FadeInSection direction="up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
                     <div className="max-w-3xl mx-auto text-center mb-12">
                         <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-brand-text-primary">
                             Our therapists use a variety of evidence-based approaches to help you address common challenges
                         </h2>
                     </div>
-
-                    {/* Flexbox layout for specialties */}
                     <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
-                        {specialties.map((specialty) => (
-                            <Link
-                                key={specialty.title}
-                                to={specialty.path}
-                                className="flex-1 basis-[calc(100%-1.5rem)] sm:basis-[calc(50%-1.5rem)] min-w-[280px] max-w-[500px]
-                                p-6 sm:p-8 bg-brand-gray-warm rounded-xl transition-all duration-300 
-                                hover:shadow-lg hover:bg-white hover:scale-[1.02] 
-                                border border-transparent hover:border-brand-sage/20"
-                            >
-                                <h3 className="font-heading text-lg sm:text-xl font-semibold text-brand-text-primary mb-3 
-                                group-hover:text-brand-text-primary transition-colors duration-300">
-                                    {specialty.title}
-                                </h3>
-                                <p className="text-brand-text-primary text-base sm:text-lg">
-                                    {specialty.description}
-                                </p>
-                            </Link>
+                        {specialties.map((specialty, index) => (
+                            <SpecialtyCard key={index} {...specialty} />
                         ))}
                     </div>
-                </div>
+                </FadeInSection>
             </section>
             {/* Bottom Section */}
             <section className="py-4 sm:py-6 md:py-8 bg-brand-background-primary">
-                <div className="max-w-4xl mx-auto text-center px-4">
-                    <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-brand-text-primary mb-6">
-                        Our therapeutic approach
-                    </h2>
-                    <div className="text-brand-text-primary text-base sm:text-lg md:text-xl space-y-4">
-                        <p>
-                            We combine therapies like Cognitive Behavioral Therapy (CBT), Trauma-focused therapy, mindfulness, relational therapy, and psychodynamic therapy, all tailored to your unique needs.
-                            At <span className="font-semibold text-brand-text-primary">Mind Matters Center</span>,
-                            we believe that therapy should respect and integrate your cultural background while helping you move forward with confidence and clarity.
-                        </p>
-                        <p>
-                            Our goal is to help you feel heard, understood, and empowered as you work toward emotional healing and a more balanced life.
-                        </p>
-                    </div>
+                <FadeInSection direction="up">
+                    <div className="max-w-4xl mx-auto text-center px-4">
+                        <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-brand-text-primary mb-6">
+                            Our therapeutic approach
+                        </h2>
+                        <div className="text-brand-text-primary text-base sm:text-lg md:text-xl space-y-4">
+                            <p>
+                                We combine therapies like Cognitive Behavioral Therapy (CBT), Trauma-focused therapy, mindfulness, relational therapy, and psychodynamic therapy, all tailored to your unique needs.
+                                At <span className="font-semibold text-brand-text-primary">Mind Matters Center</span>,
+                                we believe that therapy should respect and integrate your cultural background while helping you move forward with confidence and clarity.
+                            </p>
+                            <p>
+                                Our goal is to help you feel heard, understood, and empowered as you work toward emotional healing and a more balanced life.
+                            </p>
+                        </div>
 
-                    <Link
-                        to="/book-consultation"
-                        className="inline-block mt-8 sm:mt-12 px-6 sm:px-8 py-3 sm:py-4 bg-brand-coral text-white 
+                        <Link
+                            to="/book-consultation"
+                            className="inline-block mt-8 sm:mt-12 px-6 sm:px-8 py-3 sm:py-4 bg-brand-coral text-white 
                             text-lg sm:text-xl font-semibold rounded-full hover:bg-brand-coralLight 
                             transition-all duration-300 hover:transform hover:scale-105 active:scale-95"
-                    >
-                        Book a consultation
-                    </Link>
-                </div>
+                        >
+                            Book a consultation
+                        </Link>
+                    </div>
+                </FadeInSection>
             </section>
         </div>
 

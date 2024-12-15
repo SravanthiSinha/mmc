@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 
+
+import { FadeInSection, CrisisCard } from '../components/shared/Animations';
+
 const Resources = () => {
     const crisisLines = [
         {
@@ -79,87 +82,64 @@ const Resources = () => {
 
             {/* California Resources Section */}
             <section className="bg-brand-background-primary py-8 sm:py-10">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-6">
-                        Crisis resources
-                    </h2>
-                    <p className="text-base sm:text-lg text-brand-text-primary mb-6 text-center">
-                        If you have an urgent or emergent need for mental health assistance, please CALL or TEXT Crisis Lifeline to 988, or call 911 and go to the nearest emergency department.
-                    </p>
-                    <a
-                        href="https://focus.senate.ca.gov/mentalhealth/suicide"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block bg-brand-sage text-white px-6 py-3 rounded-full 
+                <FadeInSection>
+                    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-6">
+                            Crisis resources
+                        </h2>
+                        <p className="text-base sm:text-lg text-brand-text-primary mb-6 text-center">
+                            If you have an urgent or emergent need for mental health assistance, please CALL or TEXT Crisis Lifeline to 988, or call 911 and go to the nearest emergency department.
+                        </p>
+                        <a
+                            href="https://focus.senate.ca.gov/mentalhealth/suicide"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-brand-sage text-white px-6 py-3 rounded-full 
                             hover:bg-opacity-90  transition-all duration-200 text-center
                             hover:transform hover:scale-105 active:scale-95"
-                    >
-                        Visit California mental health resources
-                    </a>
-                </div>
+                        >
+                            Visit California mental health resources
+                        </a>
+                    </div>
+                </FadeInSection>
             </section>
 
             {/* Crisis Resources Section */}
             <section className="bg-brand-background-primary py-8 sm:py-10">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <FadeInSection direction="up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="shadow-md border border-brand-gray-warm rounded-xl py-8 sm:py-10 px-4 sm:px-6">
                         <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-8 text-center">
                             24/7 Crisis resources
                         </h2>
-                        <div className="flex flex-wrap justify-center  gap-4 sm:gap-6">
+                        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
                             {crisisLines.map((line, index) => (
-                                <div
-                                    key={index}
-                                    className="w-full sm:w-[calc(50%-1rem)] flex flex-col"
-                                >
-                                    <div className="bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-md 
-                                        transition-all duration-200 h-full border border-brand-gray-warm 
-                                        flex flex-col"
-                                    >
-                                        <div className="flex-grow">
-                                            <h3 className="text-base sm:text-lg font-semibold text-brand-text-primary mb-2">
-                                                {line.name}
-                                            </h3>
-                                            <p className="text-sm sm:text-base text-brand-text-primary mb-4">
-                                                {line.description}
-                                            </p>
-                                        </div>
-                                        <div className="bg-brand-gray-warm p-3 sm:p-4 rounded-full mt-auto">
-                                            <div className="flex items-center justify-center gap-2 flex-wrap text-center">
-                                                <span className="text-sm sm:text-base text-brand-text-primary">
-                                                    {line.callText}
-                                                </span>
-                                                <span className="font-bold text-brand-coral text-sm sm:text-base">
-                                                    {line.number}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <CrisisCard key={index} {...line} index={index} />
                             ))}
                         </div>
                     </div>
-                </div>
+                </FadeInSection>
             </section>
 
             {/* Help Section */}
             <section className="py-12 sm:py-16 bg-brand-background-primary">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-6">
-                        Need non-emergency support?
-                    </h2>
-                    <p className="text-base sm:text-lg text-brand-text-primary mb-8">
-                        If you're looking for ongoing therapeutic support, we're here to help.
-                    </p>
-                    <Link
-                        to="/book-consultation"
-                        className="inline-block bg-brand-coral text-white text-base sm:text-lg font-bold 
+                <FadeInSection direction="up">
+                    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-6">
+                            Need non-emergency support?
+                        </h2>
+                        <p className="text-base sm:text-lg text-brand-text-primary mb-8">
+                            If you're looking for ongoing therapeutic support, we're here to help.
+                        </p>
+                        <Link
+                            to="/book-consultation"
+                            className="inline-block bg-brand-coral text-white text-base sm:text-lg font-bold 
                             px-6 py-3 rounded-full hover:bg-brand-coralLight transition-all duration-200
                             hover:transform hover:scale-105 active:scale-95"
-                    >
-                        Book a consultation
-                    </Link>
-                </div>
+                        >
+                            Book a consultation
+                        </Link>
+                    </div>
+                </FadeInSection>
             </section>
         </div>
     );
