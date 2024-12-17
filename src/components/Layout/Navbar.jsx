@@ -61,7 +61,7 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             <div className='flex items-center'>
-              <img src={Logo} alt="Mind Matters Center Logo" className="h-7 w-7" />
+              <img src={Logo} alt="Mind Matters Center Logo" className="h-7 lg:h-14 w-auto" />
               <span className="ml-2 text-2xl/[1.75rem] font-semibold">Mind Matters Center</span>
             </div>
           </Link>
