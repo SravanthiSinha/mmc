@@ -38,10 +38,10 @@ const Navbar = () => {
     { path: '/about', label: 'About us' },
     { path: '/faq', label: 'FAQ' },
     { path: '/resources', label: 'Resources' },
-    { 
+    {
       path: 'https://your-client-portal-url.com',
       label: 'Client Portal',
-      isExternal: true 
+      isExternal: true
     }
   ];
 
@@ -53,15 +53,17 @@ const Navbar = () => {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo */}
-        
+
           <Link
             to="/"
-            className={`text-3xl font-semibold transition-colors flex items-center
+            className={`transition-colors flex items-center
               ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}`}
             onClick={() => setIsMenuOpen(false)}
           >
-            <img className="w-[1.5rem]  h-[1.5rem] mr-1" src={`${Logo}`} />
-            <h3>Mind Matters Center</h3>
+            <div className='flex items-center'>
+              <img src={Logo} alt="Mind Matters Center Logo" className="h-7 w-7" />
+              <span className="ml-2 text-2xl/[1.75rem] font-semibold">Mind Matters Center</span>
+            </div>
           </Link>
 
           {/* Mobile Menu Button */}
@@ -117,7 +119,7 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            
+
             <Link
               to="/book-consultation"
               className="bg-brand-coral text-white text-base xl:text-lg font-bold 
@@ -145,7 +147,7 @@ const Navbar = () => {
                   >
                     {link.label}
                   </Link>
-                  
+
                   {/* Mobile Dropdown Items */}
                   {link.dropdownItems && (
                     <div className="ml-4 mt-1 space-y-1">
@@ -163,7 +165,7 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
-              
+
               <div className="pt-4">
                 <Link
                   to="/book-consultation"
