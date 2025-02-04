@@ -75,6 +75,7 @@ const Faq = () => {
               isOpen={openIndex === index}
               onClick={() => setOpenIndex(openIndex === index ? null : index)}
               index={index}
+              useFade={true}
             />
           ))}
         </div>

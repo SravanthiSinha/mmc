@@ -64,7 +64,7 @@ export const HoverCard = ({ children, className = '' }) => {
   );
 };
 
-export const AnimatedFAQItem = ({ question, answer, isOpen, onClick, index }) => {
+export const AnimatedFAQItem = ({ question, answer, isOpen, onClick, index, useFade }) => {
   const contentRef = useRef(null);
   const [height, setHeight] = useState(0);
 
@@ -74,37 +74,41 @@ export const AnimatedFAQItem = ({ question, answer, isOpen, onClick, index }) =>
     }
   }, [answer]);
 
-  return (
-    <FadeInSection delay={index * 100}>
-      <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:border-brand-sage/30 transition-all duration-300">
-        <button
-          onClick={onClick}
-          className="w-full px-4 sm:px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-all duration-300 group"
-          aria-expanded={isOpen}
-        >
-          <span className="text-base sm:text-lg font-semibold text-brand-sage group-hover:text-brand-sage/80 transition-colors pr-4">
-            {question}
-          </span>
-          <svg
-            className={`w-5 h-5 sm:w-6 sm:h-6 text-brand-sage transition-transform duration-300 flex-shrink-0
-              ${isOpen ? 'transform rotate-180' : ''}`}
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-        <div
-          style={{ maxHeight: isOpen ? `${height}px` : '0px' }}
-          className="transition-all duration-300 ease-in-out overflow-hidden"
-        >
-          <div ref={contentRef} className="px-4 sm:px-6 p-4 prose text-brand-text-primary whitespace-pre-line text-base sm:text-lg">
-            {answer}
-          </div>
-        </div>
+  const Content = () => (<div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:border-brand-sage/30 transition-all duration-300">
+    <button
+      onClick={onClick}
+      className="w-full px-4 sm:px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-all duration-300 group"
+      aria-expanded={isOpen}
+    >
+      <span className="text-base sm:text-lg font-semibold text-brand-sage group-hover:text-brand-sage/80 transition-colors pr-4">
+        {question}
+      </span>
+      <svg
+        className={`w-5 h-5 sm:w-6 sm:h-6 text-brand-sage transition-transform duration-300 flex-shrink-0
+          ${isOpen ? 'transform rotate-180' : ''}`}
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <div
+      style={{ maxHeight: isOpen ? `${height}px` : '0px' }}
+      className="transition-all duration-300 ease-in-out overflow-hidden"
+    >
+      <div ref={contentRef} className="px-4 sm:px-6 p-4 prose text-brand-text-primary whitespace-pre-line text-base sm:text-lg">
+        {answer}
       </div>
+    </div>
+  </div>)
+
+  return useFade ? (
+    <FadeInSection delay={index * 100}>
+      <Content />
     </FadeInSection>
+  ) : (
+    <Content />
   );
 };
 
