@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FadeInSection } from '../components/shared/Animations';
 import Relationship_Counseling from '../assets/images/relationship-counseling.jpg';
+import CTASection from '../components/shared/CTASection';
 
 const RelationshipCounseling = () => {
     const challenges = [
@@ -84,21 +84,6 @@ const RelationshipCounseling = () => {
                 </FadeInSection>
             </section>
 
-            {/* Treatment Approach */}
-            <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
-                <FadeInSection>
-                    <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
-                            Our healing approach
-                        </h2>
-                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
-                            Whether you're dealing with frequent conflicts, intimacy concerns, or major life transitions,
-                            we provide a safe space to explore, heal, and grow together.
-                        </p>
-                    </div>
-                </FadeInSection>
-            </section>
-
             {/* Common Challenges Section */}
             <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
                 <FadeInSection>
@@ -121,6 +106,21 @@ const RelationshipCounseling = () => {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                </FadeInSection>
+            </section>
+
+            {/* Treatment Approach */}
+            <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
+                <FadeInSection>
+                    <div className="max-w-3xl mx-auto text-center">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
+                            Our healing approach
+                        </h2>
+                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
+                            Whether you're dealing with frequent conflicts, intimacy concerns, or major life transitions,
+                            we provide a safe space to explore, heal, and grow together.
+                        </p>
                     </div>
                 </FadeInSection>
             </section>
@@ -156,7 +156,7 @@ const RelationshipCounseling = () => {
             </section>
 
             {/* Additional Support Section */}
-            <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-8 bg-brand-background-secondary">
+            <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-8 bg-brand-background-primary">
                 <FadeInSection>
                     <div className="max-w-4xl mx-auto">
                         <div className="p-6 sm:p-8 md:p-12 text-center">
@@ -165,18 +165,12 @@ const RelationshipCounseling = () => {
                                 and needs without judgment, learn effective communication tools, and develop deeper
                                 understanding and empathy for each other.
                             </p>
-                            <Link
-                                to="/book-consultation"
-                                className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-brand-coral text-white 
-                                text-base sm:text-lg font-semibold rounded-full hover:bg-brand-coralLight 
-                                transition-all duration-300 hover:transform hover:scale-105 active:scale-95"
-                            >
-                                Book a consultation
-                            </Link>
                         </div>
                     </div>
                 </FadeInSection>
             </section>
+
+            <CTASection />
         </div>
     );
 };

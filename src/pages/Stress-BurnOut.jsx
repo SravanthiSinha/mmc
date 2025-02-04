@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FadeInSection } from '../components/shared/Animations';
 import Stress_Burnout from '../assets/images/stress-burnout.jpg';
+import CTASection from '../components/shared/CTASection';
 
 const StressBurnout = () => {
     const signs = [
@@ -84,21 +85,6 @@ const StressBurnout = () => {
                 </FadeInSection>
             </section>
 
-            {/* Treatment Approach */}
-            <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
-                <FadeInSection>
-                    <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
-                            Our recovery approach
-                        </h2>
-                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
-                            Whether you're balancing work, family, or personal responsibilities,
-                            we'll help you develop personalized strategies for sustainable well-being.
-                        </p>
-                    </div>
-                </FadeInSection>
-            </section>
-
             {/* Common Signs Section */}
             <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
                 <FadeInSection>
@@ -121,6 +107,21 @@ const StressBurnout = () => {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                </FadeInSection>
+            </section>
+
+             {/* Treatment Approach */}
+             <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
+                <FadeInSection>
+                    <div className="max-w-3xl mx-auto text-center">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
+                            Our recovery approach
+                        </h2>
+                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
+                            Whether you're balancing work, family, or personal responsibilities,
+                            we'll help you develop personalized strategies for sustainable well-being.
+                        </p>
                     </div>
                 </FadeInSection>
             </section>
@@ -156,7 +157,7 @@ const StressBurnout = () => {
             </section>
 
             {/* Additional Support Section */}
-            <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-8 bg-brand-background-secondary">
+            <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-8 bg-brand-background-primary">
                 <FadeInSection>
                     <div className="max-w-4xl mx-auto">
                         <div className="p-6 sm:p-8 md:p-12 text-center">
@@ -166,18 +167,12 @@ const StressBurnout = () => {
                                 and physical well-being. Together, we'll develop strategies that work for your
                                 lifestyle and help you create lasting positive changes.
                             </p>
-                            <Link
-                                to="/book-consultation"
-                                className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-brand-coral text-white 
-                                text-base sm:text-lg font-semibold rounded-full hover:bg-brand-coralLight 
-                                transition-all duration-300 hover:transform hover:scale-105 active:scale-95"
-                            >
-                                Book a consultation
-                            </Link>
                         </div>
                     </div>
                 </FadeInSection>
             </section>
+
+            <CTASection/>
         </div>
     );
 };

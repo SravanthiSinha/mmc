@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FadeInSection } from '../components/shared/Animations';
 import Anxiety_Depression from '../assets/images/anxiety-depression.jpg';
+import CTASection from '../components/shared/CTASection';
 
 const AnxietyDepression = () => {
     const symptoms = [
@@ -87,21 +87,6 @@ const AnxietyDepression = () => {
                 </FadeInSection>
             </section>
 
-            {/* Treatment Approach */}
-            <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
-                <FadeInSection>
-                    <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
-                            Our treatment approach
-                        </h2>
-                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
-                            We help you develop practical coping strategies, reframe negative thought patterns,
-                            and restore a sense of calm and confidence.
-                        </p>
-                    </div>
-                </FadeInSection>
-            </section>
-
             {/* Common Signs Section */}
             <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
                 <FadeInSection>
@@ -124,6 +109,21 @@ const AnxietyDepression = () => {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                </FadeInSection>
+            </section>
+
+            {/* Treatment Approach */}
+            <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
+                <FadeInSection>
+                    <div className="max-w-3xl mx-auto text-center">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
+                            Our treatment approach
+                        </h2>
+                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
+                            We help you develop practical coping strategies, reframe negative thought patterns,
+                            and restore a sense of calm and confidence.
+                        </p>
                     </div>
                 </FadeInSection>
             </section>
@@ -159,7 +159,7 @@ const AnxietyDepression = () => {
             </section>
 
             {/* Additional Support Section */}
-            <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-8 bg-brand-background-secondary">
+            <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-8 bg-brand-background-primary">
                 <FadeInSection>
                     <div className="max-w-4xl mx-auto">
                         <div className="p-6 sm:p-8 md:p-12 text-center">
@@ -169,18 +169,12 @@ const AnxietyDepression = () => {
                                 through your challenges at your own pace and develop the tools needed
                                 for long-term emotional well-being.
                             </p>
-                            <Link
-                                to="/book-consultation"
-                                className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-brand-coral text-white 
-                                text-base sm:text-lg font-semibold rounded-full hover:bg-brand-coralLight 
-                                transition-all duration-300 hover:transform hover:scale-105 active:scale-95"
-                            >
-                                Book a consultation
-                            </Link>
                         </div>
                     </div>
                 </FadeInSection>
             </section>
+            
+            <CTASection />
         </div>
     );
 };

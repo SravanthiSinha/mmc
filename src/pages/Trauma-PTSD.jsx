@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FadeInSection } from '../components/shared/Animations';
-import Trauma_Support from '../assets/images/trauma-support.jpg'; // Using the healing hands image
+import Trauma_Support from '../assets/images/trauma-support.jpg';
+import CTASection from '../components/shared/CTASection';
 
 const Trauma = () => {
     const signs = [
@@ -83,21 +83,6 @@ const Trauma = () => {
                 </FadeInSection>
             </section>
 
-            {/* Treatment Approach */}
-            <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
-                <FadeInSection>
-                    <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
-                            Our healing approach
-                        </h2>
-                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
-                            Trauma can leave an imprint on the mind and body, making it hard to feel safe or in control.
-                            We provide specialized support to help you reconnect with yourself and rebuild trust.
-                        </p>
-                    </div>
-                </FadeInSection>
-            </section>
-
             {/* Common Signs Section */}
             <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
                 <FadeInSection>
@@ -120,6 +105,21 @@ const Trauma = () => {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                </FadeInSection>
+            </section>
+
+            {/* Treatment Approach */}
+            <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
+                <FadeInSection>
+                    <div className="max-w-3xl mx-auto text-center">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
+                            Our healing approach
+                        </h2>
+                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
+                            Trauma can leave an imprint on the mind and body, making it hard to feel safe or in control.
+                            We provide specialized support to help you reconnect with yourself and rebuild trust.
+                        </p>
                     </div>
                 </FadeInSection>
             </section>
@@ -155,7 +155,7 @@ const Trauma = () => {
             </section>
 
             {/* Additional Support Section */}
-            <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-8 bg-brand-background-secondary">
+            <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-8 bg-brand-background-primary">
                 <FadeInSection>
                     <div className="max-w-4xl mx-auto">
                         <div className="p-6 sm:p-8 md:p-12 text-center">
@@ -164,19 +164,13 @@ const Trauma = () => {
                                 Our therapists are specially trained to provide trauma-informed care
                                 in a safe, supportive environment where you have full control over
                                 the pace of your healing process.
-                            </p>
-                            <Link
-                                to="/book-consultation"
-                                className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-brand-coral text-white 
-                                text-base sm:text-lg font-semibold rounded-full hover:bg-brand-coralLight 
-                                transition-all duration-300 hover:transform hover:scale-105 active:scale-95"
-                            >
-                                Book a consultation
-                            </Link>
+                            </p>                          
                         </div>
                     </div>
                 </FadeInSection>
             </section>
+
+            <CTASection/>
         </div>
     );
 };

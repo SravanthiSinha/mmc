@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FadeInSection } from '../components/shared/Animations';
 import Cultural_Family from '../assets/images/cultural-family.jpg';
+import CTASection from '../components/shared/CTASection';
 
 const FamilyCulturalDynamics = () => {
     const struggles = [
@@ -81,22 +81,6 @@ const FamilyCulturalDynamics = () => {
                 </FadeInSection>
             </section>
 
-            {/* Treatment Approach */}
-            <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
-                <FadeInSection>
-                    <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
-                            Our cultural understanding
-                        </h2>
-                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
-                            We recognize that cultural identity and family dynamics are deeply interconnected.
-                            Our approach focuses on understanding and respecting your unique background while
-                            supporting your growth.
-                        </p>
-                    </div>
-                </FadeInSection>
-            </section>
-
             {/* Common Struggles Section */}
             <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
                 <FadeInSection>
@@ -119,6 +103,22 @@ const FamilyCulturalDynamics = () => {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                </FadeInSection>
+            </section>
+
+             {/* Treatment Approach */}
+             <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
+                <FadeInSection>
+                    <div className="max-w-3xl mx-auto text-center">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
+                            Our cultural understanding
+                        </h2>
+                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
+                            We recognize that cultural identity and family dynamics are deeply interconnected.
+                            Our approach focuses on understanding and respecting your unique background while
+                            supporting your growth.
+                        </p>
                     </div>
                 </FadeInSection>
             </section>
@@ -154,7 +154,7 @@ const FamilyCulturalDynamics = () => {
             </section>
 
             {/* Additional Support Section */}
-            <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-8 bg-brand-background-secondary">
+            <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-8 bg-brand-background-primary">
                 <FadeInSection>
                     <div className="max-w-4xl mx-auto">
                         <div className="p-6 sm:p-8 md:p-12 text-center">
@@ -164,18 +164,12 @@ const FamilyCulturalDynamics = () => {
                                 explore these challenges and find ways to thrive while honoring both your
                                 individual journey and your cultural roots.
                             </p>
-                            <Link
-                                to="/book-consultation"
-                                className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-brand-coral text-white 
-                                text-base sm:text-lg font-semibold rounded-full hover:bg-brand-coralLight 
-                                transition-all duration-300 hover:transform hover:scale-105 active:scale-95"
-                            >
-                                Book a consultation
-                            </Link>
                         </div>
                     </div>
                 </FadeInSection>
             </section>
+            
+            <CTASection/>
         </div>
     );
 };
