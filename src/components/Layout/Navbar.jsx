@@ -22,17 +22,30 @@ const Navbar = () => {
     }
   }, [location]);
 
+  // Helper function to check if a path is active
+  const isPathActive = (path) => {
+    if (path === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(path);
+  };
+
+  // Helper function to check if any dropdown item is active
+  const isDropdownActive = (dropdownItems) => {
+    return dropdownItems?.some(item => location.pathname === item.path);
+  };
+
   const navLinks = [
     { path: '/', label: 'Home' },
     {
       path: '/specialties',
       label: 'Specialties',
       dropdownItems: [
-        { path: '/anxiety-depression', label: 'Anxiety & Depression' },
-        { path: '/trauma', label: 'Trauma & PTSD' },
-        { path: '/relationship-counseling', label: 'Relationship Counseling' },
-        { path: '/cultural-dynamic', label: 'Family Culture Dynamic' },
-        { path: '/stress-burnout', label: 'Stress and Burn out' }
+        { path: '/anxiety-depression', label: 'Anxiety & depression' },
+        { path: '/trauma-ptsd', label: 'Trauma & PTSD' },
+        { path: '/relationship-counseling', label: 'Relationship counseling' },
+        { path: '/family-cultural-dynamic', label: 'Family culture dynamics' },
+        { path: '/stress-burnout', label: 'Stress & burnout' }
       ]
     },
     { path: '/about', label: 'About us' },
@@ -60,7 +73,7 @@ const Navbar = () => {
               ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}`}
             onClick={() => setIsMenuOpen(false)}
           >
-            <div className='flex items-center'>
+            <div className="flex items-center">
               <img src={Logo} alt="Mind Matters Center Logo" className="h-7 lg:h-14 w-auto" />
               <span className="ml-2 text-2xl/[1.75rem] font-semibold">Mind Matters Center</span>
             </div>
@@ -74,7 +87,7 @@ const Navbar = () => {
           >
             <svg
               className={`w-6 h-6 transition-colors
-                 ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}`}
+                ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -95,7 +108,7 @@ const Navbar = () => {
                 <Link
                   to={link.path}
                   className={`px-2 py-2 rounded-full transition-all duration-200 text-lg
-                    ${location.pathname === link.path ? 'font-semibold' : ''}
+                    ${(isPathActive(link.path) || isDropdownActive(link.dropdownItems)) ? 'font-semibold' : ''}
                     ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}
                     hover:bg-gray-300/20`}
                 >
@@ -110,7 +123,8 @@ const Navbar = () => {
                       <Link
                         key={item.path}
                         to={item.path}
-                        className="block px-4 py-2 text-brand-text-primary hover:bg-gray-300/20 transition-colors"
+                        className={`block px-4 py-2 text-brand-text-primary hover:bg-gray-300/20 transition-colors
+                          ${location.pathname === item.path ? 'font-semibold bg-gray-100' : ''}`}
                       >
                         {item.label}
                       </Link>
@@ -142,7 +156,7 @@ const Navbar = () => {
                     to={link.path}
                     className={`block px-4 py-2 text-base rounded-lg transition-colors duration-200 text-brand-text-primary
                       hover:bg-gray-300
-                      ${location.pathname === link.path ? 'font-semibold bg-gray-150' : ''}`}
+                      ${(isPathActive(link.path) || isDropdownActive(link.dropdownItems)) ? 'font-semibold bg-gray-150' : ''}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {link.label}
@@ -155,7 +169,8 @@ const Navbar = () => {
                         <Link
                           key={item.path}
                           to={item.path}
-                          className="block px-4 py-2 text-base text-brand-text-primary hover:bg-gray-150 rounded-lg transition-colors"
+                          className={`block px-4 py-2 text-base text-brand-text-primary hover:bg-gray-150 rounded-lg transition-colors
+                            ${location.pathname === item.path ? 'font-semibold bg-gray-100' : ''}`}
                           onClick={() => setIsMenuOpen(false)}
                         >
                           {item.label}

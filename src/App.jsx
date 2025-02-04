@@ -6,12 +6,17 @@ import About from './pages/About';
 import Faq from './pages/Faq';
 import Resources from './pages/Resources';
 import Specialties from './pages/Specialties';
+import AnxietyDepression from './pages/Anxiety-Depression';
+import Trauma from './pages/Trauma-PTSD';
+import RelationshipCounseling from './pages/Relationship-Counselling';
+import FamilyCulturalDynamics from './pages/Family-Culture-Dynamic';
+import StressBurnout from './pages/Stress-BurnOut';
 import NotFound from './pages/NotFound';
 
 const App = () => {
   return (
     <BrowserRouter basename="/mmc">
-    <ScrollToTop />
+      <ScrollToTop />
       <MainLayout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -19,7 +24,12 @@ const App = () => {
           <Route path="/faq" element={<Faq />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/specialties" element={<Specialties />} />
-          <Route path="*" element={<NotFound/>} />
+          <Route path="/anxiety-depression" element={<AnxietyDepression />} />
+          <Route path="/trauma-ptsd" element={<Trauma />} />
+          <Route path="/relationship-counseling" element={<RelationshipCounseling />} />
+          <Route path="/family-cultural-dynamic" element={<FamilyCulturalDynamics />} />
+          <Route path="/stress-burnout" element={<StressBurnout />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
