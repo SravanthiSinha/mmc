@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const FadeInSection = ({ children, className = '', delay = 0, direction = 'up' }) => {
   const elementRef = useRef(null);
@@ -163,19 +164,26 @@ export const CrisisCard = ({ name, number, description, callText, index }) => (
 
 export const SpecialtyCard = ({ title, description, path }) => (
   <FadeInSection className="flex-1 basis-[calc(100%-1.5rem)] sm:basis-[calc(50%-1.5rem)] min-w-[280px] max-w-[500px]">
-    <div
-      className="p-6 sm:p-8 bg-brand-gray-warm rounded-xl transition-all duration-300 
+    <Link
+      to={path}
+      className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] 
+        bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300
+        overflow-hidden group cursor-pointer"
+    >
+      <div
+        className="p-6 sm:p-8 bg-brand-gray-warm rounded-xl transition-all duration-300 
         hover:shadow-lg hover:bg-white group border border-transparent 
         hover:border-brand-sage/20 hover:-translate-y-1"
-    >
-      <h3 className="font-heading text-lg sm:text-xl font-semibold text-brand-text-primary mb-3 
+      >
+        <h3 className="font-heading text-lg sm:text-xl font-semibold text-brand-text-primary mb-3 
         group-hover:text-brand-sage transition-colors duration-300">
-        {title}
-      </h3>
-      <p className="text-brand-text-primary text-base sm:text-lg">
-        {description}
-      </p>
-    </div>
+          {title}
+        </h3>
+        <p className="text-brand-text-primary text-base sm:text-lg">
+          {description}
+        </p>
+      </div>
+    </Link>
   </FadeInSection>
 );
 

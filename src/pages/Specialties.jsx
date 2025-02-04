@@ -13,7 +13,7 @@ const Specialties = () => {
         },
         {
             title: 'Trauma & PTSD',
-            path: '/trauma',
+            path: '/trauma-ptsd',
             description: 'If you\'re dealing with past trauma or PTSD, our trauma-focused therapy can help you heal and regain control over your life.',
         },
         {
@@ -23,7 +23,7 @@ const Specialties = () => {
         },
         {
             title: 'Family & cultural dynamics',
-            path: '/cultural-dynamic',
+            path: '/family-cultural-dynamic',
             description: 'Navigating intergenerational issues and family expectations can be tough. We help you understand and manage these pressures with compassion and insight.',
         },
         {
@@ -48,7 +48,6 @@ const Specialties = () => {
                         </p>
                         <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
                             We understand the unique challenges that come with balancing cultural expectations, family dynamics, and personal growth, and we are here to offer a safe, understanding space to work through them.
-
                         </p>
                     </div>
                 </div>
