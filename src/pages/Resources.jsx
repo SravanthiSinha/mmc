@@ -121,7 +121,7 @@ const Resources = () => {
             </section>
 
             {/* Help Section */}
-            <section className="py-12 sm:py-16 bg-brand-background-primary">
+            <section className="py-12 sm:py-16 bg-brand-background-secondary">
                 <FadeInSection direction="up">
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                         <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-6">

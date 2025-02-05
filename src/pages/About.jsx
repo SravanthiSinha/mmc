@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-
 import { FadeInSection } from '../components/shared/Animations';
 
 const About = () => {
@@ -51,16 +50,16 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="bg-brand-background-primary py-8 sm:py-10 md:py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-8 sm:py-10 md:py-12 bg-brand-background-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <FadeInSection>
-            <div className="prose prose-lg mx-auto text-brand-text-primary">
-              <p className="text-base sm:text-lg md:text-xl mb-6">
-                At <strong className="text-brand-text-primary">Mind Matters Center</strong>, we believe that everyone deserves the opportunity to heal, grow, and live a fulfilling life.
+            <div className="p-4 sm:p-5 md:p-6 max-w-6xl mx-auto text-brand-text-primary backdrop-blur-sm">
+              <p className="text-center sm:text-lg md:text-xl mb-6 leading-relaxed">
+                At <strong className="text-brand-coral">Mind Matters Center</strong>, we believe that everyone deserves the opportunity to heal, grow, and live a fulfilling life.
                 As an Asian-owned, women-owned company, we are deeply committed to providing compassionate,
                 culturally sensitive therapy and wellness services that empower individuals and couples to navigate life's challenges and embrace emotional well-being.
               </p>
-              <p className="text-base sm:text-lg md:text-xl">
+              <p className="text-center sm:text-lg md:text-xl leading-relaxed">
                 We specialize in working with Asian American clients, understanding the unique cultural experiences and struggles that shape their mental health.
                 Whether you're dealing with anxiety, trauma, relationship issues, or other life stressors, our team of experienced therapists is here to offer personalized support tailored to your needs.
               </p>
@@ -70,21 +69,21 @@ const About = () => {
       </section>
 
       {/* Approach Section */}
-      <section className="bg-brand-background-primary py-6">
+      <section className="py-6 sm:py-8 bg-gradient-to-b from-brand-background-primary to-brand-background-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInSection className="text-center mb-8">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-6 sm:mb-8 text-center">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary">
               Our therapeutic approach
             </h2>
           </FadeInSection>
-          <FadeInSection direction="up" className="max-w-4xl mx-auto">
-            <div className="max-w-4xl mx-auto">
-              <p className="text-base sm:text-lg text-brand-text-primary mb-6">
+          <FadeInSection direction="up">
+            <div className="max-w-4xl mx-auto p-4 sm:p-5 backdrop-blur-sm  mb-16">
+              <p className="text-base sm:text-lg text-brand-text-primary mb-6 leading-relaxed">
                 Our approach is rooted in a blend of evidence-based therapies—like Cognitive Behavioral Therapy (CBT),
                 Trauma-focused therapy, mindfulness, and relational therapy—combined with cultural sensitivity and respect.
                 We create a safe and non-judgmental space where you can explore your feelings, gain clarity, and develop the tools you need to thrive.
               </p>
-              <p className="text-base sm:text-lg text-brand-text-primary mb-16">
+              <p className="text-base sm:text-lg text-brand-text-primary leading-relaxed">
                 We are passionate about creating a welcoming and inclusive space for all. We aim to help
                 you find healing, balance, and empowerment in every aspect of your life. Whether through
                 individual therapy, couples counseling, or wellness coaching, we are here to walk alongside
@@ -97,7 +96,7 @@ const About = () => {
               <div
                 key={index}
                 className="flex-1 basis-[calc(100%-1.5rem)] sm:basis-[calc(50%-1.5rem)] md:basis-[calc(33.333%-1.5rem)] 
-                  min-w-[280px] max-w-[400px] bg-white p-6 rounded-lg shadow-lg border border-brand-gray-warm
+                  min-w-[280px] max-w-[400px] bg-white p-6 rounded-xl shadow-lg border border-brand-gray-warm
                   text-center hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="flex justify-center mb-4">
@@ -116,7 +115,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-8 sm:py-10 md:py-12 bg-brand-background-primary">
+      <section className="py-8 sm:py-10 md:py-12 bg-brand-background-secondary">
         <FadeInSection direction="up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-4 sm:mb-6">
