@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FadeInSection } from '../components/shared/Animations';
+import AboutUsImg from '../assets/images/aboutus.jpg';
+import AsianClientImg from '../assets/images/asian-client.jpg';
 
 const About = () => {
   const values = [
@@ -50,26 +52,68 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="relative py-8 sm:py-10 md:py-12 bg-brand-background-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <FadeInSection>
-            <div className="p-4 sm:p-5 md:p-6 max-w-6xl mx-auto text-brand-text-primary backdrop-blur-sm">
-              <p className="text-center sm:text-lg md:text-xl mb-6 leading-relaxed">
-                At <strong className="text-brand-coral">Mind Matters Center</strong>, we believe that everyone deserves the opportunity to heal, grow, and live a fulfilling life.
-                As an Asian-owned, women-owned company, we are deeply committed to providing compassionate,
-                culturally sensitive therapy and wellness services that empower individuals and couples to navigate life's challenges and embrace emotional well-being.
-              </p>
-              <p className="text-center sm:text-lg md:text-xl leading-relaxed">
-                We specialize in working with Asian American clients, understanding the unique cultural experiences and struggles that shape their mental health.
-                Whether you're dealing with anxiety, trauma, relationship issues, or other life stressors, our team of experienced therapists is here to offer personalized support tailored to your needs.
-              </p>
+      <section className="py-16 bg-brand-background-primary">
+        <div className="max-w-7xl mx-auto px-4">
+          <FadeInSection >
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+              <div className="text-center lg:text-left max-w-xl mx-auto lg:mx-0">
+                <h2 className="text-3xl font-serif text-brand-text-primary mb-6">
+                  Our mission
+                </h2>
+                <p className="text-lg text-brand-text-primary/80 leading-relaxed">
+                  At <strong className="text-brand-primary">Mind Matters Center</strong>,
+                  we believe that everyone deserves the opportunity to heal, grow, and live a fulfilling life.
+                  As an Asian-owned, women-owned company, we are deeply committed to providing compassionate,
+                  culturally sensitive therapy and wellness services that empower individuals and couples
+                  to navigate life's challenges and embrace emotional well-being.
+                </p>
+              </div>
+
+              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg mx-auto lg:mx-0 w-full max-w-2xl">
+                <img
+                  src={AboutUsImg}
+                  alt="Mind Matters Center peaceful therapy space"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              </div>
             </div>
           </FadeInSection>
         </div>
       </section>
 
+      {/* Specialization Section */}
+      {/* Specialization Section */}
+      <section className="py-8 sm:py-10 bg-brand-background-secondary">
+        <div className="max-w-7xl mx-auto px-4">
+          <FadeInSection>
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div className="relative h-[250px] sm:h-[300px] rounded-xl overflow-hidden shadow-lg mx-auto lg:mx-0 w-full max-w-xl order-2 lg:order-1">
+                <img
+                  src={AsianClientImg}
+                  alt="Asian client in therapy"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              </div>
+              <div className="text-center lg:text-left max-w-xl mx-auto lg:mx-0 order-1 lg:order-2">
+                <h2 className="text-2xl sm:text-3xl font-serif text-brand-text-primary mb-4">
+                  Our expertise
+                </h2>
+                <p className="text-base sm:text-lg text-brand-text-primary/80 leading-relaxed">
+                  We specialize in working with Asian American clients, understanding the unique cultural
+                  experiences and struggles that shape their mental health. Our team of experienced
+                  therapists offers personalized support for anxiety, trauma, relationship issues,
+                  and other life stressors.
+                </p>
+              </div>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
       {/* Approach Section */}
-      <section className="py-6 sm:py-8 bg-gradient-to-b from-brand-background-primary to-brand-background-secondary">
+      < section className="py-6 sm:py-8 bg-gradient-to-b from-brand-background-primary to-brand-background-secondary" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInSection className="text-center mb-8">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary">
@@ -112,10 +156,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* CTA Section */}
-      <section className="py-8 sm:py-10 md:py-12 bg-brand-background-secondary">
+      < section className="py-8 sm:py-10 md:py-12 bg-brand-background-secondary" >
         <FadeInSection direction="up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-4 sm:mb-6">
@@ -134,8 +178,8 @@ const About = () => {
             </Link>
           </div>
         </FadeInSection>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 
