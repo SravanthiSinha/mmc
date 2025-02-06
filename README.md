@@ -11,3 +11,5 @@ A modern, culturally sensitive mental health consultation website built with Rea
 - **Icons:** Lucide React
 - **Build Tool:** Vite
 - **Deployment:** GitHub Pages
+
+Currently Published @ https://sravanthisinha.github.io/mmc
