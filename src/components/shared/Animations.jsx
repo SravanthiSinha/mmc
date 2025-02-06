@@ -166,26 +166,57 @@ export const CrisisCard = ({ name, number, description, callText, index }) => (
   </FadeInSection>
 );
 
-export const SpecialtyCard = ({ title, description, path }) => (
-  <FadeInSection className="flex-1 basis-[calc(100%-1.5rem)] sm:basis-[calc(50%-1.5rem)] min-w-[280px] max-w-[500px]">
+export const SpecialtyCard = ({ title, description, path, img_path }) => (
+  <FadeInSection>
     <Link
       to={path}
-      className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] 
-        bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300
-        overflow-hidden group cursor-pointer"
+      className="group flex flex-col sm:flex-row h-full bg-white rounded-2xl overflow-hidden shadow-sm 
+        hover:shadow-lg transition-all duration-300 border border-brand-gray-warm/10"
     >
-      <div
-        className="p-6 sm:p-8 bg-brand-gray-warm rounded-xl transition-all duration-300 
-        hover:shadow-lg hover:bg-white group border border-transparent 
-        hover:border-brand-sage/20 hover:-translate-y-1"
-      >
-        <h3 className="font-heading text-lg sm:text-xl font-semibold text-brand-text-primary mb-3 
-        group-hover:text-brand-sage transition-colors duration-300">
+      {/* Image Section */}
+      <div className="relative w-full sm:w-2/5 h-48 sm:h-auto overflow-hidden">
+        <img
+          src={img_path}
+          alt={`${title} therapy service`}
+          className="w-full h-full object-cover transition-transform duration-500 
+            group-hover:scale-105"
+        />
+        {/* Mobile-only gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent sm:hidden"></div>
+      </div>
+
+      {/* Content Section */}
+      <div className="relative flex-1 p-6 sm:p-8 flex flex-col">
+        {/* Decorative Element */}
+        <div className="absolute top-0 right-0 w-24 h-24 opacity-5 transform translate-x-8 -translate-y-8">
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full text-brand-sage">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+          </svg>
+        </div>
+
+        {/* Title */}
+        <h3 className="text-xl sm:text-2xl font-serif text-brand-text-primary mb-3 
+          group-hover:text-brand-sage transition-colors duration-300">
           {title}
         </h3>
-        <p className="text-brand-text-primary text-base sm:text-lg">
+
+        {/* Description */}
+        <p className="text-brand-text-primary/80 text-base sm:text-lg leading-relaxed mb-6">
           {description}
         </p>
+
+        {/* Learn More Link */}
+        <div className="mt-auto flex items-center text-brand-sage group-hover:text-brand-coral transition-colors duration-300">
+          <span className="text-sm font-semibold">Learn more</span>
+          <svg
+            className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </div>
       </div>
     </Link>
   </FadeInSection>

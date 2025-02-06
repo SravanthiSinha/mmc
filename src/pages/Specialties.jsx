@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Anxiety_Depression from '../assets/images/anxiety-depression.jpg';
+import Stress_Burnout from '../assets/images/stress-burnout.jpg';
+import Relationship_Counseling from '../assets/images/relationship-counseling.jpg';
+import Cultural_Family from '../assets/images/cultural-family.jpg';
+import Trauma_Support from '../assets/images/trauma-support.jpg';
 import { FadeInSection, SpecialtyCard } from '../components/shared/Animations';
 
 
@@ -9,26 +13,31 @@ const Specialties = () => {
         {
             title: 'Anxiety & depression',
             path: '/anxiety-depression',
+            img_path: Anxiety_Depression,
             description: 'Whether it\'s everyday stress or deeper emotional struggles, we help you manage anxiety and depression with proven therapeutic tools.',
         },
         {
             title: 'Trauma & PTSD',
             path: '/trauma-ptsd',
+            img_path: Trauma_Support,
             description: 'If you\'re dealing with past trauma or PTSD, our trauma-focused therapy can help you heal and regain control over your life.',
         },
         {
             title: 'Relationship issues',
             path: '/relationship-counseling',
+            img_path: Relationship_Counseling,
             description: 'From communication breakdowns to trust issues, we support couples in improving their relationships and deepening their connection.',
         },
         {
             title: 'Family & cultural dynamics',
             path: '/family-cultural-dynamic',
+            img_path: Cultural_Family,
             description: 'Navigating intergenerational issues and family expectations can be tough. We help you understand and manage these pressures with compassion and insight.',
         },
         {
             title: 'Stress & burnout',
             path: '/stress-burnout',
+            img_path: Stress_Burnout,
             description: 'Life can get overwhelming, especially when juggling multiple roles. We help you build resilience and create balance in your life.',
         },
     ];
@@ -60,8 +69,8 @@ const Specialties = () => {
                         <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-brand-text-primary">
                             Our therapists use a variety of evidence-based approaches to help you address common challenges
                         </h2>
-                    </div>
-                    <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
+                    </div>                    
+                    <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto">
                         {specialties.map((specialty, index) => (
                             <SpecialtyCard key={index} {...specialty} />
                         ))}
@@ -69,7 +78,7 @@ const Specialties = () => {
                 </FadeInSection>
             </section>
             {/* Bottom Section */}
-            <section className="py-4 sm:py-6 md:py-8 bg-brand-background-primary">
+            <section className="py-4 sm:py-6 md:py-8 bg-gradient-to-b from-brand-background-primary to-brand-background-secondary">
                 <FadeInSection direction="up">
                     <div className="max-w-4xl mx-auto text-center px-4">
                         <h2 className="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-brand-text-primary mb-6">
