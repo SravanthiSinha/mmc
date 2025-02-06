@@ -9,7 +9,8 @@ const StressBurnout = () => {
         'Chronic fatigue',
         'Irritability',
         'Loss of motivation',
-        'feeling "on edge" all the time'
+        'feeling "on edge" all the time',
+        'Insomnia'
     ];
 
     const approaches = [
@@ -111,8 +112,8 @@ const StressBurnout = () => {
                 </FadeInSection>
             </section>
 
-             {/* Treatment Approach */}
-             <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
+            {/* Treatment Approach */}
+            <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
                 <FadeInSection>
                     <div className="max-w-3xl mx-auto text-center">
                         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">

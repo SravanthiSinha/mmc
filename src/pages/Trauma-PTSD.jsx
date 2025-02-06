@@ -8,7 +8,8 @@ const Trauma = () => {
         'Flashbacks',
         'Difficulty trusting others',
         'Hypervigilance',
-        'Emotional numbness'
+        'Emotional numbness',
+        'Insomnia'
     ];
 
     const approaches = [
@@ -164,7 +165,7 @@ const Trauma = () => {
                                 Our therapists are specially trained to provide trauma-informed care
                                 in a safe, supportive environment where you have full control over
                                 the pace of your healing process.
-                            </p>                          
+                            </p>
                         </div>
                     </div>
                 </FadeInSection>

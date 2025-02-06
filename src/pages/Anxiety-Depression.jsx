@@ -9,7 +9,8 @@ const AnxietyDepression = () => {
         'Trouble sleeping',
         'Lack of motivation',
         'Overthinking',
-        'Persistent sadness'
+        'Persistent sadness',
+        'Insomnia'
     ];
 
     const approaches = [
@@ -95,12 +96,12 @@ const AnxietyDepression = () => {
                             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-12 text-center">
                                 Common signs
                             </h2>
-                            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+                            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 max-w-3xl mx-auto">
                                 {symptoms.map((symptom, index) => (
                                     <div
                                         key={index}
                                         className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-brand-sage/10 flex items-center justify-center p-4 
-                                        group hover:bg-brand-sage hover:scale-105 transition-all duration-300"
+                                     group hover:bg-brand-sage hover:scale-105 transition-all duration-300"
                                     >
                                         <span className="text-sm sm:text-base text-brand-text-primary group-hover:text-white text-center transition-colors duration-300">
                                             {symptom}
@@ -173,7 +174,7 @@ const AnxietyDepression = () => {
                     </div>
                 </FadeInSection>
             </section>
-            
+
             <CTASection />
         </div>
     );
