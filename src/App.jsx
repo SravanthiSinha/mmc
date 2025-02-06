@@ -12,7 +12,6 @@ import RelationshipCounseling from './pages/Relationship-Counselling';
 import FamilyCulturalDynamics from './pages/Family-Culture-Dynamic';
 import StressBurnout from './pages/Stress-BurnOut';
 import PrivacyPolicy from './pages/PrivacyPolicy';
-import PrivacyPolicy2 from './pages/PrivacyPolicy2';
 import NotFound from './pages/NotFound';
 
 const App = () => {
@@ -32,7 +31,6 @@ const App = () => {
           <Route path="/family-cultural-dynamic" element={<FamilyCulturalDynamics />} />
           <Route path="/stress-burnout" element={<StressBurnout />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/privacy-policy2" element={<PrivacyPolicy2 />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </MainLayout>

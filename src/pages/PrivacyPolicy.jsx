@@ -4,14 +4,6 @@ import { FadeInSection, AnimatedFAQItem } from '../components/shared/Animations'
 const PrivacyPolicy = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
-    const formatContent = (content) => {
-        if (typeof content === 'string') {
-            return content.split('•').map(item => item.trim()).join('\\n• ');
-        }
-        return content;
-    };
-
-
     const privacyContent = [
         {
             title: "WHAT IS CONSIDERED PERSONAL INFORMATION?",
@@ -26,7 +18,7 @@ const PrivacyPolicy = () => {
       Like many websites, we use cookies to enhance your experience and gather information about visitors and visits to our websites. Please refer to the do we use cookies section below for information about cookies and how we use them.`
         },
         {
-            title: "WE MAY PROCESS THE FOLLOWING CATEGORIES OF PERSONAL DATA ABOUT YOU:",
+            title: "WE MAY PROCESS THE FOLLOWING CATEGORIES OF PERSONAL DATA ABOUT YOU",
             content: (
                 <ul className="list-disc pl-6 space-y-4">
                     <li><strong>Communication Data</strong>  that includes any communication that you send to us whether that be through the contact form on our website, through email, text, social media messaging, social media posting or any other communication that you send us. We process this data for the purposes of communicating with you, for record keeping and for the establishment, pursuance or defense of legal claims. Our lawful ground for this processing is our legitimate interests which in this case are to reply to communications sent to us, to keep records and to establish, pursue or defend legal claims.</li>
@@ -54,28 +46,32 @@ const PrivacyPolicy = () => {
         },
         {
             title: "DISCLOSURE OF YOUR PERSONAL DATA",
-            content: `We may have to share your personal data with the parties set out below:
+            content: <div><p>We may have to share your personal data with the parties set out below:</p>
 
-      • Service providers who provide IT and system administration services.
-      • Professional advisers including lawyers, bankers, auditors and insurers.
-      • Government bodies that require us to report processing activities.
-      • Third party technology platforms and advertisers that support the running and growth of Mind Matters Center.
+                <ul className="list-disc pl-6 space-y-4 py-6" >
+                    <li>Service providers who provide IT and system administration services.</li>
+                    <li> Professional advisers including lawyers, bankers, auditors and insurers.</li>
+                    <li>Government bodies that require us to report processing activities.</li>
+                    <li>Third party technology platforms and advertisers that support the running and growth of Mind Matters Center.</li>
+                </ul >
 
-      We require all third parties to whom we transfer your data to respect the security of your personal data and to treat it in accordance with the law. We only allow such third parties to process your personal data for specified purposes and in accordance with our instructions.`
+                <p>We require all third parties to whom we transfer your data to respect the security of your personal data and to treat it in accordance with the law. We only allow such third parties to process your personal data for specified purposes and in accordance with our instructions.</p>
+            </div>
         },
         {
             title: "HOW DO WE USE YOUR INFORMATION?",
-            content: `We may use the information we collect from you when you register, purchase products, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:
-
-      • To personalize your site experience and to allow us to deliver the type of content and product offerings in which you are most interested.
-      • To allow us to better service you in responding to your customer service requests.
-      • To quickly process your transactions.
-      • To administer a survey or other site feature.
-      • If you have opted-in to receive our email newsletter, we will send you educational and marketing emails.
-      • If you would no longer like to receive promotional email from us, please refer to the "How can you opt-out, remove or modify information you have provided to us?" section.
-      • If you have not opted-in to receive email newsletters, you will not receive these emails.
-
-      Visitors who register or participate in other site features such as marketing programs will be given a choice whether they would like to be on our email list and receive e-mail communications from us.`
+            content: <div><p>We may use the information we collect from you when you register, purchase products, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:</p>
+                <ul className="list-disc pl-6 space-y-4 py-6" >
+                    <li>To personalize your site experience and to allow us to deliver the type of content and product offerings in which you are most interested.</li>
+                    <li>To allow us to better service you in responding to your customer service requests.</li>
+                    <li>To quickly process your transactions.</li>
+                    <li> To administer a survey or other site feature.</li>
+                    <li> If you have opted-in to receive our email newsletter, we will send you educational and marketing emails.</li>
+                    <li> If you would no longer like to receive promotional email from us, please refer to the "How can you opt-out, remove or modify information you have provided to us?" section.</li>
+                    <li> If you have not opted-in to receive email newsletters, you will not receive these emails.</li>
+                </ul>
+                <p>Visitors who register or participate in other site features such as marketing programs will be given a choice whether they would like to be on our email list and receive e-mail communications from us.
+                </p></div>
         },
         {
             title: "DATA SECURITY",
@@ -89,7 +85,7 @@ const PrivacyPolicy = () => {
         },
         {
             title: "COOKIES",
-            content: "As you browse Mind Matters Center website, advertising cookies will be placed on your computer so that we can understand what you are interested in. ookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and stored on your computer’s hard drive. To opt out of cookies, find and select the settings tab of your internet browser and click “block third party cookies and site data” or de-select the “accept cookies” box."
+            content: "As you browse Mind Matters Center website, advertising cookies will be placed on your computer so that we can understand what you are interested in. Cookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and stored on your computer’s hard drive. To opt out of cookies, find and select the settings tab of your internet browser and click “block third party cookies and site data” or de-select the “accept cookies” box."
         },
         {
             title: "HOW DO WE PROTECT VISITOR INFORMATION?",
@@ -109,12 +105,13 @@ const PrivacyPolicy = () => {
         },
         {
             title: "YOUR ACCESS TO AND CONTROL OVER INFORMATION",
-            content: `You may opt out of any future contacts from us at any time. You can do the following at any time by contacting us via the email address or phone number given on our website:
-
-      • See what data we have about you, if any.
-      • Change/correct any data we have about you.
-      • Have us delete any data we have about you.
-      • Express any concern you have about our use of your data.`
+            content: <div><p>You may opt out of any future contacts from us at any time. You can do the following at any time by contacting us via the email address or phone number given on our website:</p>
+                <ul className="list-disc pl-6 space-y-4 py-6" >
+                    <li> See what data we have about you, if any</li>
+                    <li> Change/correct any data we have about you.</li>
+                    <li> Have us delete any data we have about you.</li>
+                    <li> Express any concern you have about our use of your data.</li>
+                </ul></div>
         },
         {
             title: "CHANGES TO OUR POLICY",
@@ -154,7 +151,7 @@ const PrivacyPolicy = () => {
                         <AnimatedFAQItem
                             key={index}
                             question={section.title}
-                            answer={formatContent(section.content)}
+                            answer={section.content}
                             isOpen={openIndex === index}
                             onClick={() => setOpenIndex(openIndex === index ? null : index)}
                             index={index}
