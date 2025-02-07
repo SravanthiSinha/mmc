@@ -1,165 +1,247 @@
-import React, { useState } from 'react';
-import { FadeInSection, AnimatedFAQItem } from '../components/shared/Animations';
+import React from 'react';
+import { FadeInSection } from '../components/shared/Animations';
 
 const PrivacyPolicy = () => {
-    const [openIndex, setOpenIndex] = useState(null);
+    const sections = [
+        {
+            title: "Information We Collect",
+            icon: (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+            ),
+            content: "We collect personal and non-personal information in the following ways:",
+            subsections: [
+                {
+                    title: "Personal Information",
+                    content: "When you fill out forms, book an appointment, or contact us, you may provide your name, email, phone number, and other details."
+                },
+                {
+                    title: "Automatically Collected Information",
+                    content: "When you visit our website, we may collect data such as IP address, browser type, and browsing behavior through cookies and analytics tools."
+                },
+                {
+                    title: "Health-Related Information",
+                    content: "If you engage in therapy services, your information is protected under HIPAA (Health Insurance Portability and Accountability Act) and other confidentiality laws."
+                }
+            ]
+        },
+        {
+            title: "How We Use Your Information",
+            icon: (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+            ),
+            content: "We use the collected information to:",
+            listItems: [
+                "Provide and improve our services",
+                "Respond to inquiries and appointment requests",
+                "Ensure website security and performance",
+                "Comply with legal and ethical obligations",
+                "Communicate updates, when applicable, with your consent"
+            ]
+        },
+        {
+            title: "Sharing and Disclosure",
+            icon: (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+            ),
+            content: "We do not sell your personal information. We may share your data in the following cases:",
+            listItems: [
+                "With Your Consent: If you explicitly agree to share your information with third parties",
+                "Legal Compliance: If required by law or to protect rights, safety, or comply with regulatory requirements",
+                "Service Providers:  We may work with trusted third-party vendors (such as payment processors or appointment scheduling software) who are contractually required to protect your information."
+            ]
+        },
+        {
+            title: "Data Security",
+            icon: (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+            ),
+            content: "We take reasonable steps to protect your personal information from unauthorized access, disclosure, or misuse. However, no method of transmission over the Internet is 100% secure. If you suspect a security issue, please contact us immediately.",
+        },
+        {
+            title: "Your Rights and Choices",
+            icon: (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            ),
+            content: "Depending on your location and applicable laws, you may have the right to:",
+            listItems: ["Request access to the personal information we have about you",
+                "Correct or delete your information",
+                "Withdraw consent for specific uses of your data",
+                "Opt-out of non-essential communications",
+            ],
+            content2: <span>To exercise your rights, contact us at <strong className="text-brand-sage">info@mindmatterscenter.com</strong></span>
+        },
+        {
+            title: "Cookies and Tracking",
+            icon: (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+            ),
+            content: "We use cookies and similar tracking tools to enhance your browsing experience. You can manage your cookie preferences through your browser settings.",
+        },
 
-    const privacyContent = [
         {
-            title: "WHAT IS CONSIDERED PERSONAL INFORMATION?",
-            content: "Personal information refers to information such as your name, address, email address, geographic location, purchase history, gender, credit card information and browsing habits on our site."
+            title: "Third-Party Links",
+            icon: (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                </svg>
+            ),
+            content: "Our website may contain links to external websites. We are not responsible for their privacy practices, so we encourage you to review their policies before sharing information."
         },
         {
-            title: "WHAT INFORMATION DO WE COLLECT?",
-            content: `We collect information from you when you register on the site, place an order, enter a contest or sweepstakes, respond to a survey or communication such as e-mail, or participate in another site feature.
-
-      When ordering or registering, we may ask you for your name, e-mail address, mailing address, phone number, credit card information or other information. You may, however, visit our site anonymously.
-
-      Like many websites, we use cookies to enhance your experience and gather information about visitors and visits to our websites. Please refer to the do we use cookies section below for information about cookies and how we use them.`
+            title: "Updates to This Policy",
+            icon: (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+            ),
+            content: "We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date. We encourage you to review this policy periodically."
         },
         {
-            title: "WE MAY PROCESS THE FOLLOWING CATEGORIES OF PERSONAL DATA ABOUT YOU",
-            content: (
-                <ul className="list-disc pl-6 space-y-4">
-                    <li><strong>Communication Data</strong>  that includes any communication that you send to us whether that be through the contact form on our website, through email, text, social media messaging, social media posting or any other communication that you send us. We process this data for the purposes of communicating with you, for record keeping and for the establishment, pursuance or defense of legal claims. Our lawful ground for this processing is our legitimate interests which in this case are to reply to communications sent to us, to keep records and to establish, pursue or defend legal claims.</li>
-                    <li><strong>Customer Data</strong> that includes data relating to any purchases of goods and/or services such as your name, title, billing address, delivery address email address, phone number, contact details, purchase details and your card details. We process this data to supply the goods and/or services you have purchased and to keep records of such transactions. Our lawful ground for this processing is the performance of a contract between you and us and/or taking steps at your request to enter into such a contract.</li>
-                    <li><strong>User Data</strong>that includes data about how you use our website and any online services together with any data that you post for publication on our website or through other online services. We process this data to operate our website and ensure relevant content is provided to you, to ensure the security of our website, to maintain back- ups of our website and/or databases and to enable publication and administration of our website, other online services and business. Our lawful ground for this processing is our legitimate interests which in this case are to enable us to properly administer our website and our business.</li>
-                    <li><strong>Technical Data</strong>that includes data about your use of our website and online services such as your IP address, your login data, details about your browser, length of visit to pages on our website, page views and navigation paths, details about the number of times you use our website, time zone settings and other technology on the devices you use to access our website. The source of this data is from our analytics tracking system. We process this data to analyse your use of our website and other online services, to administer and protect our business and website, to deliver relevant website content and advertisements to you and to understand the effectiveness of our advertising. Our lawful ground for this processing is our legitimate interests which in this case are to enable us to properly administer our website and our business and to grow our business and to decide our marketing strategy.</li>
-                    <li><strong>Marketing Data</strong> that includes data about your preferences in receiving marketing from us and our third parties and your communication preferences. We process this data to enable you to partake in our promotions such as sales offers, affiliate offers, free contests with give-aways, to deliver relevant website content and advertisements to you and measure or understand the effectiveness of this advertising. Our lawful ground for this processing is our legitimate interests which in this case are to study how customers use our products/services, to develop them, to grow our business and to decide our marketing strategy.</li>
-                    <li>We may use Customer Data, User Data, Technical Data and Marketing Data to deliver relevant website content and advertisements to you (including Facebook adverts or other display advertisements) and to measure or understand the effectiveness of the advertising we serve you. Our lawful ground for this processing is legitimate interests which is to grow our business. We may also use such data to send other marketing communications to you. Our lawful ground for this processing is either consent or legitimate interests (namely to grow our business)</li>
-                </ul>
-            )
-        },
-        {
-            title: "SENSITIVE DATA",
-            content: `We do not collect any Sensitive Data about you. Sensitive data refers to data that includes details about your race or ethnicity, religious or philosophical beliefs, sex life, sexual orientation, political opinions, trade union membership, information about your health and genetic and biometric data. We do not collect any information about criminal convictions and offenses.`
-        },
-        {
-            title: "MARKETING COMMUNICATIONS",
-            content: `Our lawful ground of processing your personal data to send you marketing communications is either your consent or our legitimate interests (namely to grow our business).
-
-      Under the Privacy and Electronic Communications Regulations, we may send you marketing communications from us if (i) you made a purchase or asked for information from us about our goods or services or (ii) you agreed to receive marketing communications and in each case you have not opted out of receiving such communications since. Under these regulations, if you are a limited company, we may send you marketing emails without your consent. However you can still opt out of receiving marketing emails from us at any time.
-
-      You can ask us or third parties to stop sending you marketing messages at any time simply by unsubscribing from emails via the unsubscribe button which can be found at the bottom of each email or by sending an email with your request to stop receiving emails.
-
-      If you opt out of receiving marketing communications this opt-out does not apply to personal data provided as a result of other transactions, such as purchases, warranty registrations etc.`
-        },
-        {
-            title: "DISCLOSURE OF YOUR PERSONAL DATA",
-            content: <div><p>We may have to share your personal data with the parties set out below:</p>
-
-                <ul className="list-disc pl-6 space-y-4 py-6" >
-                    <li>Service providers who provide IT and system administration services.</li>
-                    <li> Professional advisers including lawyers, bankers, auditors and insurers.</li>
-                    <li>Government bodies that require us to report processing activities.</li>
-                    <li>Third party technology platforms and advertisers that support the running and growth of Mind Matters Center.</li>
-                </ul >
-
-                <p>We require all third parties to whom we transfer your data to respect the security of your personal data and to treat it in accordance with the law. We only allow such third parties to process your personal data for specified purposes and in accordance with our instructions.</p>
-            </div>
-        },
-        {
-            title: "HOW DO WE USE YOUR INFORMATION?",
-            content: <div><p>We may use the information we collect from you when you register, purchase products, respond to a survey or marketing communication, surf the website, or use certain other site features in the following ways:</p>
-                <ul className="list-disc pl-6 space-y-4 py-6" >
-                    <li>To personalize your site experience and to allow us to deliver the type of content and product offerings in which you are most interested.</li>
-                    <li>To allow us to better service you in responding to your customer service requests.</li>
-                    <li>To quickly process your transactions.</li>
-                    <li> To administer a survey or other site feature.</li>
-                    <li> If you have opted-in to receive our email newsletter, we will send you educational and marketing emails.</li>
-                    <li> If you would no longer like to receive promotional email from us, please refer to the "How can you opt-out, remove or modify information you have provided to us?" section.</li>
-                    <li> If you have not opted-in to receive email newsletters, you will not receive these emails.</li>
-                </ul>
-                <p>Visitors who register or participate in other site features such as marketing programs will be given a choice whether they would like to be on our email list and receive e-mail communications from us.
-                </p></div>
-        },
-        {
-            title: "DATA SECURITY",
-            content: "We have put in place security measures to prevent your personal data from being accidentally lost, used, altered, disclosed, or accessed without authorization. We also allow access to your personal data only to those employees and partners who have a business need to know such data. They will only process your personal data on our instructions and they must keep it confidential. We have procedures in place to deal with any suspected personal data breach and will notify you and any applicable regulator of a breach if we are legally required to."
-        },
-        {
-            title: "DATA RETENTION",
-            content: `We will only retain your personal data for as long as necessary to fulfill the purposes we collected it for, including for the purposes of satisfying any legal, accounting, or reporting requirements. When deciding what the correct time is to keep the data for we look at its amount, nature and sensitivity, potential risk of harm from unauthorized use or disclosure, the processing purposes, if these can be achieved by other means and legal requirements.
-
-      For tax purposes the law requires us to keep basic information about our customers (including Contact, Identity, Financial and Transaction Data) for seven years after they stop being customers. In some circumstances we may anonymize your personal data for research or statistical purposes in which case we may use this information indefinitely without further notice to you.`
-        },
-        {
-            title: "COOKIES",
-            content: "As you browse Mind Matters Center website, advertising cookies will be placed on your computer so that we can understand what you are interested in. Cookies are files with a small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and stored on your computer’s hard drive. To opt out of cookies, find and select the settings tab of your internet browser and click “block third party cookies and site data” or de-select the “accept cookies” box."
-        },
-        {
-            title: "HOW DO WE PROTECT VISITOR INFORMATION?",
-            content: "We implement a variety of security measures to maintain the safety of your personal information. Your personal information is contained behind secured networks and is only accessible by a limited number of persons who have special access rights to such systems, and are required to keep the information confidential. When you place orders or access your personal information, we offer the use of a secure server. All sensitive/credit information you supply is transmitted via Secure Socket Layer (SSL) technology and then encrypted into our databases to be only accessed as stated above."
-        },
-        {
-            title: "DO WE DISCLOSE THE INFORMATION WE COLLECT TO OUTSIDE PARTIES?",
-            content: "We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information unless we provide you with advance notice, except as described below. It does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others’ rights, property, or safety. However, non-personally identifiable visitor information may be provided to other parties for marketing, advertising, or other uses."
-        },
-        {
-            title: "HOW CAN YOU OPT-OUT, REMOVE OR MODIFY INFORMATION YOU HAVE PROVIDED TO US?",
-            content: "To modify your email subscriptions, you can find an unsubscribe link at the bottom of each email. Please note that due to email production schedules you may receive any emails already in production. Please note that we may maintain information about an individual sales transaction in order to service that transaction and for record keeping."
-        },
-        {
-            title: "THIRD PARTY LINKS",
-            content: "In an attempt to provide you with increased value, we may include third party links on our site. These linked sites have separate and independent privacy policies. We, therefore, have no responsibility or liability for the content and activities of these linked sites. Nonetheless, we seek to protect the integrity of our site and welcome any feedback about these linked sites (including if a specific link does not work)."
-        },
-        {
-            title: "YOUR ACCESS TO AND CONTROL OVER INFORMATION",
-            content: <div><p>You may opt out of any future contacts from us at any time. You can do the following at any time by contacting us via the email address or phone number given on our website:</p>
-                <ul className="list-disc pl-6 space-y-4 py-6" >
-                    <li> See what data we have about you, if any</li>
-                    <li> Change/correct any data we have about you.</li>
-                    <li> Have us delete any data we have about you.</li>
-                    <li> Express any concern you have about our use of your data.</li>
-                </ul></div>
-        },
-        {
-            title: "CHANGES TO OUR POLICY",
-            content: "If we decide to change our privacy policy, we will post those changes on this page. Policy changes will apply only to information collected after the date of the change. Last updated: February 04, 2025"
-        },
-        {
-            title: "ONLINE PRIVACY POLICY",
-            content: "This privacy policy refers only to information collected through our websites, and does not apply to information collected in person at events, coaching calls or social media."
-        },
-        {
-            title: "YOUR CONSENT",
-            content: "In using our site, you agree to our privacy policy."
-        },
-        {
-            title: "QUESTIONS AND FEEDBACK",
-            content: "We welcome your questions, comments, and concerns about privacy. Please send us any and all feedback pertaining to privacy, or any other issue via email at: contact@mindmatterscenter.com"
+            title: "Contact Us",
+            icon: (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M16 12c0 2.5-2.5 4-4 4s-4-1.5-4-4"
+                    />
+                </svg>
+            ),
+            content: <span>If you have any questions or concerns about this Privacy Policy, please contact us at: <strong className="text-brand-sage">info@mindmatterscenter.com</strong></span>,
         }
     ];
 
-
     return (
-        <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-primary">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20">
-                {/* Header */}
-                <div className="text-center mb-8 sm:mb-12">
-                    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary mb-8 sm:mb-10">
-                        Privacy Policy
-                    </h1>
-                    <p className="text-brand-text-primary mb-6">
-                        Welcome to Mind Matters Center. This Privacy Policy explains how our website operates and what happens when you visit or use our services.
-                    </p>
-                </div>
 
-                {/* Privacy Policy Accordion */}
-                <div className="space-y-3 sm:space-y-4">
-                    {privacyContent.map((section, index) => (
-                        <AnimatedFAQItem
-                            key={index}
-                            question={section.title}
-                            answer={section.content}
-                            isOpen={openIndex === index}
-                            onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                            index={index}
-                            useFade={false}
-                        />
-                    ))}
+        <div className="min-h-screen pt-20 sm:pt-24 md:pt-32 bg-brand-background-secondary">
+            {/* Hero Section */}
+            <section className="mb-12 sm:mb-16 md:mb-20">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center max-w-4xl mx-auto">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary mb-6 sm:mb-8">
+                            Privacy Policy
+                        </h1>
+                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary/80 mb-8 sm:mb-12">
+                            Effective Date: Feb 7th, 2025
+                        </p>
+                        <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
+                            <strong className="text-brand-text-primary">Mind Matters Center</strong> ("we," "us," or "our") is committed to protecting your privacy.
+                            This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website and engage with our services. By using our website, you agree to the terms outlined below.
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </section>
+
+            {/* Main Content with refined spacing */}
+            <section className="py-16 sm:py-20 md:py-24 bg-brand-background-primary">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid gap-8 sm:gap-10 md:gap-12">
+                        {sections.map((section, index) => (
+                            <FadeInSection key={index} delay={index * 100}>
+                                <div className="bg-white rounded-2xl shadow-sm p-6 sm:p-8 md:p-10 border border-brand-gray-warm hover:shadow-md transition-shadow duration-300">
+                                    <div className="flex items-start gap-5 mb-8">
+                                        <div className="p-3 bg-brand-sage/10 rounded-xl text-brand-sage">
+                                            {section.icon}
+                                        </div>
+                                        <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary">
+                                            {section.title}
+                                        </h2>
+                                    </div>
+
+                                    {section.content && (
+                                        <p className="text-base sm:text-lg text-brand-text-primary mb-8 leading-relaxed">
+                                            {section.content}
+                                        </p>
+                                    )}
+
+                                    {section.subsections && (
+                                        <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                                            {section.subsections.map((subsection, idx) => (
+                                                <div
+                                                    key={idx}
+                                                    className="bg-brand-background-secondary rounded-xl p-6 hover:shadow-md transition-shadow duration-300"
+                                                >
+                                                    <h3 className="text-lg font-semibold text-brand-sage mb-3">
+                                                        {subsection.title}
+                                                    </h3>
+                                                    <p className="text-base text-brand-text-primary leading-relaxed">
+                                                        {subsection.content}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+
+                                    {section.listItems && (
+                                        <ul className="space-y-4">
+                                            {section.listItems.map((item, idx) => (
+                                                <li key={idx} className="flex items-start gap-4">
+                                                    <svg
+                                                        className="w-5 h-5 text-brand-sage flex-shrink-0 mt-1"
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                    >
+                                                        <path
+                                                            strokeLinecap="round"
+                                                            strokeLinejoin="round"
+                                                            strokeWidth={2}
+                                                            d="M5 13l4 4L19 7"
+                                                        />
+                                                    </svg>
+                                                    <span className="text-base sm:text-lg text-brand-text-primary leading-relaxed">
+                                                        {item}
+                                                    </span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                    {section.content2 && (
+                                        <p className="text-base sm:text-lg text-brand-text-primary my-8 leading-relaxed">
+                                            {section.content2}
+                                        </p>
+                                    )}
+                                </div>
+                            </FadeInSection>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/*  Acknowledgment section */}
+            <section className="bg-brand-background-secondary py-8 sm:py-10">
+                <FadeInSection direction="up" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+                    <div className="max-w-3xl mx-auto text-center mb-12">
+                        <h2 className="font-heading text-lg sm:text-xl md:text-2xl font-semibold text-brand-text-primary">
+                            By using our services, you acknowledge that you have read and understood this Privacy Policy.
+                        </h2>
+                    </div>
+                </FadeInSection>
+            </section>
         </div>
     );
 };
