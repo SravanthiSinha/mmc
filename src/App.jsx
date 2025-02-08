@@ -12,6 +12,7 @@ import RelationshipCounseling from './pages/Relationship-Counselling';
 import FamilyCulturalDynamics from './pages/Family-Culture-Dynamic';
 import StressBurnout from './pages/Stress-BurnOut';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import OurTeam from './pages/OurTeam';
 import NotFound from './pages/NotFound';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/our-team" element={<OurTeam />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/specialties" element={<Specialties />} />

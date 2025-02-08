@@ -48,7 +48,11 @@ const Navbar = () => {
         { path: '/stress-burnout', label: 'Stress & burnout' }
       ]
     },
-    { path: '/about', label: 'About us' },
+    {
+      path: '/about', label: 'About us', dropdownItems: [
+        { path: '/our-team', label: 'Our Team' }
+      ]
+    },
     { path: '/faq', label: 'FAQ' },
     { path: '/resources', label: 'Resources' },
     {
