@@ -76,11 +76,11 @@ const OurTeam = () => {
                                             <ul className="space-y-3 text-brand-text-primary/90">
                                                 <li className="flex items-start gap-2">
                                                     <span className="text-brand-sage">•</span>
-                                                    <span>Social Work (MSW) and Gerontology (MSG) from University of Southern California</span>
+                                                    <span>Dual master’s degrees in Social Work (MSW) and Gerontology (MSG) from University of Southern California</span>
                                                 </li>
                                                 <li className="flex items-start gap-2">
                                                     <span className="text-brand-sage">•</span>
-                                                    <span>Currently pursuing DSW at University of Pennsylvania</span>
+                                                    <span>Currently pursuing a Doctorate in Social Work (DSW) at University of Pennsylvania</span>
                                                 </li>
                                                 <li className="flex items-start gap-2">
                                                     <span className="text-brand-sage">•</span>
