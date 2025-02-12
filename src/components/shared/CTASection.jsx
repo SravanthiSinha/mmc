@@ -14,23 +14,26 @@ const CTASection = () => {
 
                     <p className="text-lg sm:text-xl text-brand-text-primary mb-8">
                         You don't have to navigate these challenges alone.{' '}
-                        <span className="font-semibold">Book a free 20-minute consultation</span>{' '}
+                        <span>Book a free 20-minute consultation</span>{' '}
                         to see how therapy can help you move forward.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+                    <div className="flex flex-col items-center gap-3 mb-10">
                         <Link
                             to="/book-consultation"
-                            className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-brand-coral text-white 
-                                text-base sm:text-lg font-semibold rounded-full hover:bg-brand-coralLight 
-                                transition-all duration-300 hover:transform hover:scale-105 active:scale-95"
+                            className="inline-block bg-brand-coral text-white text-base sm:text-lg md:text-xl font-bold 
+                                px-8 py-3 rounded-full hover:bg-brand-coralLight transition-all duration-200
+                                hover:transform hover:scale-105 active:scale-95"
                         >
                             Book a consultation
                         </Link>
+                        <span className="text-sm sm:text-base text-brand-text-primary/80">
+                            Free 20 Minute Consultation
+                        </span>
                     </div>
 
-                    <div className="text-brand-text-primary">
-                        <p className="text-lg font-semibold mb-2">Have Questions?</p>
+                    <div className="text-brand-text-primary pt-6">
+                        <p className="font-semibold mb-2">Have Questions?</p>
                         <div className="space-y-2">
                             <p>
                                 Call us at{' '}

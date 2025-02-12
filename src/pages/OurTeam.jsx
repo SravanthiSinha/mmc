@@ -49,14 +49,19 @@ const OurTeam = () => {
 
                                 {/* Consultation Button */}
                                 <div className="text-center py-6">
-                                    <Link
-                                        to="/book-consultation"
-                                        className="inline-block bg-brand-coral text-white text-base font-bold 
-                    px-6 py-3 rounded-full hover:bg-brand-coralLight transition-all duration-200
-                    hover:transform hover:scale-105 active:scale-95"
-                                    >
-                                        Book a consultation
-                                    </Link>
+                                    <div className="flex flex-col items-center gap-2">
+                                        <Link
+                                            to="/book-consultation"
+                                            className="inline-block bg-brand-coral text-white text-base sm:text-lg md:text-xl font-bold 
+                px-6 py-3 rounded-full hover:bg-brand-coralLight transition-all duration-200
+                hover:transform hover:scale-105 active:scale-95"
+                                        >
+                                            Book a consultation
+                                        </Link>
+                                        <span className="text-sm sm:text-base text-brand-text-primary/80">
+                                            Free 20 Minute Consultation
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
 
