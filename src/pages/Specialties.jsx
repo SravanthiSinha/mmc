@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Anxiety_Depression from '../assets/images/anxiety-depression.jpg';
 import Stress_Burnout from '../assets/images/stress-burnout.jpg';
 import Relationship_Counseling from '../assets/images/relationship-counseling.jpg';
 import Cultural_Family from '../assets/images/cultural-family.jpg';
 import Trauma_Support from '../assets/images/trauma-support.jpg';
 import { FadeInSection, SpecialtyCard } from '../components/shared/Animations';
+import CTASection from '../components/shared/CTASection';
 
 
 const Specialties = () => {
@@ -95,17 +95,10 @@ const Specialties = () => {
                             </p>
                         </div>
 
-                        <Link
-                            to="/book-consultation"
-                            className="inline-block mt-8 sm:mt-12 px-6 sm:px-8 py-3 sm:py-4 bg-brand-coral text-white 
-                            text-lg sm:text-xl font-semibold rounded-full hover:bg-brand-coralLight 
-                            transition-all duration-300 hover:transform hover:scale-105 active:scale-95"
-                        >
-                            Book a consultation
-                        </Link>
                     </div>
                 </FadeInSection>
             </section>
+            <CTASection/>
         </div>
 
     );

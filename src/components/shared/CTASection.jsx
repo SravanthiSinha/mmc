@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FadeInSection } from '../shared/Animations';
+import { CONTACT_INFO } from '../../constants';
 
 const CTASection = () => {
     return (
@@ -30,13 +31,28 @@ const CTASection = () => {
 
                     <div className="text-brand-text-primary">
                         <p className="text-lg font-semibold mb-2">Have Questions?</p>
-                        Email us at {' '}
-                        <a
-                            href="mailto:info@mindmatterscenter.com"
-                            className="text-brand-coral hover:text-brand-sage transition-colors duration-300"
-                        >
-                            info@mindmatterscenter.com
-                        </a>
+                        <div className="space-y-2">
+                            <p>
+                                Call us at{' '}
+                                <a
+                                    href="tel:+14153790835"
+                                    className="text-brand-coral hover:text-brand-sage transition-colors duration-300"
+                                    aria-label="Call our office"
+                                >
+                                    {CONTACT_INFO.phone}
+                                </a>
+                            </p>
+                            <p>
+                                Email us at{' '}
+                                <a
+                                    href={`mailto:${CONTACT_INFO.email}`}
+                                    className="text-brand-coral hover:text-brand-sage transition-colors duration-300"
+                                    aria-label="Email us"
+                                >
+                                    {CONTACT_INFO.email}
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
+import {CONTACT_INFO} from '../constants';
 
 const PrivacyPolicy = () => {
     const sections = [
@@ -78,7 +79,7 @@ const PrivacyPolicy = () => {
                 "Withdraw consent for specific uses of your data",
                 "Opt-out of non-essential communications",
             ],
-            content2: <span>To exercise your rights, contact us at <strong className="text-brand-sage">info@mindmatterscenter.com</strong></span>
+            content2: <span>To exercise your rights, contact us at <strong className="text-brand-sage">{CONTACT_INFO.email}</strong></span>
         },
         {
             title: "Cookies and Tracking",
@@ -131,7 +132,7 @@ const PrivacyPolicy = () => {
                     />
                 </svg>
             ),
-            content: <span>If you have any questions or concerns about this Privacy Policy, please contact us at: <strong className="text-brand-sage">info@mindmatterscenter.com</strong></span>,
+            content: <span>If you have any questions or concerns about this Privacy Policy, please contact us at: <strong className="text-brand-sage">{CONTACT_INFO.email}</strong></span>,
         }
     ];
 
