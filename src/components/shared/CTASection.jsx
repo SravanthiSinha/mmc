@@ -32,10 +32,10 @@ const CTASection = () => {
                         <p className="text-lg font-semibold mb-2">Have Questions?</p>
                         Email us at {' '}
                         <a
-                            href="mailto:contact@mindmatterscenter.com"
+                            href="mailto:info@mindmatterscenter.com"
                             className="text-brand-coral hover:text-brand-sage transition-colors duration-300"
                         >
-                            contact@mindmatterscenter.com
+                            info@mindmatterscenter.com
                         </a>
                     </div>
                 </div>
