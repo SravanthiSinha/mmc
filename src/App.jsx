@@ -14,6 +14,7 @@ import StressBurnout from './pages/Stress-BurnOut';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import OurTeam from './pages/OurTeam';
 import NotFound from './pages/NotFound';
+import JoinOurTeam from './pages/JoinOurTeam';
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/our-team" element={<OurTeam />} />
+          <Route path="/join-our-team" element={<JoinOurTeam />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/specialties" element={<Specialties />} />

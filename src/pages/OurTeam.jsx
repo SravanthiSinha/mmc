@@ -11,7 +11,7 @@ const OurTeam = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto">
                         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary mb-6 sm:mb-8">
-                            Meet Our Team
+                            Meet our team
                         </h1>
                         <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
                             Dedicated professionals committed to providing culturally sensitive and

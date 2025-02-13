@@ -50,7 +50,8 @@ const Navbar = () => {
     },
     {
       path: '/about', label: 'About us', dropdownItems: [
-        { path: '/our-team', label: 'Our Team' }
+        { path: '/our-team', label: 'Our team' },
+        { path: '/join-our-team', label: 'Join our team' }
       ]
     },
     { path: '/faq', label: 'FAQ' },
@@ -122,7 +123,7 @@ const Navbar = () => {
                 {/* Desktop Dropdown */}
                 {link.dropdownItems && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 z-50 
-                    opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     {link.dropdownItems.map((item) => (
                       <Link
                         key={item.path}
