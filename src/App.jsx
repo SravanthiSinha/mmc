@@ -15,6 +15,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import OurTeam from './pages/OurTeam';
 import NotFound from './pages/NotFound';
 import JoinOurTeam from './pages/JoinOurTeam';
+import ChineseServices from './pages/ChineseServices';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/relationship-counseling" element={<RelationshipCounseling />} />
           <Route path="/family-cultural-dynamic" element={<FamilyCulturalDynamics />} />
           <Route path="/stress-burnout" element={<StressBurnout />} />
+          <Route path="/services" element={<ChineseServices />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

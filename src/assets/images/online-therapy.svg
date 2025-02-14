@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- Background Circle -->
+  <circle cx="120" cy="120" r="100" fill="#F7F9FB"/>
+  
+  <!-- Screen/Window Frame -->
+  <rect x="70" y="60" width="100" height="80" rx="4" fill="#97B0AA"/>
+  
+  <!-- Screen Content -->
+  <rect x="75" y="65" width="90" height="70" rx="2" fill="#FFFFFF"/>
+  
+  <!-- Person Icon (therapist) -->
+  <circle cx="105" cy="90" r="12" fill="#4A5568"/>
+  <rect x="93" y="105" width="24" height="20" rx="2" fill="#4A5568"/>
+  
+  <!-- Person Icon (client) -->
+  <circle cx="135" cy="90" r="12" fill="#4A5568"/>
+  <rect x="123" y="105" width="24" height="20" rx="2" fill="#4A5568"/>
+  
+  <!-- Connection Lines -->
+  <path d="M85 140 Q120 155 155 140" stroke="#97B0AA" fill="none" strokeWidth="3"/>
+  
+  <!-- WiFi Curves -->
+  <path d="M95 155 Q120 170 145 155" stroke="#97B0AA" fill="none" strokeWidth="3"/>
+  <path d="M105 165 Q120 180 135 165" stroke="#97B0AA" fill="none" strokeWidth="3"/>
+</svg>

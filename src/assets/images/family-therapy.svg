@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+  <!-- Background Circle -->
+  <circle cx="120" cy="120" r="100" fill="#F7F9FB"/>
+  
+  <!-- Table/Surface -->
+  <path d="M70 140 L170 140 L180 160 L60 160 Z" fill="#97B0AA"/>
+  
+  <!-- Adult Figure 1 (parent) -->
+  <circle cx="90" cy="100" r="12" fill="#4A5568"/>
+  <rect x="78" y="115" width="24" height="20" rx="2" fill="#4A5568"/>
+  
+  <!-- Adult Figure 2 (parent) -->
+  <circle cx="150" cy="100" r="12" fill="#4A5568"/>
+  <rect x="138" y="115" width="24" height="20" rx="2" fill="#4A5568"/>
+  
+  <!-- Child Figure (smaller) -->
+  <circle cx="120" cy="110" r="8" fill="#4A5568"/>
+  <rect x="114" y="120" width="12" height="15" rx="2" fill="#4A5568"/>
+  
+  <!-- Connection Lines (representing relationships) -->
+  <path d="M95 105 Q120 90 145 105" stroke="#97B0AA" fill="none" strokeWidth="2"/>
+  <path d="M100 110 L115 115" stroke="#97B0AA" fill="none" strokeWidth="2"/>
+  <path d="M140 110 L125 115" stroke="#97B0AA" fill="none" strokeWidth="2"/>
+  
+  <!-- Cultural Symbol (abstract bridge) -->
+  <path d="M75 80 Q120 70 165 80" stroke="#97B0AA" fill="none" strokeWidth="3"/>
+</svg>
