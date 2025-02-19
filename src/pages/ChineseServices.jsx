@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FadeInSection, HoverCard } from '../components/shared/Animations';
 import AboutUsImg from '../assets/images/aboutus.jpg';
+import { BOOKING_URL } from '../constants';
 
 // Import SVGs
 import IndividualTherapy from '../assets/images/individual-therapy.svg';
@@ -165,7 +166,7 @@ const ChineseServices = () => {
             </p>
             <div className="flex flex-col items-center gap-2">
               <Link
-                to="/book-consultation"
+                to={BOOKING_URL} target="_blank"
                 className="inline-block bg-brand-coral text-white text-base sm:text-lg md:text-xl font-bold 
                 px-6 py-3 rounded-full hover:bg-brand-coralLight transition-all duration-200
                 hover:transform hover:scale-105 active:scale-95"

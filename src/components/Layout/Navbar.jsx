@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Logo from '../../assets/images/favicon.svg';
+import { BOOKING_URL, CLIENT_PORTAL_URL } from '../../constants';
 
 const Navbar = () => {
   const location = useLocation();
@@ -58,7 +59,7 @@ const Navbar = () => {
     { path: '/faq', label: 'FAQ' },
     { path: '/resources', label: 'Resources' },
     {
-      path: 'https://your-client-portal-url.com',
+      path: CLIENT_PORTAL_URL,
       label: 'Client Portal',
       isExternal: true
     }
@@ -113,6 +114,7 @@ const Navbar = () => {
                 {/* Main Link */}
                 <Link
                   to={link.path}
+                  target={link.isExternal ? '_blank' : '_self'}
                   className={`px-2 py-2 rounded-full transition-all duration-200 text-lg
                     ${(isPathActive(link.path) || isDropdownActive(link.dropdownItems)) ? 'font-semibold' : ''}
                     ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}
@@ -141,7 +143,7 @@ const Navbar = () => {
             ))}
 
             <Link
-              to="/book-consultation"
+              to={BOOKING_URL} target="_blank"
               className="bg-brand-coral text-white text-base xl:text-lg font-bold 
                 px-4 py-2 rounded-full hover:bg-brand-coralLight transition-colors duration-200
                 whitespace-nowrap"
@@ -160,6 +162,7 @@ const Navbar = () => {
                   {/* Main Link */}
                   <Link
                     to={link.path}
+                    target={link.isExternal ? '_blank' : '_self'}
                     className={`block px-4 py-2 text-base rounded-lg transition-colors duration-200 text-brand-text-primary
                       hover:bg-gray-300
                       ${(isPathActive(link.path) || isDropdownActive(link.dropdownItems)) ? 'font-semibold bg-gray-150' : ''}`}
@@ -189,7 +192,7 @@ const Navbar = () => {
 
               <div className="pt-4">
                 <Link
-                  to="/book-consultation"
+                  to={BOOKING_URL} target="_blank"
                   onClick={() => setIsMenuOpen(false)}
                   className="block bg-brand-coral text-white text-xl font-bold px-4 py-3 
                     rounded-full text-center hover:bg-brand-coralLight transition-colors duration-200"

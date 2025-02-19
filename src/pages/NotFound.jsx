@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-
 import { FadeInSection, AnimatedIcon } from '../components/shared/Animations';
-
+import { BOOKING_URL } from '../constants';
 
 const NotFound = () => {
   return (
@@ -46,7 +45,7 @@ const NotFound = () => {
                 Return Home
               </Link>
               <Link
-                to="/book-consultation"
+                to={BOOKING_URL} target="_blank"
                 className="inline-flex items-center justify-center px-6 py-3 bg-brand-coral text-white 
                   rounded-full hover:bg-brand-coralLight transition-all duration-200
                   hover:transform hover:scale-105 active:scale-95 text-base sm:text-lg font-semibold"
