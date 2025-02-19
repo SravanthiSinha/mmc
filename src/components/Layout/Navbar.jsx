@@ -144,11 +144,11 @@ const Navbar = () => {
 
             <Link
               to={BOOKING_URL} target="_blank"
-              className="bg-brand-coral text-white text-base xl:text-lg font-bold 
+              className="bg-brand-coral text-white text-lg font-bold 
                 px-4 py-2 rounded-full hover:bg-brand-coralLight transition-colors duration-200
                 whitespace-nowrap"
             >
-              Book a consultation
+              Book Now
             </Link>
           </div>
         </div>
@@ -197,7 +197,7 @@ const Navbar = () => {
                   className="block bg-brand-coral text-white text-xl font-bold px-4 py-3 
                     rounded-full text-center hover:bg-brand-coralLight transition-colors duration-200"
                 >
-                  Book a consultation
+                  Book Now
                 </Link>
               </div>
             </div>

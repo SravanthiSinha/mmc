@@ -41,10 +41,10 @@ const Home = () => {
               <div className="flex flex-col items-start gap-2">
                 <Link
                   to={BOOKING_URL} target="_blank"
-                  className="inline-block bg-brand-coral text-white text-lg sm:text-xl md:text-2xl font-bold px-6 py-3 rounded-full
+                  className="inline-block bg-brand-coral text-white text-xl font-bold px-6 py-3 rounded-full
                     hover:bg-brand-coralLight transition-colors duration-200"
                 >
-                  Book a consultation
+                  Book Now
                 </Link>
                 <span className="text-brand-text-secondary text-sm sm:text-base md:text-lg mt-2">
                   *We also offer a free 20-minute initial consultation
@@ -192,7 +192,7 @@ const Home = () => {
                 px-6 py-3 rounded-full hover:bg-brand-coralLight transition-all duration-200
                 hover:transform hover:scale-105 active:scale-95"
                   >
-                    Book a consultation
+                    Book Now
                   </Link>
                   <span className="text-sm sm:text-base text-brand-text-primary/80">
                     Free 20 Minute Consultation

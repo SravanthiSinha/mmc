@@ -48,9 +48,9 @@ const NotFound = () => {
                 to={BOOKING_URL} target="_blank"
                 className="inline-flex items-center justify-center px-6 py-3 bg-brand-coral text-white 
                   rounded-full hover:bg-brand-coralLight transition-all duration-200
-                  hover:transform hover:scale-105 active:scale-95 text-base sm:text-lg font-semibold"
+                  hover:transform hover:scale-105 active:scale-95 text-xl font-semibold"
               >
-                Book a consultation
+                Book Now
               </Link>
             </div>
 
