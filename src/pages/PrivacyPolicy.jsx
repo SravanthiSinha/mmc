@@ -1,6 +1,6 @@
 import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
-import {CONTACT_INFO} from '../constants';
+import { CONTACT_INFO } from '../constants';
 
 const PrivacyPolicy = () => {
     const sections = [
@@ -164,7 +164,7 @@ const PrivacyPolicy = () => {
                         {sections.map((section, index) => (
                             <FadeInSection key={index} delay={index * 100}>
                                 <div className="bg-white rounded-2xl shadow-sm p-6 sm:p-8 md:p-10 border border-brand-gray-warm hover:shadow-md transition-shadow duration-300">
-                                    <div className="flex items-start gap-5 mb-8">
+                                    <div className="flex items-center gap-5 mb-8">
                                         <div className="p-3 bg-brand-sage/10 rounded-xl text-brand-sage">
                                             {section.icon}
                                         </div>
@@ -200,7 +200,7 @@ const PrivacyPolicy = () => {
                                     {section.listItems && (
                                         <ul className="space-y-4">
                                             {section.listItems.map((item, idx) => (
-                                                <li key={idx} className="flex items-start gap-4">
+                                                <li key={idx} className="flex items-center gap-4">
                                                     <svg
                                                         className="w-5 h-5 text-brand-sage flex-shrink-0 mt-1"
                                                         fill="none"
