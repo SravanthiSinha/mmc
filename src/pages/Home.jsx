@@ -97,14 +97,14 @@ const Home = () => {
                 Dedicated professionals committed to providing culturally responsive mental health care
               </p>
             </div>
-            
+
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               {/* Featured Therapist */}
               <div className="md:w-1/2 lg:w-2/5">
                 <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                  <img 
-                    src={ZengImg} 
-                    alt="Yajun (Stella) Zeng, LCSW" 
+                  <img
+                    src={ZengImg}
+                    alt="Yajun (Stella) Zeng, LCSW"
                     className="w-full aspect-square md:aspect-auto md:h-[450px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -118,7 +118,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              
+
               {/* Team Description */}
               <div className="md:w-1/2 lg:w-3/5">
                 <blockquote className="italic text-lg md:text-xl text-brand-text-primary border-l-4 border-brand-sage pl-6 py-2 mb-6">
@@ -130,8 +130,8 @@ const Home = () => {
                 <p className="text-base md:text-lg text-brand-text-primary mb-8">
                   Our approach integrates evidence-based treatment with cultural sensitivity to help you find healing, balance, and empowerment in every aspect of your life.
                 </p>
-                <Link 
-                  to="/our-team" 
+                <Link
+                  to="/our-team"
                   className="inline-flex items-center text-base md:text-lg font-medium text-brand-sage hover:text-brand-coral transition-colors"
                 >
                   Meet our entire team
@@ -188,7 +188,7 @@ const Home = () => {
             <h2 className="text-xl md:text-3xl lg:text-5xl font-serif text-brand-text-primary mb-6 md:mb-8">
               Our services
             </h2>
-            
+
             {/* What We Offer Content */}
             <div className="max-w-4xl mx-auto mb-12 md:mb-16">
               <p className="text-base md:text-lg text-brand-text-primary mb-6">
@@ -201,11 +201,11 @@ const Home = () => {
                 compassionate environment. Whatever your path to wellness looks like, we're here to support you every step of the way.
               </p>
             </div>
-            
+
             <h3 className="text-lg md:text-2xl font-serif text-brand-text-primary mb-8 md:mb-10">
               Our therapeutic approaches
             </h3>
-            
+
             <div className="flex flex-wrap justify-center max-w-6xl mx-auto">
               {[
                 {
@@ -256,11 +256,11 @@ const Home = () => {
                 Click below to learn more about each area of focus.
               </p>
             </div>
-            
+
             <div className="flex flex-wrap justify-center">
               {specialties.map((specialty, index) => (
                 <FadeInSection key={index} delay={index * 100 + 200} className="w-full sm:w-1/2 lg:w-1/3 p-3">
-                  <Link 
+                  <Link
                     to={specialty.path}
                     className="block bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group h-full"
                   >
@@ -283,7 +283,7 @@ const Home = () => {
           </div>
         </FadeInSection>
       </section>
-      
+
       {/* Not Alone Section - Empathy and Support */}
       <section className="py-12 md:py-20 bg-brand-background-primary">
         <FadeInSection delay={100}>
@@ -314,7 +314,7 @@ const Home = () => {
                 Explore more ways we can support your mental health journey
               </p>
             </div>
-            
+
             <div className="flex flex-wrap justify-center max-w-5xl mx-auto">
               <div className="w-full sm:w-1/2 lg:w-1/3 p-3">
                 <Link to="/resources" className="block h-full">
@@ -335,7 +335,7 @@ const Home = () => {
                   </div>
                 </Link>
               </div>
-              
+
               <div className="w-full sm:w-1/2 lg:w-1/3 p-3">
                 <Link to="/faq" className="block h-full">
                   <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-6 flex flex-col items-center h-full border border-brand-gray-warm">
@@ -355,7 +355,7 @@ const Home = () => {
                   </div>
                 </Link>
               </div>
-              
+
               <div className="w-full sm:w-1/2 lg:w-1/3 p-3">
                 <Link to="/services" className="block h-full">
                   <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-6 flex flex-col items-center h-full border border-brand-gray-warm">
@@ -376,17 +376,30 @@ const Home = () => {
                 </Link>
               </div>
             </div>
-            
-            {/* Secondary Link */}
-            <div className="flex justify-center mt-8">
-              <Link 
-                to="/join-our-team" 
+
+            {/* Secondary Links */}
+            <div className="flex flex-col md:flex-row justify-center gap-4 mt-8">
+              <Link
+                to="/join-our-team"
                 className="flex items-center p-4 rounded-lg bg-white border border-brand-gray-warm hover:bg-brand-sage/10 transition-all duration-200 shadow-sm hover:shadow-md"
               >
                 <svg className="w-5 h-5 text-brand-sage mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
                 </svg>
                 <span className="font-medium text-brand-text-primary">Interested in joining our team?</span>
+                <svg className="w-4 h-4 ml-2 text-brand-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+
+              <Link
+                to="/contact"
+                className="flex items-center p-4 rounded-lg bg-white border border-brand-gray-warm hover:bg-brand-sage/10 transition-all duration-200 shadow-sm hover:shadow-md"
+              >
+                <svg className="w-5 h-5 text-brand-sage mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span className="font-medium text-brand-text-primary">Need to get in touch with us?</span>
                 <svg className="w-4 h-4 ml-2 text-brand-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>

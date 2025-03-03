@@ -16,6 +16,7 @@ import OurTeam from './pages/OurTeam';
 import NotFound from './pages/NotFound';
 import JoinOurTeam from './pages/JoinOurTeam';
 import ChineseServices from './pages/ChineseServices';
+import Contact from './pages/Contact';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/our-team" element={<OurTeam />} />
           <Route path="/join-our-team" element={<JoinOurTeam />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/specialties" element={<Specialties />} />

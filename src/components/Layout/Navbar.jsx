@@ -53,7 +53,8 @@ const Navbar = () => {
     {
       path: '/about', label: 'About us', dropdownItems: [
         { path: '/our-team', label: 'Our team' },
-        { path: '/join-our-team', label: 'Join our team' }
+        { path: '/contact', label: 'Contact us' },
+        { path: '/join-our-team', label: 'Join our team' },
       ]
     },
     { path: '/faq', label: 'FAQ' },
