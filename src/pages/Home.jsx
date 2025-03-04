@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import heroImage from '../assets/images/hero-background.jpg';
-import IndividualTherapy from '../assets/images/individual-therapy.svg';
-import CouplesTherapy from '../assets/images/couples-therapy.svg';
-import WellNessCoaching from '../assets/images/wellness-coaching.svg';
+import IndividualTherapyImg from '../assets/images/individual-therapy.svg';
+import CouplesTherapyImg from '../assets/images/couples-therapy.svg';
+import WellNessCoachingImg from '../assets/images/wellness-coaching.svg';
 import { FadeInSection, HoverCard } from '../components/shared/Animations';
 import { BOOKING_URL } from '../constants';
 import ZengImg from '../assets/images/profile_pics/zeng.jpg';
@@ -46,6 +46,42 @@ const Home = () => {
     }
   ];
 
+  const features = [
+    {
+      title: "TELEHEALTH",
+      description: "Virtual therapy sessions across CA.",
+      icon: (
+        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M6 21V19C6 17.9391 6.42143 16.9217 7.17157 16.1716C7.92172 15.4214 8.93913 15 10 15H14C15.0609 15 16.0783 15.4214 16.8284 16.1716C17.5786 16.9217 18 17.9391 18 19V21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M3 10V15M3 15H5M3 15V18M21 10V15M21 15H19M21 15V18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    },
+    {
+      title: "NO WAIT LIST",
+      description: "Convenient appointments available when it works for you!",
+      icon: (
+        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 8V12L15 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    },
+    {
+      title: "SERVING DIVERSE POPULATIONS",
+      description: "A safe and welcoming space for clients from all walks of life",
+      icon: (
+        <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )
+    }
+  ];
+
   return (
     <>
       {/* Hero Section */}
@@ -61,12 +97,12 @@ const Home = () => {
         {/* Content */}
         <div className="relative z-20 min-h-screen flex items-center">
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-48">
-            <div className="max-w-4xl mx-auto md:mx-0">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif text-brand-text-secondary mb-4 md:mb-6">
-                Empowering healing for AAPI, BIPOC
+            <div className="max-w-5xl mx-auto md:mx-0">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-secondary mb-4 md:mb-6">
+                Virtual therapy in California for Asian-American and BIPOC communities on their path to healing
               </h1>
               <p className="text-xl sm:text-2xl md:text-3xl text-brand-text-secondary/90 mb-6 md:mb-8">
-                Accessible, inclusive virtual therapy for diverse communities in California
+                Inclusive virtual therapy in California for diverse communities
               </p>
               <div className="flex flex-col items-start gap-2">
                 <Link
@@ -85,7 +121,89 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Team Introduction Section - Personal Connection First */}
+      {/* Features section */}
+      <section className="py-6 md:py-20 bg-brand-background-secondary text-brand-text-primary">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeInSection>
+            <h2 className="text-xl md:text-2xl text-center mb-12">
+              Psychological services for adults & teens in centennial and surrounding areas in California.
+            </h2>
+          </FadeInSection>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            {features.map((feature, index) => (
+              <FadeInSection key={index} delay={index * 100}>
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="bg-white/10 p-4 rounded-full mb-2 text-brand-sage">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-lg tracking-wide text-brand-sage">
+                    {feature.title}
+                  </h3>
+                  <div className="h-px w-12 bg-brand-sage/20 mx-auto"></div>
+                  <p className="text-base">
+                    {feature.description}
+                  </p>
+                </div>
+              </FadeInSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Are You Experiencing Section - Identify Pain Points */}
+      <section className="py-12 md:py-20 bg-brand-background-primary">
+        <FadeInSection delay={100}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
+              {/* Left Column */}
+              <div className="flex-1 flex flex-col space-y-6 md:space-y-8">
+                <h2 className="text-2xl md:text-3xl font-serif text-brand-text-primary">
+                  It's never too late to start the journey of healing
+                </h2>
+                <div className="flex flex-col space-y-4">
+                  {checklistItems.map((item, index) => (
+                    <div key={index} className="flex items-start space-x-3">
+                      <svg className="w-5 h-5 mt-1 text-brand-sage flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                      </svg>
+                      <span className="text-base md:text-lg text-brand-text-primary">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Column */}
+              <div className="flex-1 flex flex-col justify-center space-y-6 md:space-y-12 mt-8 lg:mt-0">
+                <p className="text-2xl md:text-3xl lg:text-4xl text-brand-text-primary font-semibold">
+                  We support asian americans and bipoc communities using culturally <span className="text-brand-coral">sensitive</span> therapy to meet you where you are
+                </p>
+                <p className="text-xl md:text-2xl lg:text-3xl text-brand-text-primary">
+                  At Mind Matters Center, we provide inclusive, compassionate care to help you find clarity, balance, and empowerment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </FadeInSection>
+      </section>
+
+      {/* Not Alone Section - Empathy and Support */}
+      <section className="py-12 md:py-20 bg-brand-background-secondary">
+        <FadeInSection delay={100}>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6 md:mb-8">
+                You are not alone – We're here to help you reclaim your life
+              </h2>
+              <p className="text-base md:text-xl text-brand-text-primary">
+                At Mind Matters Center, we're committed to walking alongside you on your journey toward healing and growth.
+                Our dedicated therapists in California provide the support and understanding you need to overcome obstacles and start living your life with confidence and peace.
+              </p>
+            </div>
+          </div>
+        </FadeInSection>
+      </section>
+
+      {/* Team Introduction Section */}
       <section className="py-12 md:py-20 bg-brand-background-primary">
         <FadeInSection delay={100}>
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -145,97 +263,57 @@ const Home = () => {
         </FadeInSection>
       </section>
 
-      {/* Are You Experiencing Section - Identify Pain Points */}
-      <section className="py-12 md:py-20 bg-brand-background-secondary">
-        <FadeInSection delay={100}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
-              {/* Left Column */}
-              <div className="flex-1 flex flex-col space-y-6 md:space-y-8">
-                <h2 className="text-2xl md:text-3xl font-serif text-brand-text-primary">
-                  It's never too late to start the journey of healing
-                </h2>
-                <div className="flex flex-col space-y-4">
-                  {checklistItems.map((item, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <svg className="w-5 h-5 mt-1 text-brand-sage flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
-                      </svg>
-                      <span className="text-base md:text-lg text-brand-text-primary">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Column */}
-              <div className="flex-1 flex flex-col justify-center space-y-6 md:space-y-12 mt-8 lg:mt-0">
-                <p className="text-3xl md:text-4xl lg:text-5xl text-brand-text-primary font-semibold">
-                  Culturally <span className="text-brand-coral">sensitive</span> therapy that meets you where you are
-                </p>
-                <p className="text-xl md:text-2xl lg:text-3xl text-brand-text-primary">
-                  At Mind Matters Center, we provide inclusive, compassionate care to help you find clarity, balance, and empowerment.
-                </p>
-              </div>
-            </div>
-          </div>
-        </FadeInSection>
-      </section>
-
       {/* Services Section - What We Offer */}
-      <section className="py-12 md:py-20 bg-brand-background-primary">
+      <section className="py-12 md:py-20 bg-brand-background-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-xl md:text-3xl lg:text-5xl font-serif text-brand-text-primary mb-6 md:mb-8">
-              Our services
+              Our Therapy Services
             </h2>
 
             {/* What We Offer Content */}
             <div className="max-w-4xl mx-auto mb-12 md:mb-16">
               <p className="text-base md:text-lg text-brand-text-primary mb-6">
                 We specialize in providing culturally sensitive therapy services, with a focus on supporting Asian American individuals and couples.
-                Whether you're navigating anxiety, trauma, relationship challenges, or other life stressors, we tailor our approach to meet your unique needs.
-              </p>
-              <p className="text-base md:text-lg text-brand-text-primary">
-                Our therapists draw from a wide range of therapeutic modalities, including Cognitive Behavioral Therapy (CBT),
-                Trauma-Focused Therapy, mindfulness practices, relational therapy, psychodynamic therapy, and more, to help you achieve lasting healing in a safe,
-                compassionate environment. Whatever your path to wellness looks like, we're here to support you every step of the way.
+                Whether you’re navigating anxiety, trauma, relationship challenges, or other life stressors, we tailor our approach to meet your unique needs.
               </p>
             </div>
-
-            <h3 className="text-lg md:text-2xl font-serif text-brand-text-primary mb-8 md:mb-10">
-              Our therapeutic approaches
-            </h3>
 
             <div className="flex flex-wrap justify-center max-w-6xl mx-auto">
               {[
                 {
-                  icon: IndividualTherapy,
+                  icon: IndividualTherapyImg,
                   title: "Individual therapy",
-                  description: "One-on-one sessions focused on your personal growth and healing journey."
+                  description: "One-on-one sessions focused on your personal growth and healing journey.",
+                  path: "/individual-therapy"
                 },
                 {
-                  icon: CouplesTherapy,
+                  icon: CouplesTherapyImg,
                   title: "Couples therapy",
-                  description: "Building stronger relationships through open communication and understanding."
+                  description: "Building stronger relationships through open communication and understanding.",
+                  path: "/couples-therapy"
                 },
                 {
-                  icon: WellNessCoaching,
+                  icon: WellNessCoachingImg,
                   title: "Wellness coaching",
-                  description: "Holistic approach to achieving balance in mind, body, and spirit."
+                  description: "Holistic approach to achieving balance in mind, body, and spirit.",
+                  path: "/wellness-coaching"
                 }
               ].map((service, index) => (
                 <FadeInSection key={index} delay={index * 100} className="w-full md:w-1/2 lg:w-1/3 p-3">
-                  <HoverCard className="bg-white p-6 rounded-lg shadow-lg h-full">
-                    <div className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4 transition-transform duration-300 hover:scale-105">
-                      <img src={service.icon} alt={service.title} className="w-full h-full" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-center mb-2 text-brand-sage">
-                      {service.title}
-                    </h3>
-                    <p className="text-brand-text-primary text-center">
-                      {service.description}
-                    </p>
-                  </HoverCard>
+                  <Link to={service.path} className="block h-full no-underline">
+                    <HoverCard className="bg-white p-6 rounded-lg shadow-lg h-full">
+                      <div className="w-32 h-32 md:w-48 md:h-48 mx-auto mb-4 transition-transform duration-300 hover:scale-105">
+                        <img src={service.icon} alt={service.title} className="w-full h-full" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-center mb-2 text-brand-sage">
+                        {service.title}
+                      </h3>
+                      <p className="text-brand-text-primary text-center">
+                        {service.description}
+                      </p>
+                    </HoverCard>
+                  </Link>
                 </FadeInSection>
               ))}
             </div>
@@ -244,7 +322,7 @@ const Home = () => {
       </section>
 
       {/* Specialties Section - Areas of Expertise */}
-      <section className="py-12 md:py-20 bg-brand-background-secondary">
+      <section className="py-12 md:py-20 bg-brand-background-primary">
         <FadeInSection delay={100}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
@@ -284,26 +362,8 @@ const Home = () => {
         </FadeInSection>
       </section>
 
-      {/* Not Alone Section - Empathy and Support */}
-      <section className="py-12 md:py-20 bg-brand-background-primary">
-        <FadeInSection delay={100}>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6 md:mb-8">
-                You are not alone – We're here to help you reclaim your life
-              </h2>
-              <p className="text-base md:text-xl text-brand-text-primary">
-                Life's challenges can feel isolating, but you don't have to face them alone.
-                At Mind Matters Center, we're committed to walking alongside you on your journey toward healing and growth.
-                Our dedicated therapists provide the support and understanding you need to overcome obstacles and start living your life with confidence and peace.
-              </p>
-            </div>
-          </div>
-        </FadeInSection>
-      </section>
-
       {/* Additional Resources Section */}
-      <section className="py-12 md:py-20 bg-brand-background-secondary">
+      <section className="py-12 md:py-20 bg-brand-background-primary">
         <FadeInSection delay={300}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
@@ -410,7 +470,7 @@ const Home = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-12 md:py-20 bg-brand-background-primary">
+      <section className="py-12 md:py-20 bg-brand-background-secondary">
         <FadeInSection delay={400}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-xl md:text-2xl lg:text-3xl text-brand-text-primary mb-8">

@@ -17,6 +17,9 @@ import NotFound from './pages/NotFound';
 import JoinOurTeam from './pages/JoinOurTeam';
 import ChineseServices from './pages/ChineseServices';
 import Contact from './pages/Contact';
+import IndividualTherapy from './pages/IndividualTherapy';
+import CouplesTherapy from './pages/CouplesTherapy';
+import WellnessCoaching from './pages/WellnessCoaching';
 
 const App = () => {
   return (
@@ -37,6 +40,9 @@ const App = () => {
           <Route path="/relationship-counseling" element={<RelationshipCounseling />} />
           <Route path="/family-cultural-dynamic" element={<FamilyCulturalDynamics />} />
           <Route path="/stress-burnout" element={<StressBurnout />} />
+          <Route path="/individual-therapy" element={<IndividualTherapy/>}/>
+          <Route path="/couples-therapy" element={<CouplesTherapy/>}/>
+          <Route path="/wellness-coaching" element={<WellnessCoaching/>}/>
           <Route path="/services" element={<ChineseServices />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
