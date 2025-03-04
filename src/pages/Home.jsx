@@ -82,6 +82,18 @@ const Home = () => {
     }
   ];
 
+  const FlowerIcon = () => (
+    <svg width="60" height="60" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Flower petals */}
+      <circle cx="20" cy="10" r="5" stroke="currentColor" strokeWidth="1" fill="none" />
+      <circle cx="15" cy="15" r="5" stroke="currentColor" strokeWidth="1" fill="none" />
+      <circle cx="25" cy="15" r="5" stroke="currentColor" strokeWidth="1" fill="none" />
+      <circle cx="20" cy="20" r="5" stroke="currentColor" strokeWidth="1" fill="none" />
+      {/* Center */}
+      <circle cx="20" cy="15" r="2" stroke="currentColor" strokeWidth="1" fill="none" />
+    </svg>
+  );
+
   return (
     <>
       {/* Hero Section */}
@@ -324,38 +336,38 @@ const Home = () => {
       {/* Specialties Section - Areas of Expertise */}
       <section className="py-12 md:py-20 bg-brand-background-primary">
         <FadeInSection delay={100}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
-                Explore Our Specialties
+                Area of Focus
               </h2>
-              <p className="text-base md:text-xl text-brand-text-primary max-w-3xl mx-auto">
-                At Mind Matters Center, we offer specialized therapy services to address a range of challenges.
-                Click below to learn more about each area of focus.
-              </p>
             </div>
 
             <div className="flex flex-wrap justify-center">
               {specialties.map((specialty, index) => (
-                <FadeInSection key={index} delay={index * 100 + 200} className="w-full sm:w-1/2 lg:w-1/3 p-3">
+                <div key={index} className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-16 flex flex-col items-center">
+                  <div className="mb-6 text-brand-sage">
+                    <FlowerIcon />
+                  </div>
+
+                  <h3 className="text-lg font-medium text-brand-text-primary mb-4 text-center">
+                    {specialty.title}
+                  </h3>
+
+                  <p className="text-brand-text-primary/90 mb-6 text-center">
+                    {specialty.description}
+                  </p>
+
                   <Link
                     to={specialty.path}
-                    className="block bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group h-full"
+                    className="uppercase text-md tracking-wider text-brand-sage hover:text-brand-coral transition-colors flex items-center"
                   >
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold text-brand-sage mb-3 group-hover:text-brand-coral transition-colors duration-200">
-                        {specialty.title}
-                      </h3>
-                      <p className="text-brand-text-primary">{specialty.description}</p>
-                      <div className="mt-4 text-brand-coral font-medium inline-flex items-center group-hover:translate-x-2 transition-transform duration-200">
-                        Learn more
-                        <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </div>
-                    </div>
+                    Learn More
+                    <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
                   </Link>
-                </FadeInSection>
+                </div>
               ))}
             </div>
           </div>
