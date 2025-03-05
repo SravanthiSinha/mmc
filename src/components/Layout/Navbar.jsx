@@ -51,8 +51,8 @@ const Navbar = () => {
     },
     { path: '/services', label: '中文服务' },
     {
-      path: '/about', label: 'About us', dropdownItems: [
-        { path: '/our-team', label: 'Our team' },
+      path: '/our-team', label: 'Our team', dropdownItems: [
+        { path: '/about', label: 'About us' },
         { path: '/contact', label: 'Contact us' },
         { path: '/join-our-team', label: 'Join our team' },
       ]
