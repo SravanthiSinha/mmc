@@ -2,6 +2,7 @@ import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
 import Cultural_Family from '../assets/images/cultural-family.jpg';
 import CTASection from '../components/shared/CTASection';
+import BookNowCTA from '../components/shared/BookNowCTA';
 
 const FamilyCulturalDynamics = () => {
     const struggles = [
@@ -69,12 +70,15 @@ const FamilyCulturalDynamics = () => {
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-black/40"></div>
-                            <div className="relative z-10 flex items-center justify-center h-full p-4 sm:p-8">
+                            <div className="relative z-10 flex flex-col items-center justify-center h-full p-4 sm:p-8">
                                 <p className="text-center sm:text-lg md:text-xl lg:text-2xl font-semibold text-brand-text-secondary max-w-4xl">
                                     Navigating family expectations and cultural identity can be challenging.
                                     We support you in honoring your heritage while fostering meaningful connections
                                     and emotional well-being.
                                 </p>
+                                <div className="flex justify-center mt-4">
+                                    <BookNowCTA />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -102,13 +106,16 @@ const FamilyCulturalDynamics = () => {
                                     </div>
                                 ))}
                             </div>
+                            <div className="flex justify-center mt-12">
+                                <BookNowCTA />
+                            </div>
                         </div>
                     </div>
                 </FadeInSection>
             </section>
 
-             {/* Treatment Approach */}
-             <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
+            {/* Treatment Approach */}
+            <section className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 bg-brand-background-primary border-t border-brand-gray-warm/10">
                 <FadeInSection>
                     <div className="max-w-3xl mx-auto text-center">
                         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
@@ -149,6 +156,9 @@ const FamilyCulturalDynamics = () => {
                                 </div>
                             ))}
                         </div>
+                        <div className="flex justify-center mt-12">
+                            <BookNowCTA />
+                        </div>
                     </div>
                 </FadeInSection>
             </section>
@@ -168,8 +178,8 @@ const FamilyCulturalDynamics = () => {
                     </div>
                 </FadeInSection>
             </section>
-            
-            <CTASection/>
+
+            <CTASection />
         </div>
     );
 };

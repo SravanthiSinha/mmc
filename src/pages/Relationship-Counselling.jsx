@@ -2,6 +2,7 @@ import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
 import Relationship_Counseling from '../assets/images/relationship-counseling.jpg';
 import CTASection from '../components/shared/CTASection';
+import BookNowCTA from '../components/shared/BookNowCTA';
 
 const RelationshipCounseling = () => {
     const challenges = [
@@ -73,11 +74,14 @@ const RelationshipCounseling = () => {
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-black/40"></div>
-                            <div className="relative z-10 flex items-center justify-center h-full p-4 sm:p-8">
+                            <div className="relative z-10 flex flex-col items-center justify-center h-full p-4 sm:p-8">
                                 <p className="text-center sm:text-lg md:text-xl lg:text-2xl font-semibold text-brand-text-secondary max-w-4xl">
                                     Feeling disconnected, misunderstood, or struggling with trust? We help couples
                                     improve communication, rebuild emotional closeness, and strengthen their partnership.
                                 </p>
+                                <div className="flex justify-center mt-4">
+                                    <BookNowCTA />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -104,6 +108,9 @@ const RelationshipCounseling = () => {
                                         </span>
                                     </div>
                                 ))}
+                            </div>
+                            <div className="flex justify-center mt-12">
+                                <BookNowCTA />
                             </div>
                         </div>
                     </div>
@@ -150,6 +157,9 @@ const RelationshipCounseling = () => {
                                     </p>
                                 </div>
                             ))}
+                        </div>
+                        <div className="flex justify-center mt-12">
+                            <BookNowCTA />
                         </div>
                     </div>
                 </FadeInSection>

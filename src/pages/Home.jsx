@@ -4,7 +4,7 @@ import IndividualTherapyImg from '../assets/images/individual-therapy.svg';
 import CouplesTherapyImg from '../assets/images/couples-therapy.svg';
 import WellNessCoachingImg from '../assets/images/wellness-coaching.svg';
 import { FadeInSection, HoverCard } from '../components/shared/Animations';
-import { BOOKING_URL } from '../constants';
+import BookNowCTA from '../components/shared/BookNowCTA';
 import ZengImg from '../assets/images/profile_pics/zeng.jpg';
 
 const Home = () => {
@@ -117,13 +117,7 @@ const Home = () => {
                 Inclusive virtual therapy in California for diverse communities
               </p>
               <div className="flex flex-col items-start gap-2">
-                <Link
-                  to={BOOKING_URL} target="_blank"
-                  className="inline-block bg-brand-coral text-white text-xl font-bold px-6 py-3 rounded-full
-                    hover:bg-brand-coralLight transition-colors duration-200"
-                >
-                  Book Now
-                </Link>
+                <BookNowCTA size="lg" />
                 <span className="text-brand-text-secondary text-sm sm:text-base md:text-lg mt-2">
                   *We also offer a free 20-minute initial consultation
                 </span>
@@ -158,6 +152,9 @@ const Home = () => {
                 </div>
               </FadeInSection>
             ))}
+          </div>
+          <div className="mt-12 flex justify-center">
+            <BookNowCTA />
           </div>
         </div>
       </section>
@@ -194,6 +191,9 @@ const Home = () => {
                 </p>
               </div>
             </div>
+            <div className="mt-6 text-center">
+              <BookNowCTA />
+            </div>
           </div>
         </FadeInSection>
       </section>
@@ -210,6 +210,9 @@ const Home = () => {
                 At Mind Matters Center, we're committed to walking alongside you on your journey toward healing and growth.
                 Our dedicated therapists in California provide the support and understanding you need to overcome obstacles and start living your life with confidence and peace.
               </p>
+              <div className="mt-8">
+                <BookNowCTA />
+              </div>
             </div>
           </div>
         </FadeInSection>
@@ -246,6 +249,10 @@ const Home = () => {
                       Clinical Director | Mind Matters Center
                     </p>
                   </div>
+                </div>
+                {/* Added BookNowCTA button under the image */}
+                <div className="mt-4 flex justify-center">
+                  <BookNowCTA />
                 </div>
               </div>
 
@@ -287,8 +294,11 @@ const Home = () => {
             <div className="max-w-4xl mx-auto mb-12 md:mb-16">
               <p className="text-base md:text-lg text-brand-text-primary mb-6">
                 We specialize in providing culturally sensitive therapy services, with a focus on supporting Asian American individuals and couples.
-                Whether you’re navigating anxiety, trauma, relationship challenges, or other life stressors, we tailor our approach to meet your unique needs.
+                Whether you're navigating anxiety, trauma, relationship challenges, or other life stressors, we tailor our approach to meet your unique needs.
               </p>
+              <div className="mt-6">
+                <BookNowCTA />
+              </div>
             </div>
 
             <div className="flex flex-wrap justify-center max-w-6xl mx-auto">
@@ -369,6 +379,9 @@ const Home = () => {
                   </Link>
                 </div>
               ))}
+            </div>
+            <div className="flex justify-center mt-4">
+              <BookNowCTA />
             </div>
           </div>
         </FadeInSection>
@@ -493,15 +506,8 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col items-center gap-2">
-              <Link
-                to={BOOKING_URL} target="_blank"
-                className="inline-block bg-brand-coral text-white text-base sm:text-lg md:text-xl font-bold 
-              px-6 py-3 rounded-full hover:bg-brand-coralLight transition-all duration-200
-              hover:transform hover:scale-105 active:scale-95"
-              >
-                Book Now
-              </Link>
-              <span className="text-sm sm:text-base text-brand-text-primary/80">
+              <BookNowCTA size="lg" />
+              <span className="text-sm sm:text-base text-brand-text-primary/80 mt-2">
                 Free 20 Minute Consultation
               </span>
             </div>

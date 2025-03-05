@@ -3,6 +3,7 @@ import { FadeInSection } from '../components/shared/Animations';
 import AboutUsImg from '../assets/images/aboutus.jpg';
 import AsianClientImg from '../assets/images/asian-client.jpg';
 import { BOOKING_URL } from '../constants';
+import BookNowCTA from '../components/shared/BookNowCTA';
 
 const About = () => {
   const values = [
@@ -44,7 +45,7 @@ const About = () => {
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary mb-6 sm:mb-8">
               Welcome to <span className="text-brand-text-primary">Mind Matters Center</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-brand-text-primary">
+            <p className="text-base sm:text-lg md:text-xl text-brand-text-primary mb-6">
               An Asian-owned, women-owned company committed to providing compassionate,
               culturally sensitive therapy and wellness services.
             </p>
@@ -55,20 +56,23 @@ const About = () => {
       {/* Mission Section */}
       <section className="py-16 bg-brand-background-primary">
         <div className="max-w-7xl mx-auto px-4">
-          <FadeInSection >
+          <FadeInSection>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
 
               <div className="text-center lg:text-left max-w-xl mx-auto lg:mx-0">
                 <h2 className="text-3xl font-serif text-brand-text-primary mb-6">
                   Our mission
                 </h2>
-                <p className="text-lg text-brand-text-primary/80 leading-relaxed">
+                <p className="text-lg text-brand-text-primary/80 leading-relaxed mb-6">
                   At <strong className="text-brand-primary">Mind Matters Center</strong>,
                   we believe that everyone deserves the opportunity to heal, grow, and live a fulfilling life.
                   As an Asian-owned, women-owned company, we are deeply committed to providing compassionate,
                   culturally sensitive therapy and wellness services that empower individuals and couples
                   to navigate life's challenges and embrace emotional well-being.
                 </p>
+                <div className="flex justify-center lg:justify-start">
+                  <BookNowCTA />
+                </div>
               </div>
 
               <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg mx-auto lg:mx-0 w-full max-w-2xl">
@@ -84,7 +88,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Specialization Section */}
+
       {/* Specialization Section */}
       <section className="py-8 sm:py-10 bg-brand-background-secondary">
         <div className="max-w-7xl mx-auto px-4">
@@ -102,19 +106,23 @@ const About = () => {
                 <h2 className="text-2xl sm:text-3xl font-serif text-brand-text-primary mb-4">
                   Our expertise
                 </h2>
-                <p className="text-base sm:text-lg text-brand-text-primary/80 leading-relaxed">
+                <p className="text-base sm:text-lg text-brand-text-primary/80 leading-relaxed mb-6">
                   We specialize in working with Asian American clients, understanding the unique cultural
                   experiences and struggles that shape their mental health. Our team of experienced
                   therapists offers personalized support for anxiety, trauma, relationship issues,
                   and other life stressors.
                 </p>
+                <div className="flex justify-center lg:justify-end">
+                  <BookNowCTA />
+                </div>
               </div>
             </div>
           </FadeInSection>
         </div>
       </section>
+
       {/* Approach Section */}
-      < section className="py-6 sm:py-8 bg-gradient-to-b from-brand-background-primary to-brand-background-secondary" >
+      <section className="py-6 sm:py-8 bg-gradient-to-b from-brand-background-primary to-brand-background-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInSection className="text-center mb-8">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary">
@@ -122,18 +130,22 @@ const About = () => {
             </h2>
           </FadeInSection>
           <FadeInSection direction="up">
-            <div className="max-w-4xl mx-auto p-4 sm:p-5 backdrop-blur-sm  mb-16">
+            <div className="max-w-4xl mx-auto p-4 sm:p-5 backdrop-blur-sm mb-16">
               <p className="text-base sm:text-lg text-brand-text-primary mb-6 leading-relaxed">
                 Our approach is rooted in a blend of evidence-based therapies—like Cognitive Behavioral Therapy (CBT),
                 Trauma-focused therapy, mindfulness, and relational therapy—combined with cultural sensitivity and respect.
                 We create a safe and non-judgmental space where you can explore your feelings, gain clarity, and develop the tools you need to thrive.
               </p>
-              <p className="text-base sm:text-lg text-brand-text-primary leading-relaxed">
+              <p className="text-base sm:text-lg text-brand-text-primary leading-relaxed mb-6">
                 We are passionate about creating a welcoming and inclusive space for all. We aim to help
                 you find healing, balance, and empowerment in every aspect of your life. Whether through
                 individual therapy, couples counseling, or wellness coaching, we are here to walk alongside
                 you every step of the way.
               </p>
+              {/* Added CTA button after the approach description */}
+              <div className="flex justify-center mt-8">
+                <BookNowCTA />
+              </div>
             </div>
           </FadeInSection>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
@@ -157,10 +169,10 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section >
+      </section>
 
       {/* CTA Section */}
-      < section className="py-8 sm:py-10 md:py-12 bg-brand-background-secondary" >
+      <section className="py-8 sm:py-10 md:py-12 bg-brand-background-secondary">
         <FadeInSection direction="up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-brand-text-primary mb-4 sm:mb-6">

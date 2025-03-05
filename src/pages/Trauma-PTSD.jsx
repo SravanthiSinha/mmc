@@ -2,6 +2,7 @@ import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
 import Trauma_Support from '../assets/images/trauma-support.jpg';
 import CTASection from '../components/shared/CTASection';
+import BookNowCTA from '../components/shared/BookNowCTA';
 
 const Trauma = () => {
     const signs = [
@@ -73,11 +74,14 @@ const Trauma = () => {
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-black/40"></div>
-                            <div className="relative z-10 flex items-center justify-center h-full p-4 sm:p-8">
+                            <div className="relative z-10 flex  flex-col items-center justify-center h-full p-4 sm:p-8">
                                 <p className="text-center sm:text-lg md:text-xl lg:text-2xl font-semibold text-brand-text-secondary max-w-4xl">
                                     If past experiences trigger fear, avoidance, or emotional distress,
                                     we offer a safe space to process and heal at your own pace.
                                 </p>
+                                <div className="flex justify-center mt-4">
+                                    <BookNowCTA />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -104,6 +108,9 @@ const Trauma = () => {
                                         </span>
                                     </div>
                                 ))}
+                            </div>
+                            <div className="flex justify-center mt-12">
+                                <BookNowCTA />
                             </div>
                         </div>
                     </div>
@@ -151,6 +158,9 @@ const Trauma = () => {
                                 </div>
                             ))}
                         </div>
+                        <div className="flex justify-center mt-12">
+                            <BookNowCTA />
+                        </div>
                     </div>
                 </FadeInSection>
             </section>
@@ -171,7 +181,7 @@ const Trauma = () => {
                 </FadeInSection>
             </section>
 
-            <CTASection/>
+            <CTASection />
         </div>
     );
 };

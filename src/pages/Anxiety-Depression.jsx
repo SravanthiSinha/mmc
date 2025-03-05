@@ -2,6 +2,7 @@ import React from 'react';
 import { FadeInSection } from '../components/shared/Animations';
 import Anxiety_Depression from '../assets/images/anxiety-depression.jpg';
 import CTASection from '../components/shared/CTASection';
+import BookNowCTA from '../components/shared/BookNowCTA';
 
 const AnxietyDepression = () => {
     const symptoms = [
@@ -77,11 +78,14 @@ const AnxietyDepression = () => {
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-black/40"></div>
-                            <div className="relative z-10 flex items-center justify-center h-full p-4 sm:p-8">
+                            <div className="relative z-10 flex flex-col items-center justify-center h-full p-4 sm:p-8">
                                 <p className="text-center sm:text-lg md:text-xl lg:text-2xl font-semibold text-brand-text-secondary max-w-4xl">
                                     Do you feel stuck in a cycle of worry, racing thoughts, or persistent sadness?
                                     Anxiety and depression can make it difficult to focus, sleep, or enjoy life's moments.
                                 </p>
+                                <div className="flex justify-center mt-4">
+                                    <BookNowCTA />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -108,6 +112,9 @@ const AnxietyDepression = () => {
                                         </span>
                                     </div>
                                 ))}
+                            </div>
+                            <div className="flex justify-center mt-12">
+                                <BookNowCTA />
                             </div>
                         </div>
                     </div>
@@ -155,6 +162,9 @@ const AnxietyDepression = () => {
                                 </div>
                             ))}
                         </div>
+                        <div className="flex justify-center mt-12">
+                            <BookNowCTA />
+                        </div>
                     </div>
                 </FadeInSection>
             </section>
@@ -164,7 +174,7 @@ const AnxietyDepression = () => {
                 <FadeInSection>
                     <div className="max-w-4xl mx-auto">
                         <div className="p-6 sm:p-8 md:p-12 text-center">
-                            <p className="text-base sm:text-lg text-brand-text-primary mb-12">
+                            <p className="text-base sm:text-lg text-brand-text-primary mb-8">
                                 We understand that seeking help for anxiety and depression takes courage.
                                 Our therapists provide a safe, non-judgmental space where you can work
                                 through your challenges at your own pace and develop the tools needed
