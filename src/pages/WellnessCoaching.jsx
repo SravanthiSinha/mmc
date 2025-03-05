@@ -12,7 +12,7 @@ const WellnessCoaching = () => {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center">
                         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary">
-                            Wellness Coaching
+                            Wellness coaching
                         </h1>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ const WellnessCoaching = () => {
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="bg-white rounded-2xl shadow p-8 md:p-12 border-l-4 border-brand-sage">
                             <h3 className="text-xl md:text-2xl font-serif text-brand-sage mb-6">
-                                Our Approach
+                                Our approach
                             </h3>
                             <p className="text-base md:text-lg text-brand-text-primary">
                                 Unlike therapy, <strong>wellness coaching</strong> is future-focused and designed to help you take actionable steps toward a more fulfilling life. We work with <strong>Asian American individuals, BIPOC communities, and professionals</strong> who want culturally attuned guidance in areas like career growth, work-life balance, and personal development.

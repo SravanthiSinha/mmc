@@ -47,7 +47,7 @@ const IndividualTherapy = () => {
                     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="bg-white rounded-2xl shadow p-8 md:p-12 border-l-4 border-brand-sage">
                             <h3 className="text-xl md:text-2xl font-serif text-brand-sage mb-6">
-                                Our Specialization
+                                Our specialization
                             </h3>
                             <p className="text-base md:text-lg text-brand-text-primary">
                                 We specialize in working with <strong>Asian American and BIPOC individuals</strong> and those seeking therapy that honors cultural identity, family dynamics, and personal values. Whether you're facing relationship struggles, career stress, or past trauma, we tailor our approach to meet your unique needs.

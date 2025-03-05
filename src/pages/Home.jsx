@@ -20,29 +20,44 @@ const Home = () => {
   // Our specialties for quick access
   const specialties = [
     {
-      title: 'Anxiety & Depression',
-      path: '/anxiety-depression',
-      description: 'Relief from persistent worry, sadness, and negative thoughts'
+      title: 'Trauma Therapy',
+      path: '/trauma-therapy',
+      description: 'Healing from trauma with evidence-based approaches for strength and recovery'
     },
     {
-      title: 'Trauma & PTSD',
-      path: '/trauma-ptsd',
-      description: 'Processing difficult experiences in a safe, supportive environment'
+      title: 'Therapy for Women',
+      path: '/womens-therapy',
+      description: 'Supporting women through unique challenges, life transitions, and personal growth'
     },
     {
-      title: 'Relationship Counseling',
+      title: 'Therapy for Asian Americans and BIPOC',
+      path: '/asia-bipoc-therapy',
+      description: 'Culturally sensitive therapy for navigating identity and systemic challenges'
+    },
+    {
+      title: 'Anxiety Therapy',
+      path: '/anxiety-therapy',
+      description: 'Evidence-based techniques to manage worry and regain a sense of calm'
+    },
+    {
+      title: 'Depression Therapy',
+      path: '/depression-therapy',
+      description: 'Support for understanding emotions and rediscovering motivation and joy'
+    },
+    {
+      title: 'Relationship Therapy',
       path: '/relationship-counseling',
-      description: 'Rebuilding connection, trust, and communication'
+      description: 'Guidance to build communication, trust, and emotional connection'
     },
     {
       title: 'Family & Cultural Dynamics',
       path: '/family-cultural-dynamic',
-      description: 'Navigating cultural identity and family expectations'
+      description: 'Navigating intergenerational issues and family expectations with compassion'
     },
     {
-      title: 'Stress & Burnout',
+      title: 'Therapy for Burnout and Stress',
       path: '/stress-burnout',
-      description: 'Finding balance and restoring wellbeing'
+      description: 'Restoring balance and well-being in your personal and professional life'
     }
   ];
 
@@ -344,43 +359,78 @@ const Home = () => {
       </section>
 
       {/* Specialties Section - Areas of Expertise */}
+      {/* Specialties Section - Areas of Expertise */}
       <section className="py-12 md:py-20 bg-brand-background-primary">
         <FadeInSection delay={100}>
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-6">
-                Area of Focus
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-brand-text-primary mb-4">
+                Areas of Focus
               </h2>
+              <p className="text-base md:text-lg text-brand-text-primary/90 max-w-3xl mx-auto">
+                Our therapeutic approaches are tailored to your unique needs, addressing specific challenges with cultural sensitivity and evidence-based care.
+              </p>
             </div>
 
-            <div className="flex flex-wrap justify-center">
-              {specialties.map((specialty, index) => (
-                <div key={index} className="w-full sm:w-1/2 lg:w-1/3 px-4 mb-16 flex flex-col items-center">
-                  <div className="mb-6 text-brand-sage">
-                    <FlowerIcon />
+            <div className="flex flex-wrap -mx-3">
+              {specialties.slice(0, 4).map((specialty, index) => (
+                <FadeInSection key={index} delay={index * 100} className="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6">
+                  <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 h-full group overflow-hidden">
+                    <div className="p-6 flex flex-col h-full">
+                      <div className="mb-4 text-brand-sage flex justify-center">
+                        <FlowerIcon />
+                      </div>
+                      <h3 className="text-lg font-medium text-brand-text-primary mb-3 text-center group-hover:text-brand-coral transition-colors">
+                        {specialty.title}
+                      </h3>
+                      <p className="text-brand-text-primary/80 mb-6 text-center flex-grow">
+                        {specialty.description}
+                      </p>
+                      <Link
+                        to={specialty.path}
+                        className="mt-auto mx-auto uppercase text-sm tracking-wider font-medium text-brand-sage hover:text-brand-coral transition-colors flex items-center"
+                      >
+                        Learn More
+                        <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
-
-                  <h3 className="text-lg font-medium text-brand-text-primary mb-4 text-center">
-                    {specialty.title}
-                  </h3>
-
-                  <p className="text-brand-text-primary/90 mb-6 text-center">
-                    {specialty.description}
-                  </p>
-
-                  <Link
-                    to={specialty.path}
-                    className="uppercase text-md tracking-wider text-brand-sage hover:text-brand-coral transition-colors flex items-center"
-                  >
-                    Learn More
-                    <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </Link>
-                </div>
+                </FadeInSection>
               ))}
             </div>
-            <div className="flex justify-center mt-4">
+
+            <div className="flex flex-wrap -mx-3">
+              {specialties.slice(4).map((specialty, index) => (
+                <FadeInSection key={index + 4} delay={(index + 4) * 100} className="w-full sm:w-1/2 lg:w-1/4 px-3 mb-6">
+                  <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 h-full group overflow-hidden">
+                    <div className="p-6 flex flex-col h-full">
+                      <div className="mb-4 text-brand-sage flex justify-center">
+                        <FlowerIcon />
+                      </div>
+                      <h3 className="text-lg font-medium text-brand-text-primary mb-3 text-center group-hover:text-brand-coral transition-colors">
+                        {specialty.title}
+                      </h3>
+                      <p className="text-brand-text-primary/80 mb-6 text-center flex-grow">
+                        {specialty.description}
+                      </p>
+                      <Link
+                        to={specialty.path}
+                        className="mt-auto mx-auto uppercase text-sm tracking-wider font-medium text-brand-sage hover:text-brand-coral transition-colors flex items-center"
+                      >
+                        Learn More
+                        <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </FadeInSection>
+              ))}
+            </div>
+
+            <div className="flex justify-center mt-8">
               <BookNowCTA />
             </div>
           </div>
@@ -442,7 +492,7 @@ const Home = () => {
               </div>
 
               <div className="w-full sm:w-1/2 lg:w-1/3 p-3">
-                <Link to="/services" className="block h-full">
+                <Link to="/chinese-services" className="block h-full">
                   <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-6 flex flex-col items-center h-full border border-brand-gray-warm">
                     <div className="bg-brand-sage/10 p-4 rounded-full mb-4">
                       <svg className="w-8 h-8 text-brand-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor">

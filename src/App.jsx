@@ -6,8 +6,7 @@ import About from './pages/About';
 import Faq from './pages/Faq';
 import Resources from './pages/Resources';
 import Specialties from './pages/Specialties';
-import AnxietyDepression from './pages/Anxiety-Depression';
-import Trauma from './pages/Trauma-PTSD';
+import TraumaTherapy from './pages/TraumaTherapy';
 import RelationshipCounseling from './pages/Relationship-Counselling';
 import FamilyCulturalDynamics from './pages/Family-Culture-Dynamic';
 import StressBurnout from './pages/Stress-BurnOut';
@@ -20,6 +19,10 @@ import Contact from './pages/Contact';
 import IndividualTherapy from './pages/IndividualTherapy';
 import CouplesTherapy from './pages/CouplesTherapy';
 import WellnessCoaching from './pages/WellnessCoaching';
+import AnxietyTherapy from './pages/AnxietyTherapy';
+import DepressionTherapy from './pages/DepressionTherapy';
+import WomensTherapy from './pages/WomensTherapy';
+import ASIABIOPCTherapy from './pages/ASIABIOPCTherapy';
 
 const App = () => {
   return (
@@ -34,16 +37,19 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/resources" element={<Resources />} />
-          <Route path="/specialties" element={<Specialties />} />
-          <Route path="/anxiety-depression" element={<AnxietyDepression />} />
-          <Route path="/trauma-ptsd" element={<Trauma />} />
+          <Route path="/services" element={<Specialties />} />
+          <Route path="/anxiety-therapy" element={<AnxietyTherapy />} />
+          <Route path="/depression-therapy" element={<DepressionTherapy />} />
+          <Route path="/womens-therapy" element={<WomensTherapy />} />
+          <Route path="/asia-bipoc-therapy" element={<ASIABIOPCTherapy />} />
+          <Route path="/trauma-therapy" element={<TraumaTherapy />} />
           <Route path="/relationship-counseling" element={<RelationshipCounseling />} />
           <Route path="/family-cultural-dynamic" element={<FamilyCulturalDynamics />} />
           <Route path="/stress-burnout" element={<StressBurnout />} />
-          <Route path="/individual-therapy" element={<IndividualTherapy/>}/>
-          <Route path="/couples-therapy" element={<CouplesTherapy/>}/>
-          <Route path="/wellness-coaching" element={<WellnessCoaching/>}/>
-          <Route path="/services" element={<ChineseServices />} />
+          <Route path="/individual-therapy" element={<IndividualTherapy />} />
+          <Route path="/couples-therapy" element={<CouplesTherapy />} />
+          <Route path="/wellness-coaching" element={<WellnessCoaching />} />
+          <Route path="/chinese-services" element={<ChineseServices />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

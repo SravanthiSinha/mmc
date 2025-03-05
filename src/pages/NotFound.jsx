@@ -62,7 +62,7 @@ const NotFound = () => {
               </h2>
               <div className="flex flex-col gap-3">
                 <Link
-                  to="/specialties"
+                  to="/services"
                   className="text-brand-sage hover:text-brand-text-primary transition-colors duration-200"
                 >
                   View Our Specialties →

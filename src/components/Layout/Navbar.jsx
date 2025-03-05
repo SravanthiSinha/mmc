@@ -39,17 +39,24 @@ const Navbar = () => {
   const navLinks = [
     { path: '/', label: 'Home' },
     {
-      path: '/specialties',
-      label: 'Specialties',
+      path: '/services',
+      label: 'Services',
       dropdownItems: [
-        { path: '/anxiety-depression', label: 'Anxiety & depression' },
-        { path: '/trauma-ptsd', label: 'Trauma & PTSD' },
-        { path: '/relationship-counseling', label: 'Relationship counseling' },
+        { path: '/trauma-therapy', label: 'Trauma therapy' },
+        { path: '/womens-therapy', label: 'Therapy for women' },
+        { path: '/asia-bipoc-therapy', label: 'Therapy for asian americans and BIPOC community' },
+        { path: '/anxiety-therapy', label: 'Anxiety therapy' },
+        { path: '/depression-therapy', label: 'Depression therapy' },
+        { path: '/relationship-counseling', label: 'Relationship therapy' },
         { path: '/family-cultural-dynamic', label: 'Family culture dynamics' },
-        { path: '/stress-burnout', label: 'Stress & burnout' }
+        { path: '/stress-burnout', label: 'Therapy for burn out and stress' },
+        // { path: '/individual-therapy', label: 'Individual therapy' },
+        // { path: '/couples-therapy', label: 'Couples therapy' },
+        // { path: '/wellness-coaching', label: 'Wellness coaching' },
+
       ]
     },
-    { path: '/services', label: '中文服务' },
+    { path: '/chinese-services', label: '中文服务' },
     {
       path: '/our-team', label: 'Our team', dropdownItems: [
         { path: '/about', label: 'About us' },
