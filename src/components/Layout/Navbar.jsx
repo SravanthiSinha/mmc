@@ -45,7 +45,7 @@ const Navbar = () => {
       dropdownItems: [
         { path: '/trauma-therapy', label: 'Trauma therapy' },
         { path: '/womens-therapy', label: 'Therapy for women' },
-        { path: '/asia-bipoc-therapy', label: 'Therapy for asian americans and BIPOC community' },
+        { path: '/asia-bipoc-therapy', label: 'Therapy for Asian Americans and BIPOC community' },
         { path: '/anxiety-therapy', label: 'Anxiety therapy' },
         { path: '/depression-therapy', label: 'Depression therapy' },
         { path: '/relationship-counseling', label: 'Relationship therapy' },

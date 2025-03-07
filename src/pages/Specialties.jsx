@@ -26,7 +26,7 @@ const Specialties = () => {
             description: 'Women face unique challenges, from societal pressures to life transitions and emotional burnout. Our therapists provide a supportive space for women to explore their mental health, relationships, and personal growth, helping you cultivate self-compassion and empowerment.'
         },
         {
-            title: 'Therapy for asian americans and BIPOC community',
+            title: 'Therapy for Asian Americans and BIPOC community',
             path: '/asia-bipoc-therapy',
             img_path: BIPOC_Therapy,
             description: 'Navigating mental health while balancing cultural identity, family expectations, and systemic challenges can be complex. We offer culturally sensitive therapy tailored to the experiences of Asian Americans and BIPOC individuals, providing a space where you feel seen, understood, and supported.'

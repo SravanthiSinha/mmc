@@ -199,7 +199,7 @@ const Home = () => {
               {/* Right Column */}
               <div className="flex-1 flex flex-col justify-center space-y-6 md:space-y-12 mt-8 lg:mt-0">
                 <p className="text-2xl md:text-3xl lg:text-4xl text-brand-text-primary font-semibold">
-                  We support asian americans and bipoc communities using culturally <span className="text-brand-coral">sensitive</span> therapy to meet you where you are
+                  We support Asian Americans and BIPOC communities using culturally <span className="text-brand-coral">sensitive</span> therapy to meet you where you are
                 </p>
                 <p className="text-xl md:text-2xl lg:text-3xl text-brand-text-primary">
                   At Mind Matters Center, we provide inclusive, compassionate care to help you find clarity, balance, and empowerment.

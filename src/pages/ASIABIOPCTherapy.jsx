@@ -61,7 +61,7 @@ const ASIABIOPCTherapy = () => {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center">
                         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif text-brand-text-primary">
-                            Therapy for asian americans & BIPOC communities
+                            Therapy for Asian Americans & BIPOC communities
                         </h1>
                     </div>
                 </div>
