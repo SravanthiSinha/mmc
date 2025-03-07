@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Logo from '../../assets/images/favicon.svg';
 import { BOOKING_URL, CLIENT_PORTAL_URL } from '../../constants';
+import { ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
   const location = useLocation();
@@ -123,12 +124,15 @@ const Navbar = () => {
                 <Link
                   to={link.path}
                   target={link.isExternal ? '_blank' : '_self'}
-                  className={`px-2 py-2 rounded-full transition-all duration-200 text-lg
+                  className={`px-2 py-2 rounded-full transition-all duration-200 text-lg flex items-center
                     ${(isPathActive(link.path) || isDropdownActive(link.dropdownItems)) ? 'font-semibold' : ''}
                     ${location.pathname === '/' && !scrolled ? 'text-brand-text-secondary' : 'text-brand-text-primary'}
                     hover:bg-gray-300/20`}
                 >
                   {link.label}
+                  {link.dropdownItems && (
+                    <ChevronDown className="ml-1 h-4 w-4" />
+                  )}
                 </Link>
 
                 {/* Desktop Dropdown */}
