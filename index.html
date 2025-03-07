@@ -11,9 +11,16 @@
     <meta name="theme-color" content="#FCC419" />
     <meta name="description" content="Mind Matters Center - Supporting your mental health journey with individual, family & group therapy services." />
     <title>Mind Matters Center</title>
+    
+    <!-- Preconnect to Google Fonts domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Use preload strategy for Google Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
@@ -26,7 +33,7 @@
           // Remove it from sessionStorage
           sessionStorage.removeItem('spa-path');
           // Replace the current history state with the saved path
-          const newPath = '/mmc' + (savedPath === '/' ? '' : savedPath);
+          const newPath =  (savedPath === '/' ? '' : savedPath);
           window.history.replaceState(null, null, newPath);
         }
       })();
