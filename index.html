@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/mmc/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/mmc/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/mmc/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/mmc/apple-touch-icon.png" />
+    <link rel="manifest" href="/mmc/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FCC419" />
+    <meta name="description" content="Mind Matters Center - Supporting your mental health journey with individual, family & group therapy services." />
+    <title>Mind Matters Center</title>
+    
+    <!-- Preconnect to Google Fonts domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Use preload strategy for Google Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    </noscript>
+    <script type="module" crossorigin src="/mmc/assets/index-eRjlzOpA.js"></script>
+    <link rel="stylesheet" crossorigin href="/mmc/assets/index-DwzLc_fO.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      (function() {
+        // Get the saved path from sessionStorage
+        const savedPath = sessionStorage.getItem('spa-path');
+        if (savedPath) {
+          // Remove it from sessionStorage
+          sessionStorage.removeItem('spa-path');
+          // Replace the current history state with the saved path
+          const newPath =  (savedPath === '/' ? '' : savedPath);
+          window.history.replaceState(null, null, newPath);
+        }
+      })();
+    </script>
+  </body>
+</html>
